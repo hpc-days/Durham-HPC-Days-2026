@@ -1,0 +1,7 @@
+main:
+  - title: "Register"
+    url: /register/
+  - title: "Programme"
+    url: /programme-empty/
+  - title: "Durham HPC Days 2025"
+    url: "https://durham.readthedocs.io/en/latest/hpcdays2025/index.html"
