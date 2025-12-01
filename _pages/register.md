@@ -1,6 +1,6 @@
 ---
 layout: splash
-title: "Conference Programme"
+title: "Conference Registration"
 permalink: /register/
 classes: [full-programme]
 ---
@@ -41,6 +41,19 @@ classes: [full-programme]
     <p style="margin-top: 2rem; font-size: 1rem; color: #ccc; opacity: 0.8;">
       <em>The general registration will open after this stage — keep an eye out for that announcement.</em>
     </p>
+  </div>
+</section>
+
+
+<section style="background: linear-gradient(180deg, #0b132b 0%, #1c2541 100%); color: #fff; padding: 4rem 2rem; text-align: center; border-radius: 12px;">
+  <div style="max-width: 950px; margin: 0 auto;">
+    <h1 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700;">Participant and Sponsor registration</h1>
+
+    <p style="font-size: 1.15rem; line-height: 1.7; opacity: 0.9; margin-bottom: 2.5rem;">
+      Registration for the <strong>Durham HPC Days 2026</strong> will open here shortly.  If you are a vendor sponsor, please select
+      the appropriate option which will enable the sponsorship payment.
+    </p>
+
   </div>
 </section>
 
