@@ -19,7 +19,9 @@ description: >-
   Durham HPC Days website
 github_username: mzhc13
 
+
 minimal_mistakes_skin: air
+
 search: true
 
 # Liquid
@@ -30,13 +32,12 @@ liquid:
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
 # Outputting
-permalink: /:categories/:path/
+permalink: /:categories/:title/
 #paginate: 5 # amount of posts to show
 #paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 feed:
   path: atom.xml
-
 include:
   - _pages
 
@@ -57,9 +58,15 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
+  - jemoji
+  - jekyll-include-cache
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-gist
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll_filter_by_date.rb
 
 author:
   name   : "First Lastname"
@@ -68,25 +75,8 @@ author:
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://shareing-dri.github.io/"
-    - label: "Bluesky"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://mzhc13.github.io/"
 
-footer:
-  links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://bsky.app/profile/tobiasweinzierl.bsky.social"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/SHAREing-DRI"
 
 defaults:
   # _posts
@@ -109,7 +99,8 @@ defaults:
       author_profile: false
       
 
-
+feed:
+  path: null
 
 
 future: true
@@ -129,20 +120,24 @@ collections:
   programme-empty:
     output: true
     permalink: /programme-empty/:path/
-    
-#category_archive:
-#  type: liquid
-#  path: /categories/
-#tag_archive:
-#  type: liquid
-#  path: /tags/
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
 
 # mimic GitHub Pages with --safe
-#whitelist:
-#  - jekyll-paginate
-#  - jekyll-sitemap
-#  - jekyll-gist
-#  - jekyll-feed
-#  - jemoji
-#  - jekyll-include-cache
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+  
+  
+  
+  
 
