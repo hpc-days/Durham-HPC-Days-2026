@@ -3,7 +3,7 @@ layout: splash
 permalink: /
 hidden: true
 header:
-  overlay_image: "assets/images/background-hpc-days.png"
+  overlay_image: "/assets/images/background-hpc-days.png"
 ---
 <style>
 body {
@@ -178,10 +178,18 @@ t {
 .call-for-submissions {
   background: #002A41;
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  max-width: 900px;
+  padding: 2rem 2rem;
+  border-radius: 22px;
   text-align: center;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.call-for-submissions h2 {
+  font-size: 1.9rem;
+  margin-bottom: 1.2rem;
 }
 .call-for-submissions .deadline-box {
   font-size: 1.1rem;
@@ -196,6 +204,37 @@ t {
 .hero-content .btn {
   margin: 0.5rem;
 }
+
+.dual-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(360px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+.dual-cards .call-for-submissions {
+  margin: 0;
+}
+
+.page__content,
+.page__inner-wrap,
+.wrapper,
+.initial-content {
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+
+/* Mobile stacking */
+@media (max-width: 780px) {
+  .dual-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 @media (max-width: 900px) {
   .hero { padding: 2rem 1rem; }
   .hero-inner { max-width: 100%; border-radius: 8px; }
@@ -211,19 +250,27 @@ t {
   </t>
 </section>
 
-<section class="call-for-submissions fade-in">
-  <h2>📢 Call for Submissions</h2>
-  <div class="deadline-box">
-    🗓️ Submission Deadline: <strong>January 31st</strong>
-  </div>
-  <br><br>
-  <a href="{{ site.baseurl }}/register/" class="btn btn-purple">Submit Your Session</a>
+<div class="dual-cards fade-in">
 
+  <section class="call-for-submissions">
+    <h2>📢 Call for Sessions</h2>
+    <div class="deadline-box">
+      🗓️ Submission Deadline: <strong>January 31st</strong>
+    </div>
+    <br><br>
+    <a href="/call-for-sessions/" class="btn btn-purple">Submit Your Session</a>
+  </section>
 
-<br><br>
-</section>
+  <section class="call-for-submissions">
+    <h2>📝 Registration Open</h2>
+    <div class="deadline-box">
+      Register now to attend Durham HPC Days 2026
+    </div>
+    <br><br>
+    <a href="https://pay.durham.ac.uk/event-durham/durham-hpc-days-2026" class="btn btn-purple">Register</a>
+  </section>
 
-
+</div>
 
 <div class="hero">
   <div class="hero-inner">
@@ -246,10 +293,9 @@ t {
 <section id="gallery" class="fade-in">
   <h2>📸 Gallery</h2>
   <div class="image-grid">
-    <img src="assets/images/Sessions.jpg" alt="Sessions">
-    <img src="assets/images/food-truck.jpg" alt="Food truck">
-    <img src="assets/images/social.png" alt="social">
-    <img src="assets/images/stickers.jpg" alt="stickers">
+    <img src="/assets/images/Sessions.jpg" alt="Sessions">
+    <img src="/assets/images/food-truck.jpg" alt="Food truck">
+    <img src="/assets/images/social.png" alt="social">
   </div>
 </section>
 
