@@ -5,7 +5,7 @@ permalink: /sponsors/
 classes: [full-programme]
 ---
 
-<bre><br>
+<br><br>
 <section style="background: linear-gradient(180deg, #0b132b 0%, #1c2541 100%); color: #fff; padding: 4rem 2rem; border-radius: 12px;">
   <div style="max-width: 950px; margin: 0 auto; text-align: center;">
     <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">Sponsor & Supporter Information</h1>

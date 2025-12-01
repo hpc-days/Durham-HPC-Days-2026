@@ -3,7 +3,7 @@ layout: splash
 permalink: /
 hidden: true
 header:
-  overlay_image: "Durham-HPC-Days-2026/assets/images/background-hpc-days.png"
+  overlay_image: "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/background-hpc-days.png?raw=true"
 ---
 <style>
 body {
@@ -293,9 +293,9 @@ t {
 <section id="gallery" class="fade-in">
   <h2>📸 Gallery</h2>
   <div class="image-grid">
-    <img src="Durham-HPC-Days-2026/assets/images/Sessions.jpg" alt="Sessions">
-    <img src="Durham-HPC-Days-2026/assets/images/food-truck.jpg" alt="Food truck">
-    <img src="Durham-HPC-Days-2026/assets/images/social.png" alt="social">
+    <img src="https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/Sessions.jpg?raw=true" alt="Sessions">
+    <img src="https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/food-truck.jpg?raw=true" alt="Food truck">
+    <img src="https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/social.png?raw=true" alt="social">
   </div>
 </section>
 

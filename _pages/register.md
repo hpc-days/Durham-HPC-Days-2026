@@ -9,7 +9,7 @@ permalink: /register/
   width: 100vw;
   margin-left: calc(50% - 50vw);
   height: 50vh;
-  background-image: url('/assets/images/cathedral-cartoon.png');
+  background-image: url("https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/cathedral-cartoon.png?raw=true");
   background-attachment: fixed;
   background-position: 50% 40%;
   background-repeat: no-repeat;
@@ -22,7 +22,7 @@ permalink: /register/
 .parallax-overlay {
   background: linear-gradient(rgba(104,36,109,0.85), rgba(70,20,75,0.85));
   color: white;
-  padding: 2rem 20rem;
+  padding: 2rem 15rem;
   text-align: center;
   border-radius: 14px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.40);
