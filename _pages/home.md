@@ -258,7 +258,7 @@ t {
       🗓️ Submission Deadline: <strong>January 31st</strong>
     </div>
     <br><br>
-    <a href="/call-for-sessions/" class="btn btn-purple">Submit Your Session</a>
+    <a href="https://hpc-days.github.io/Durham-HPC-Days-2026/call-for-sessions/" class="btn btn-purple">Submit Your Session</a>
   </section>
 
   <section class="call-for-submissions">
@@ -305,7 +305,7 @@ t {
     Discover the full schedule of keynotes, technical sessions, and social events for the upcoming conference.
     Check the programme to plan your participation and make the most of your experience at Durham HPC Days.<br>
   </t><br>
-  <a href="/programme-empty/" class="btn">Full programme coming up soon</a>
+  <a href="https://hpc-days.github.io/Durham-HPC-Days-2026/programme-empty/" class="btn">Full programme coming up soon</a>
 </section>
 
 <script>
