@@ -77,11 +77,6 @@ permalink: /call-for-sessions/
         mozallowfullscreen
         msallowfullscreen>
       </iframe>
-    </div>
 
-    <p style="margin-top: 2rem; font-size: 1rem; color: #ccc; opacity: 0.8;">
-      <em>The general registration will open after this stage — keep an eye out for that announcement.</em>
-    </p>
-  </div>
 
 
