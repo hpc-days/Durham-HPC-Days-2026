@@ -174,12 +174,12 @@ p, t {
   </div>
 
   <p>
-    The <strong>2023 event</strong> focused on exploring the community’s transition from homogeneous to increasingly heterogeneous supercomputing architectures, focusing on how to adapt algorithms, workflows and quantities of interest to new hardware; the role of performance portability; lessons learned from prototype and experimental systems within ExCALIBUR; the integration of core computer science and applied mathematics with domain sciences; the future of general-purpose machines and codes; sustainable and accessible research computing; and the importance of cultivating a diverse and well-trained HPC workforce.
+    The <strong>2023 event</strong> focused on exploring the community’s transition from homogeneous to increasingly heterogeneous supercomputing architectures, focusing on how to adapt algorithms, workflows and quantities of interest to new hardware; the role of performance portability; lessons learned from prototype and experimental systems within ExCALIBUR and the integration of core computer science and applied mathematics with domain sciences.
   </p>
 
   <div class="image-grid">
-    <img src="https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/social.png?raw=true" alt="HPC Days 2023 Photo 1">
-    <img src="https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/stickers.jpg?raw=true" alt="HPC Days 2023 Photo 2">
+    <img src="https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/hpc-days-2023-2.jpg?raw=true" alt="HPC Days 2023 Photo 1">
+    <img src="https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/hpc-days-2023-1.jpg?raw=true" alt="HPC Days 2023 Photo 2">
   </div>
   
 </section>
