@@ -154,74 +154,10 @@
   transform: translateY(0px);
 }
 
-/* --- Existing desktop styles, unchanged --- */
-
-/* Mobile toggle button */
-.masthead__mobile-toggle { display: none; }
-#mobile-menu-btn {
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #68246D;
-}
-
-/* Mobile styles */
-@media (max-width: 900px) {
-  .masthead__inner-wrap { flex-wrap: wrap; justify-content: space-between; }
-  .masthead__mobile-toggle { display: block; }
-
-  /* hide nav initially on mobile */
-  .site-nav__list { 
-    flex-direction: column; 
-    width: 100%; 
-    display: none; 
-    margin-top: 0.5rem; 
-    background: #fff; 
-    border-top: 1px solid #ddd;
-  }
-
-  .site-nav__item { width: 100%; }
-  .site-nav__item > a { display: block; padding: 0.8rem 1rem; border-bottom: 1px solid #eee; }
-
-  /* Submenus */
-  .submenu {
-    position: relative;
-    top: 0;
-    left: 0;
-    display: none;
-    opacity: 1;
-    transform: none;
-    border: none;
-    box-shadow: none;
-    padding-left: 1rem;
-  }
-  .submenu__item a { padding: 0.6rem 1rem; }
-}
-
 
 </style>
 
 
-<script>
-const btn = document.getElementById('mobile-menu-btn');
-const menu = document.querySelector('.site-nav__list');
-
-btn.addEventListener('click', () => {
-  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-});
-
-// Submenu toggle on mobile
-document.querySelectorAll('.has-submenu > a').forEach(link => {
-  link.addEventListener('click', e => {
-    if(window.innerWidth <= 900) {
-      e.preventDefault();
-      const submenu = link.nextElementSibling;
-      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-    }
-  });
-});
-</script>
 
 
 
