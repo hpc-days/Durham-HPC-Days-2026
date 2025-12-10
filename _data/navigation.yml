@@ -7,13 +7,13 @@ main:
     url: /tutorials/
     children:
     - title: "Node-level performance optimisation "
-      url: /tutorials/node-level-performance-optimisation/
+      url: Durham-HPC-Days-2026/tutorials/node-level-performance-optimisation/
     - title: "NVIDIA Multi-GPU Programming"
-      url: /tutorials/nvidia-multi-gpu-programming/
+      url: Durham-HPC-Days-2026/tutorials/nvidia-multi-gpu-programming/
     - title: "Green HPC"
-      url: /tutorials/green-hpc/
+      url: Durham-HPC-Days-2026/tutorials/green-hpc/
     - title: "Tensorrent"
-      url: /tutorials/tensorrent/
+      url: Durham-HPC-Days-2026/tutorials/tensorrent/
   - title: "Programme"
     url: /programme-empty/
   - title: "Sponsors"
