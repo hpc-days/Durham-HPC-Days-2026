@@ -228,64 +228,88 @@ t {
 
 
 /* Mobile stacking */
-
-@media (max-width: 600px) {
-  .hero-content h1 {
-    font-size: 1.3rem !important;
-  }
-  .hero-content p {
-    font-size: 0.95rem !important;
-    padding: 0 1rem;
-  }
-  .btn, .btn.btn-purple {
-    width: 100%;
-    padding: 0.8rem 0;
-    font-size: 1rem;
-  }
-
-  .dual-cards {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 0 1rem;
-  }
-
-  .call-for-submissions h2 {
-    font-size: 1.5rem;
-  }
-
-  .call-for-submissions .deadline-box {
-    font-size: 1rem;
-    padding: 0.8rem 1rem;
-  }
-
-  section#programme t,
-  section#about t {
-    font-size: 0.95rem;
-    padding: 0 1rem;
-  }
-
-  .image-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .image-grid img {
-    height: auto;
-  }
-}
-
-/* Ajuste general para tablets */
 @media (max-width: 900px) {
+
+  /* Hero adjustments */
   .hero-inner {
+    max-width: 100%;
     border-radius: 8px;
   }
   .hero-content h1 {
     font-size: 1.6rem;
+    line-height: 2rem;
   }
   .hero-content p {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.3rem;
+    max-width: 90%;
+    word-wrap: break-word;
+  }
+
+  /* Dual cards stack */
+  .dual-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .call-for-submissions {
+    padding: 1.5rem 1rem;
+  }
+  .call-for-submissions h2 {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+  .call-for-submissions .deadline-box {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.2rem;
+  }
+  .call-for-submissions .btn {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* Image grid stack */
+  .image-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .image-grid img {
+    height: auto;
+  }
+
+  /* Section headings */
+  section h2 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+  section p, t {
+    font-size: 0.95rem;
+    line-height: 1.4rem;
+  }
+
+  /* Fade-in elements spacing */
+  .fade-in {
+    margin: 1rem 0;
   }
 }
+
+@media (max-width: 500px) {
+  .hero-content h1 {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+  .hero-content p {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+  .call-for-submissions h2 {
+    font-size: 1.1rem;
+  }
+  .call-for-submissions .deadline-box {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
 
 
 </style>
