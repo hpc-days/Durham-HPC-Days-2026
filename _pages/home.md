@@ -228,18 +228,66 @@ t {
 
 
 /* Mobile stacking */
-@media (max-width: 780px) {
+
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 1.3rem !important;
+  }
+  .hero-content p {
+    font-size: 0.95rem !important;
+    padding: 0 1rem;
+  }
+  .btn, .btn.btn-purple {
+    width: 100%;
+    padding: 0.8rem 0;
+    font-size: 1rem;
+  }
+
   .dual-cards {
     grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .call-for-submissions h2 {
+    font-size: 1.5rem;
+  }
+
+  .call-for-submissions .deadline-box {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  section#programme t,
+  section#about t {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .image-grid img {
+    height: auto;
+  }
+}
+
+/* Ajuste general para tablets */
+@media (max-width: 900px) {
+  .hero-inner {
+    border-radius: 8px;
+  }
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
   }
 }
 
 
-@media (max-width: 900px) {
-  .hero { padding: 2rem 1rem; }
-  .hero-inner { max-width: 100%; border-radius: 8px; }
-  .hero-content h1 { font-size: 1.6rem; }
-}
 </style>
 
 <section id="about" class="fade-in">
