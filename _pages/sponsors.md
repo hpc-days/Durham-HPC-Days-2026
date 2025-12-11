@@ -1,9 +1,45 @@
 ---
 layout: splash
-title: "Sponsor information"
+title: "Conference Programme"
 permalink: /sponsors/
-classes: [full-programme]
 ---
+
+
+
+<style>
+.parallax-hero {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 50vh;
+  background-image: url('/assets/images/cathedral-cartoon.png');
+  background-attachment: fixed;
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax-overlay {
+  background: linear-gradient(rgba(104,36,109,0.85), rgba(70,20,75,0.85));
+  color: white;
+  padding: 2rem 20rem;
+  text-align: center;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.40);
+}
+
+.parallax-overlay h1 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.parallax-overlay p {
+  font-size: 1.3rem;
+  opacity: 0.95;
+}
+</style>
 
 <br><br>
 <section style="background: linear-gradient(180deg, #0b132b 0%, #1c2541 100%); color: #fff; padding: 4rem 2rem; border-radius: 12px;">
@@ -70,3 +106,4 @@ This page will hopefully include the information that you need to make a success
     </div>
   </div>
 </section>
+
