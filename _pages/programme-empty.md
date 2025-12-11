@@ -637,6 +637,7 @@ font-size: 0.6rem;
     grid-template-columns: 0.75fr 2.25fr 2.25fr;
     gap: 0.5rem;
     align-items: stretch; 
+padding: 0.5rem;
   }
 
   .time-label,
@@ -645,6 +646,11 @@ font-size: 0.6rem;
     background: #002A41;
     color: #fff;    
     border-radius: 8px;
+     padding-left: 0.5rem; 
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;  
+      padding-bottom: 0.5rem; 
+}
   }
   .session-card {
     display: flex;
