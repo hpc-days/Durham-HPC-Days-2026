@@ -7,7 +7,7 @@ classes: [full-programme]
 
 {% assign sessions = site.programme | sort: "start_time" %}
 {% assign tracks = "A,B" | split: "," %}
-{% assign days_order = "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" | split: "," %}
+{% assign days_order = "Monday,Tuesday,Wednesday,Thursday,Friday" | split: "," %}
 
 <div class="programme-container">
 
@@ -16,7 +16,13 @@ classes: [full-programme]
   <h3>Programme</h3>
   <ul class="accordion">
     {% for current_day in days_order %}
-      {% assign day_sessions = sessions | where: "day", current_day | sort: "start_time" %}
+    
+    {% assign day_sessions = sessions | where: "day", current_day %}
+{% assign fixed_events = site.data.fixed_events %}
+{% assign combined = day_sessions | concat: fixed_events %}
+{% assign day_sessions = combined | sort: "start_time" %}
+
+
       {% if day_sessions != empty %}
         <li class="accordion-item">
           <div class="accordion-header">
@@ -35,17 +41,20 @@ classes: [full-programme]
       {% endif %}
     {% endfor %}
   </ul>
+ 
 </aside>
-
   <!-- Main content -->
   <main class="programme-main">
-    {% for current_day in days_order %}
-      {% assign day_sessions = sessions | where: "day", current_day | sort: "start_time" %}
-      {% if day_sessions != empty %}
-      <section class="programme-day" id="{{ current_day | downcase }}">
-        <h2>{{ current_day }}</h2>
-
-        <div class="programme-grid">
+    {% for current_day in days_order %}    {% assign day_sessions = sessions | where: "day", current_day %}
+    {% assign fixed_events = site.data.fixed_events %}
+    {% assign combined = day_sessions | concat: fixed_events %}
+    {% assign day_sessions = combined | sort: "start_time" %}
+  {% if day_sessions != empty %}
+    <section class="programme-day expanded" id="{{ current_day | downcase }}">
+      <h2 class="day-toggle">
+  <span class="arrow">&gt;</span> {{ current_day }}
+</h2>
+<div class="programme-grid">
           {% assign grouped_by_time = day_sessions | group_by: "start_time" %}
           {% for time_slot in grouped_by_time %}
             {% assign first_session = time_slot.items | first %}
@@ -125,27 +134,27 @@ classes: [full-programme]
         </section>
       {% endif %}
     {% endfor %}
+
+   
   </main>
 </div>
      
      
      
-     
 <style>
-/* ======== Container ======== */
+
 .programme-container {
   display: flex;
   gap: 2rem;
 }
 
-/* Container principal */
 .programme-container {
   display: flex;
   gap: 1rem;
-   padding-top: 4rem; /* separación inicial desde arriba */
+   padding-top: 4rem; 
 }
 
-/* Sidebar acordeón */
+
 .programme-sidebar {
   flex: 0 0 250px;
   background: #f4f6f8;
@@ -159,18 +168,32 @@ classes: [full-programme]
   scrollbar-width: thin; 
   scrollbar-color: #68246D;
 }
+.programme-note {
+  background: #002A41;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  font-style: italic;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
 
+.programme-note:hover {
+  opacity: 1;
+}
 
-/* Main content */
 .programme-main {
   flex: 1;
 }
 
-/* ======== Main ======== */
 .programme-main {
   flex: 1;
 }
-/* Layout general */
+
+
 .full-programme .page__inner-wrap,
 .full-programme .page__content {
   max-width: none !important;
@@ -180,8 +203,8 @@ classes: [full-programme]
 }
 
 .programme-day {
-  margin-bottom: 1rem;
-  padding: 1rem 3%;
+ margin: 0 0 1rem 0; 
+  padding: 0.5rem 3%;  
 }
 
 .programme-day h2 {
@@ -190,13 +213,15 @@ classes: [full-programme]
   color: #002A41;
   border-bottom: 2px solid #dce3ec;
   padding-bottom: 0.3rem;
+  margin: 0 0 0.5rem 0; 
+  padding-bottom: 0.3rem;
 }
 
-/* Estructura principal */
+
 .programme-grid {
   display: flex;
   flex-direction: column;
-  gap: 0.5 rem;
+  gap: 0.5rem;
 }
 
 .programme-time {
@@ -210,7 +235,6 @@ classes: [full-programme]
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 
-/* Columna izquierda (horas) */
 .time-label {
   font-weight: 800;
   font-size: 0.8rem;
@@ -222,7 +246,6 @@ classes: [full-programme]
   text-align: center;
 }
 
-/* Tarjetas de sesión */
 .session-card {
   background: #ffffff;
   border: 1px solid #dce3ec;
@@ -322,7 +345,6 @@ font-size: 0.6rem;
   text-decoration: underline;
 }
 
-/* En caso de que no haya sesión en un track */
 .no-session {
   text-align: center;
   color: #aaa;
@@ -374,10 +396,10 @@ font-size: 0.6rem;
   color: #002A41;
   padding: 0.3rem 0.5rem;
   font-size: 1rem;
-  white-space: nowrap;      /* evita saltos de línea */
-  overflow: hidden;         /* oculta el texto que se pasa */
-  text-overflow: ellipsis;  /* muestra puntos suspensivos (…) */
-  max-width: 200px;         /* ajusta el ancho máximo visible */
+  white-space: nowrap;      
+  overflow: hidden;         
+  text-overflow: ellipsis;  
+  max-width: 200px;
 }
 
 .accordion-header:hover {
@@ -385,7 +407,7 @@ font-size: 0.6rem;
 }
 
 .accordion-item.active .accordion-header {
-  color: #68246D; /* color cuando está activo */
+  color: #68246D; 
 }
 
 .arrow {
@@ -421,18 +443,6 @@ font-size: 0.6rem;
 .accordion-item.active .accordion-content {
   max-height: 500px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -557,6 +567,8 @@ font-size: 0.6rem;
    text-align: center;
 }
 
+
+
 .session-card.social .time-label {
   font-weight: 800;
   font-size: 0.8rem;
@@ -572,7 +584,6 @@ font-size: 0.6rem;
   background: #F8FAFC; 
   color: #002A41;      
 }
-
 
 
 /*TUTORIAL SESSIONS*/
@@ -608,19 +619,109 @@ font-size: 0.6rem;
 
 
 
-/* Para sesiones divididas (parte 1/2) */
 .session-card.split-session {
   border: 2px solid #DACDA2;
   transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover sincronizado */
 .session-card.split-session:hover,
 .session-card.split-session.hover-pair {
   box-shadow: 0 0 12px #DACDA2;
   transform: scale(1.05);
 }
 
+@media (max-width: 768px) {
+   .programme-sidebar {
+    display: none;
+  }
+
+  .programme-main {
+    flex: 1 1 100%;
+    padding: 0 1rem;
+  }
+  
+  .programme-time {
+    display: grid;
+    grid-template-columns: 0.75fr 2.25fr 2.25fr;
+    gap: 0.5rem;
+    align-items: stretch; 
+padding: 0.5rem;
+  }
+
+  .time-label,
+    .time-label {
+    text-align: center;
+    background: #002A41;
+    color: #fff;    
+    border-radius: 8px;
+     padding-left: 0.5rem; 
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;  
+      padding-bottom: 0.5rem; 
+}
+  }
+  .session-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0.5rem;
+  }
+
+ .programme-day .programme-grid {
+    max-height: 0;             
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .programme-day.expanded .programme-grid {
+    max-height: 2000px;        
+  }
+  .day-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    background: #f4f6f8;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+     margin: 0 0 1rem 0; 
+  padding: 0.5rem 3%;  
+  }
+
+  .day-toggle .arrow {
+    display: inline-block;
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .programme-day.expanded .arrow {
+    transform: rotate(90deg);
+  }
+
+  .programme-day.expanded .arrow {
+    transform: rotate(90deg);
+  }
+ .programme-day .programme-grid {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .programme-day.expanded .programme-grid {
+    max-height: 2000px;        
+  }
+}
+
+}
+
+@media (min-width: 769px) {
+  .day-toggle .arrow {
+    display: none;
+  }
+    .programme-day {
+    max-height: none; 
+  }
+}
 </style>
 
 <script>
@@ -634,17 +735,21 @@ document.querySelectorAll('.accordion-header').forEach(header => {
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const sessions = document.querySelectorAll(".session-card[data-part]");
-  sessions.forEach(card => {
-    const partId = card.dataset.part;
-    const pair = document.querySelectorAll(`.session-card[data-part='${partId}']`);
-    card.addEventListener("mouseenter", () => {
-      pair.forEach(c => c.classList.add("hover-pair"));
+
+  function initAccordion() {
+    document.querySelectorAll('.day-toggle').forEach(header => {
+      // Evitar añadir múltiples veces
+      header.removeEventListener('click', toggleDay);
+      header.addEventListener('click', toggleDay);
     });
-    card.addEventListener("mouseleave", () => {
-      pair.forEach(c => c.classList.remove("hover-pair"));
-    });
-  });
+  }
+
+  function toggleDay(event) {
+    const daySection = event.currentTarget.closest('.programme-day');
+    daySection.classList.toggle('expanded');
+  }
+
+  initAccordion();
+
 });
 </script>
-

@@ -18,7 +18,7 @@
             {% if item.title == 'Tutorials' or item.children %}
               <ul class="submenu" aria-hidden="true">
                 {% if item.title == 'Tutorials' %}
-                  {% assign tutorials = site.tutorials | sort: "title" %}
+                    {% assign tutorials = site.programme | where: "category", "Tutorial" | sort: "title" %}
                   {% for tutorial in tutorials %}
                     <li class="submenu__item">
                       <a href="{{ tutorial.url | relative_url }}">{{ tutorial.title }}</a>

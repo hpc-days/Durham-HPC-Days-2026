@@ -133,7 +133,7 @@ classes: wide
 </section>
 
 <section class="about-grid">
-  {% assign tutorials = site.tutorials | sort: "title" %}
+  {% assign tutorials = site.programme | where: "category", "Tutorial" | sort: "title" %}
   {% for tutorial in tutorials %}
     <div class="about-card">
       <div class="card-title">{{ tutorial.title }}</div>
@@ -141,3 +141,4 @@ classes: wide
     </div>
   {% endfor %}
 </section>
+

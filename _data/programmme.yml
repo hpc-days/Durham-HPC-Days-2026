@@ -1,0 +1,10 @@
+- title: "Green HPC"
+  session_id: green-hpc
+  day: "Monday"
+  track: "A"
+  times:
+    - start: "09:00"
+      end: "10:30"
+    - start: "11:00"
+      end: "12:00"
+

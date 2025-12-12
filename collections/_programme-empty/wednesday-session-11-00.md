@@ -1,16 +1,14 @@
 ---
-title: "Tutorial"
-speaker: ""
-day: "Monday"
+title: "Session"
+speaker: "TBC"
+day: "Wednesday"
 track: "A"
 start_time: "11:00"
 end_time: "12:00"
-room: "TBC"
 layout: single
-category: "Tutorial"
+category: "Talk"
 ---
 
 ### Abstract
 
 ### Bio
-

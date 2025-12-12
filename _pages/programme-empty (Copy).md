@@ -9,6 +9,7 @@ classes: [full-programme]
 {% assign tracks = "A,B" | split: "," %}
 {% assign days_order = "Monday,Tuesday,Wednesday,Thursday,Friday" | split: "," %}
 
+
 <div class="programme-container">
 
 
@@ -16,8 +17,7 @@ classes: [full-programme]
   <h3>Programme</h3>
   <ul class="accordion">
     {% for current_day in days_order %}
-    
-    {% assign day_sessions = sessions | where: "day", current_day %}
+{% assign day_sessions = sessions | where: "day", current_day %}
 {% assign fixed_events = site.data.fixed_events %}
 {% assign combined = day_sessions | concat: fixed_events %}
 {% assign day_sessions = combined | sort: "start_time" %}
@@ -44,100 +44,95 @@ classes: [full-programme]
  
 </aside>
   <!-- Main content -->
-  <main class="programme-main">
-    {% for current_day in days_order %}    {% assign day_sessions = sessions | where: "day", current_day %}
+
+
+<main class="programme-main">
+  {% for current_day in days_order %}
+    {% assign day_sessions = sessions | where: "day", current_day %}
     {% assign fixed_events = site.data.fixed_events %}
     {% assign combined = day_sessions | concat: fixed_events %}
     {% assign day_sessions = combined | sort: "start_time" %}
-  {% if day_sessions != empty %}
-    <section class="programme-day expanded" id="{{ current_day | downcase }}">
-      <h2 class="day-toggle">
-  <span class="arrow">&gt;</span> {{ current_day }}
-</h2>
-<div class="programme-grid">
-          {% assign grouped_by_time = day_sessions | group_by: "start_time" %}
-          {% for time_slot in grouped_by_time %}
-            {% assign first_session = time_slot.items | first %}
-            <div class="programme-time">
-              <div class="time-label">
-                {% if first_session.start_time and first_session.end_time %}
-                  {{ first_session.start_time }}<br>–<br>{{ first_session.end_time }}
-                {% else %}
-                  {{ first_session.start_time }}
-                {% endif %}
-              </div>
-              {% assign session_count = time_slot.items | size %}
 
-                {% if session_count == 1 %}
-                  <!-- 🔹 Solo una sesión: ocupa todo el ancho -->
-                  {% assign this_session = time_slot.items | first %}
-                  {% assign category_class = this_session.category | downcase %}
-                  {% if this_session.part_of %}
-                    {% assign category_class = category_class | append: " split-session" %}
-                  {% endif %}
-                  <div class="session-card full-width {{ category_class }}"
-                       id="{{ this_session.id | default: this_session.title | slugify }}"
-                       {% if this_session.part_of %} data-part="{{ this_session.part_of }}" {% endif %}>
-                    <h3><a href="{{ this_session.url | relative_url }}">{{ this_session.title }}</a></h3>
+    {% if day_sessions != empty %}
+      <section class="programme-day expanded" id="{{ current_day | downcase }}">
+        <h2 class="day-toggle">
+          <span class="arrow">&gt;</span> {{ current_day }}
+        </h2>
 
-                    {% if this_session.speaker %}
-                      <p class="speaker">{{ this_session.speaker }}</p>
-                    {% endif %}
-
-                    {% if this_session.abstract %}
-                      {% assign plain_abstract = this_session.abstract | strip_html | strip_newlines | truncate: 90, "..." %}
-                      <p class="abstract">{{ plain_abstract }}</p>
-                      <a class="read-more" href="{{ this_session.url | relative_url }}">Read more →</a>
-                    {% endif %}
-
-                    {% if this_session.room %}
-                      <p class="room">Room: {{ this_session.room }}</p>
-                    {% endif %}
+        <div class="programme-grid">
+          {% for session in day_sessions %}
+            {% if session.times %}
+              {% for slot in session.times %}
+                <div class="programme-time">
+                  <div class="time-label">
+                    {{ slot.start }}<br>–<br>{{ slot.end }}
                   </div>
 
-                {% else %}
-                  <!-- 🔹 Dos o más sesiones (una por track) -->
-                  {% for track in tracks %}
-                    {% assign this_session = time_slot.items | where: "track", track | first %}
-                    {% if this_session %}
-                      {% assign category_class = this_session.category | downcase %}
-                      {% if this_session.part_of %}
-                        {% assign category_class = category_class | append: " split-session" %}
-                      {% endif %}
-                      <div class="session-card {{ category_class }}"
-                           id="{{ this_session.id | default: this_session.title | slugify }}"
-                           {% if this_session.part_of %} data-part="{{ this_session.part_of }}" {% endif %}>
-                        <h3><a href="{{ this_session.url | relative_url }}">{{ this_session.title }}</a></h3>
+                  {% assign category_class = session.category | downcase %}
+                  {% if session.part_of %}
+                    {% assign category_class = category_class | append: " split-session" %}
+                  {% endif %}
 
-                        {% if this_session.speaker %}
-                          <p class="speaker">{{ this_session.speaker }}</p>
-                        {% endif %}
+                  <div class="session-card {{ category_class }}"
+                       id="{{ session.id | default: session.title | slugify }}-{{ slot.start | replace: ':', '' }}">
+                    {% assign target_url = session.url | relative_url %}
+                    <h3><a href="{{ target_url }}">{{ session.title }}</a></h3>
 
-                        {% if this_session.abstract %}
-                          {% assign plain_abstract = this_session.abstract | strip_html | strip_newlines | truncate: 90, "..." %}
-                          <p class="abstract">{{ plain_abstract }}</p>
-                          <a class="read-more" href="{{ this_session.url | relative_url }}">Read more →</a>
-                        {% endif %}
-
-                        {% if this_session.room %}
-                          <p class="room">Room: {{ this_session.room }}</p>
-                        {% endif %}
-                      </div>
-                    {% else %}
-                      <div class="session-card empty"><p class="no-session">–</p></div>
+                    {% if session.speaker %}
+                      <p class="speaker">{{ session.speaker }}</p>
                     {% endif %}
-                  {% endfor %}
-                {% endif %}
-              </div> <!-- programme-time -->
-            {% endfor %}
-          </div> <!-- programme-grid -->
-        </section>
-      {% endif %}
-    {% endfor %}
 
-   
-  </main>
-</div>
+                    {% if session.abstract %}
+                      {% assign plain_abstract = session.abstract | strip_html | strip_newlines | truncate: 90, "..." %}
+                      <p class="abstract">{{ plain_abstract }}</p>
+                      <a class="read-more" href="{{ session.url | relative_url }}">Read more →</a>
+                    {% endif %}
+
+                    {% if session.room %}
+                      <p class="room">Room: {{ session.room }}</p>
+                    {% endif %}
+                  </div>
+                </div> <!-- programme-time -->
+              {% endfor %}
+            {% else %}
+              <div class="programme-time">
+                <div class="time-label">
+                  {{ session.start_time }}<br>–<br>{{ session.end_time }}
+                </div>
+
+                {% assign category_class = session.category | downcase %}
+                {% if session.part_of %}
+                  {% assign category_class = category_class | append: " split-session" %}
+                {% endif %}
+
+                <div class="session-card {{ category_class }}"
+                     id="{{ session.id | default: session.title | slugify }}">
+                  {% assign target_url = session.url | relative_url %}
+                  <h3><a href="{{ target_url }}">{{ session.title }}</a></h3>
+
+                  {% if session.speaker %}
+                    <p class="speaker">{{ session.speaker }}</p>
+                  {% endif %}
+
+                  {% if session.abstract %}
+                    {% assign plain_abstract = session.abstract | strip_html | strip_newlines | truncate: 90, "..." %}
+                    <p class="abstract">{{ plain_abstract }}</p>
+                    <a class="read-more" href="{{ session.url | relative_url }}">Read more →</a>
+                  {% endif %}
+
+                  {% if session.room %}
+                    <p class="room">Room: {{ session.room }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div> <!-- programme-grid -->
+      </section>
+    {% endif %}
+  {% endfor %}
+</main>
+
      
      
      
@@ -221,7 +216,7 @@ classes: [full-programme]
 .programme-grid {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.5 rem;
 }
 
 .programme-time {
@@ -698,10 +693,6 @@ padding: 0.5rem;
   .programme-day.expanded .arrow {
     transform: rotate(90deg);
   }
-
-  .programme-day.expanded .arrow {
-    transform: rotate(90deg);
-  }
  .programme-day .programme-grid {
     max-height: 0;
     overflow: hidden;
@@ -753,3 +744,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 </script>
+

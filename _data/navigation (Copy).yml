@@ -1,0 +1,14 @@
+main:
+  - title: "Register"
+    url: /register/
+  - title: "Call for Sessions"
+    url: /call-for-sessions/
+  - title: "Tutorials"
+    url: /tutorials/
+  - title: "Programme"
+    url: /programme-empty/
+  - title: "Sponsors"
+    url: /sponsors/
+  - title: "Past Durham HPC Days"
+    url: /past/
+   
