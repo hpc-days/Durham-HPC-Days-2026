@@ -104,17 +104,14 @@ a:hover {
 }
 
 .btn.btn-purple {
-  background: #68246D;
+  background: #002A41;
   color: #fff !important;
-  font-size: 1.2rem; 
+  font-size: 0.8rem; 
   transition: background 0.25s ease, transform 0.18s ease;
+  margin-top:0px !important;
+  font-weight: 800;
 }
 
-/* hover */
-.btn.btn-purple:hover {
-  background: #8e3d94;  
-  transform: translateY(-3px);
-}
 
 
 section {
@@ -176,8 +173,9 @@ t {
   to { opacity: 1; transform: translateY(0); }
 }
 .call-for-submissions {
-  background: #002A41;
-  color: white;
+  background: #ffffff;
+  border-top: 4px solid #002A41;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.05);
   padding: 2rem 2rem;
   border-radius: 22px;
   text-align: center;
@@ -187,31 +185,36 @@ t {
   justify-content: center;
 }
 
+.call-for-submissions hover{
+  transform: translateY(-5px);
+  box-shadow: 0 35px 55px rgba(0,0,0,0.3);
+}
+
 .call-for-submissions h2 {
-  font-size: 1.9rem;
-  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  color: #002A41;
+  margin-bottom: 0.5rem;
 }
 .call-for-submissions .deadline-box {
-  font-size: 1.1rem;
+  font-size: 1rem;
   background: white;
   color: #002A41;
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   border-radius: 15px;
   font-weight: 500;
-  margin-top: 1.5rem;
-}
-.hero-content .btn {
-  margin: 0.5rem;
+  margin-top: 0.5rem;
+  margin
 }
 
 .dual-cards {
   display: grid;
-  grid-template-columns: repeat(2, minmax(360px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(3, minmax(400px, 1fr));
+  gap: 2rem;
   max-width: 1200px;
-  margin: 4rem auto;
+  margin: 1rem auto;
   padding: 0 2rem;
+  justify-content: center;  
 }
 .dual-cards .call-for-submissions {
   margin: 0;
@@ -246,29 +249,22 @@ t {
     word-wrap: break-word;
   }
 
-  .dual-cards {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
+
   .call-for-submissions {
     padding: 1.5rem 1rem;
   }
-  .call-for-submissions h2 {
-    font-size: 1.3rem;
-    line-height: 1.5rem;
-  }
-  .call-for-submissions .deadline-box {
-    font-size: 0.95rem;
-    padding: 0.8rem 1.2rem;
-  }
+
+
   .call-for-submissions .btn {
     width: 100%;
     max-width: none;
+    font-size: 1rem;
+    padding: 0.75rem 1.6rem;
   }
 
   .image-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1rem;fv
   }
   .image-grid img {
     height: auto;
@@ -333,11 +329,7 @@ t {
   .call-for-submissions h2 {
     font-size: 1.1rem;
   }
-  .call-for-submissions .deadline-box {
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
-  }
-  
+
   .hero-inner::before {
   background: rgba(0, 0, 0, 0.5); /* antes estaba 0.2 */
   z-index: 1;
@@ -373,6 +365,7 @@ t {
   </t>
 </section>
 
+
 <div class="dual-cards fade-in">
 
   <section class="call-for-submissions">
@@ -385,7 +378,7 @@ t {
   </section>
 
   <section class="call-for-submissions">
-    <h2>📝 Registration Open</h2>
+    <h2>📝 Registration   </h2>
     <div class="deadline-box">
       Register now to attend Durham HPC Days 2026
     </div>
@@ -393,6 +386,16 @@ t {
     <a href="https://pay.durham.ac.uk/event-durham/durham-hpc-days-2026" class="btn btn-purple">Register</a>
   </section>
 
+  <section class="call-for-submissions">
+    <h2>📢 Call for Talks</h2>
+    <div class="deadline-box">
+      🗓️ Submission Deadline: <strong>March 13th</strong>
+    </div>
+    <br><br>
+    <a href="https://hpc-days.github.io/Durham-HPC-Days-2026/call-for-talks/" class="btn btn-purple">Submit Your Talk</a>
+  </section>
+  
+  
 </div>
 
 <div class="hero">
