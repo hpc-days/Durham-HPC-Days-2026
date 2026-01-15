@@ -49,6 +49,7 @@ classes: wide
 
 .about-card {
   background: #fff;
+  border-top: 4px solid #68246D;
   border-radius: 12px;
   padding: 1.5rem;
   text-align: left;

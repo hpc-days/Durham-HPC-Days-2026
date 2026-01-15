@@ -2,60 +2,251 @@
 layout: default
 ---
 
-<div class="tutorial-container">
-  <h1>{{ page.title }}</h1>
-
-  <div class="tutorial-meta">
+<!-- Hero Banner Superior -->
+<section class="tutorial-hero fade-in">
+  <div class="tutorial-hero-content">
+    <h1>{{ page.title }}</h1>
 
     {% if page.speaker %}
-    <p><strong>Instructors:</strong> {{ page.speaker }}</p>
+      {% assign sp_count = page.speaker | split: "," | size %}
+      <p class="instructors">
+        <strong>Instructor{% if sp_count > 1 %}s{% endif %}:</strong>
+        {% assign speakers = page.speaker | split: "," %}
+        {% for sp in speakers %}
+          {{ sp | strip }}{% if forloop.last == false %}, {% endif %}
+        {% endfor %}
+      </p>
     {% endif %}
-
-    {% if page.institutions %}
-    <p><strong>Institution:</strong> {{ page.institutions }}</p>
-    {% endif %}
-
-    {% if page.day %}
-    <p><strong>Day:</strong> {{ page.day }}</p>
-    {% endif %}
-
-
-    {% if page.room %}
-    <p><strong>Room:</strong> {{ page.room }}</p>
-    {% endif %}
-
   </div>
+</section>
 
-  <hr>
+<div class="tutorial-page fade-in">
 
-  {% if page.description %}
-    <h2>Description</h2>
-    <p>{{ page.description }}</p>
-  {% endif %}
+  <!-- Sidebar lateral -->
+  <aside class="tutorial-sidebar fade-in">
+  
+    {% if page.day and page.day != "TBC" %}
+      <div class="sidebar-section">
+        <h3>Day</h3>
+        <p>{{ page.day }}</p>
+      </div>
+    {% endif %}
 
-  {% if page.requirements %}
-    <h2>Requirements</h2>
-    <ul>
-      {% for req in page.requirements %}
-      <li>{{ req }}</li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+  
+      {% if page.start_time %}
+      <div class="sidebar-section">
+        <h3>Start Time</h3>
+        <p>{{ page.start_time }}</p>
+      </div>
+    {% endif %}
+
+    {% if page.end_time %}
+      <div class="sidebar-section">
+        <h3>End Time</h3>
+        <p>{{ page.end_time }}</p>
+      </div>
+    {% endif %}
+    
+    
+    {% if page.institutions and page.institutions != "TBC" %}
+      <div class="sidebar-section institution">
+        <h3>Institution</h3>
+        {% if page.institution_logo %}
+          <img src="{{ page.institution_logo }}" alt="{{ page.institutions }} logo">
+        {% endif %}
+        {% if page.institution_link %}
+          <p><a href="{{ page.institution_link }}" target="_blank">{{ page.institutions }}</a></p>
+        {% else %}
+          <p>{{ page.institutions }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if page.speaker %}
+      <div class="sidebar-section instructors">
+        <h3>Instructor{% if sp_count > 1 %}s{% endif %}</h3>
+        {% assign speakers = page.speaker | split: "," %}
+        {% for sp in speakers %}
+          <div class="instructor-card">
+            {% if page.speaker_photos and page.speaker_photos[forloop.index0] %}
+              <img src="{{ page.speaker_photos[forloop.index0] }}" alt="{{ sp | strip }}">
+            {% endif %}
+            {% if page.speaker_links and page.speaker_links[forloop.index0] %}
+              <p><a href="{{ page.speaker_links[forloop.index0] }}" target="_blank">{{ sp | strip }}</a></p>
+            {% else %}
+              <p>{{ sp | strip }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+
+
+
+
+    {% if page.room and page.room != "TBC" %}
+      <div class="sidebar-section">
+        <h3>Room</h3>
+        <p>{{ page.room }}</p>
+      </div>
+    {% endif %}
+  </aside>
+
+  <main class="tutorial-content fade-in">
+
+    {% if page.description and page.description != "TBC" %}
+      <section>
+        <h2>Description</h2>
+        <p>{{ page.description }}</p>
+      </section>
+    {% endif %}
+
+    {% if page.requirements and page.requirements != "TBC" %}
+      <section>
+        <h2>Requirements</h2>
+        {% if page.requirements contains "," %}
+          <ul>
+            {% assign reqs = page.requirements | split: "," %}
+            {% for req in reqs %}
+              <li>{{ req | strip }}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p>{{ page.requirements }}</p>
+        {% endif %}
+      </section>
+    {% endif %}
+
+  </main>
 </div>
 
 <style>
-.tutorial-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+.tutorial-hero {
+  background: linear-gradient(90deg, #E6DDC0 20%, #002A41 100%);
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.07);
 }
 
-.tutorial-meta p {
-  margin: 0.3rem 0;
+.tutorial-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-h2 {
-  margin-top: 1.6rem;
+.tutorial-hero p.instructors {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.tutorial-page {
+  display: flex;
+  max-width: 1100px;
+  margin: 0 auto 3rem auto;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+/* Sidebar */
+.tutorial-sidebar {
+  flex: 0 0 280px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.tutorial-sidebar .sidebar-section {
+  margin-bottom: 1.8rem;
+}
+
+.tutorial-sidebar h3 {
+  color: #68246d;
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+}
+
+.tutorial-sidebar p a {
+  color: #002A41;
+  text-decoration: none;
+}
+
+.tutorial-sidebar p a:hover {
+  text-decoration: underline;
+}
+
+.tutorial-sidebar img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+}
+
+.instructor-card {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Main content */
+.tutorial-content {
+  flex: 1;
+}
+
+.tutorial-content h2 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  color: #68246d;
+}
+
+.tutorial-content p, .tutorial-content ul {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .tutorial-page {
+    flex-direction: column;
+  }
+  .tutorial-sidebar {
+    order: 2;
+  }
+  .tutorial-content {
+    order: 1;
+  }
 }
 </style>
+
+<script>
+(function() {
+  function onScroll() {
+    document.querySelectorAll('.fade-in').forEach(function(el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) el.classList.add('visible');
+    });
+  }
+  document.addEventListener('scroll', onScroll);
+  document.addEventListener('DOMContentLoaded', onScroll);
+})();
+</script>
+
+
 
