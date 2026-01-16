@@ -10,7 +10,15 @@ classes: [full-programme]
 {% assign tracks = "A,B" | split: "," %}
 {% assign days_order = "Monday,Tuesday,Wednesday,Thursday,Friday" | split: "," %}
 
+  <div class="programme-top-button">
+    <a href="/programme-week/" class="button-link">
+      See Full Week Programme
+    </a>
+  </div>
+
 <div class="programme-container">
+
+
 
 
 <aside class="programme-sidebar">
@@ -144,6 +152,45 @@ classes: [full-programme]
      
 <style>
 
+.programme-top-button {
+  width: 100%;           /* ocupa todo el ancho */
+  margin-top: 1.5rem;
+  text-align: center;    /* mantiene el texto centrado */
+}
+
+.button-link {
+  display: inline-block;
+  width: 100%;           /* botón ocupa todo el ancho */
+  max-width: 1200px;     /* opcional: para no hacerlo demasiado ancho en pantallas muy grandes */
+  background-color: #002A41;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-link:hover {
+  background-color: #68246D;
+  color: #ffffff;
+}
+
+.button-link:link,
+.button-link:visited {
+  color: #ffffff;           
+  background-color: #002A41;
+  text-decoration: none;
+}
+
+.button-link:hover,
+.button-link:active {
+  background-color: #68246D;
+  color: #ffffff;
+}
+
+
 .programme-container {
   display: flex;
   gap: 2rem;
@@ -152,7 +199,7 @@ classes: [full-programme]
 .programme-container {
   display: flex;
   gap: 1rem;
-   padding-top: 4rem; 
+   padding-top: 2rem; 
 }
 
 
