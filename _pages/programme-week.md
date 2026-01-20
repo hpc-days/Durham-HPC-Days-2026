@@ -5,7 +5,10 @@ permalink: /programme-week/
 classes: [full-programme]
 ---
 
-{% assign all_sessions = site.programme-empty | sort: "start_time" %}
+{% assign all_sessions = site.programme-empty
+  | where_exp: "s", "s.start_time"
+  | sort: "start_time" %}
+
 
 
 {% assign tracks = "A,B" | split: "," %}
@@ -13,7 +16,8 @@ classes: [full-programme]
 {% assign time_slots = all_sessions | map: "start_time" | uniq | sort %}
 
 {% assign fixed_sessions = 
-  "10:30-11:00|Coffee Break,12:00-13:00|Lunch,16:00-16:30|Coffee Break" | split: "," %}
+  "10:30|Coffee Break,12:00|Lunch,16:00|Coffee Break" | split: "," %}
+
 
 {% for fs in fixed_sessions %}
   {% assign fs_parts = fs | split: "|" %}
