@@ -82,12 +82,21 @@ classes: [full-programme]
           {% if cell_sessions.size == 0 %}
             <span class="empty">–</span>
           {% else %}
-            {% assign s = cell_sessions[0] %}
-            <div class="session-card {{ s.category | downcase }}">
-              <h3><a href="{{ s.url | relative_url }}">{{ s.title }}</a></h3>
-              {% if s.speaker %}<p class="speaker">{{ s.speaker }}</p>{% endif %}
-              {% if s.room %}<p class="room">Room: {{ s.room }}</p>{% endif %}
-            </div>
+          {% assign cell_sessions = cell_sessions | sort: "track" %}
+
+{% for s in cell_sessions %}
+  <div class="session-card {{ s.category | downcase }}">
+    <h3>
+      <a href="{{ s.url | relative_url }}">
+        {% if s.track %}{% endif %}
+        {{ s.title }}
+      </a>
+    </h3>
+    {% if s.speaker %}<p class="speaker">{{ s.speaker }}</p>{% endif %}
+    {% if s.room %}<p class="room">Room: {{ s.room }}</p>{% endif %}
+  </div>
+{% endfor %}
+
           {% endif %}
         </div>
       {% endfor %}
@@ -118,13 +127,12 @@ classes: [full-programme]
   margin-right: 0 !important;
 }
 
-/* Quitar cualquier padding extra de sections dentro del layout splash */
+
 .full-programme .page__content section {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* Contenedor de la semana */
 .programme-container {
   width: 100%;
   padding: 0 !important;
@@ -146,7 +154,7 @@ classes: [full-programme]
 .programme-container {
   width: 100%;
   max-width: 100% !important;
-  padding: 0;           /* opcional: quita padding lateral */
+  padding: 0;    
   margin: 0;  
 }
 
@@ -226,7 +234,6 @@ classes: [full-programme]
   color: #002A41 !important;
 }
 
-/* Colores consistentes según categoría */
 .session-card.opening { background-color: #68246D; color: #fff; border-left-color: #68246D; }
 .session-card.opening h3, .session-card.opening .speaker, .session-card.opening .room { color: #002A41; }
 
@@ -269,9 +276,25 @@ classes: [full-programme]
 }
 
 .week-cell.coffee h3 {
-  margin: 0; /* elimina margen interno del h3 */
+  margin: 0; 
   font-size: 0.95rem;
 }
+
+
+.week-cell .session-card {
+  transition: 
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.week-cell .session-card:hover {
+  filter: brightness(1) saturate(1.4);
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
 
 
 
