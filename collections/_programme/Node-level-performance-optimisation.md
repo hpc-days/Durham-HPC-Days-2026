@@ -13,7 +13,7 @@ end_time_2: "14:30"
 start_time_3: "16:00"
 end_time_3: "16:30"
 room: "TBC"
-layout: tutorialtogether
+layout: tutorial
 category: "Tutorial"
 description: "This course covers performance engineering approaches on the compute node level.
 <br><br>

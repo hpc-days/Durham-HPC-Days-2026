@@ -4,12 +4,14 @@ speaker: "Karin Sevegnani, Paul Graham"
 institutions: "NVIDIA"
 day: "Monday"
 track: "A"
+
+
 start_time_1: "13:00"
 end_time_1: "14:30"
 start_time_2: "16:30"
 end_time_2: "18:00"
 room: "TBC"
-layout: tutorialtogether
+layout: tutorial
 category: "Tutorial"
 description: "TBC"
 requirements: "TBC"
