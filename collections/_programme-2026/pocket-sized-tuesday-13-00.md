@@ -13,7 +13,7 @@ start_time_2: "13:00"
 end_time_2: "14:30"
 
 room: "Mountjoy Centre • Durham University"
-layout: tutorial-2
+layout: tutorial
 category: "Tutorial"
 requirements: "Personal Device/Laptop"
 speaker_photos:
