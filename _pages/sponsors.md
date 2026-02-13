@@ -50,6 +50,11 @@ permalink: /sponsors/
      If you are sponsoring and supporting HPC Days 2026, thank you very much! We would not be able to run the event without you!
 This page will hopefully include the information that you need to make a success of the event, but if there is information missing please contact us.
     </p>
+    
+      <p style="font-size: 1.15rem; line-height: 1.7; opacity: 0.9; margin-bottom: 2.5rem;">
+If you have any questions, please contact Alastair Basden at a.g.basden@durham.ac.uk.
+    </p>
+    
 
     <div style="text-align: left; background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px;">
       
