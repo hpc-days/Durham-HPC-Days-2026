@@ -49,6 +49,7 @@ permalink: /call-for-sessions/
   Call for Sessions Now Closed
 </h1>
 
+
 <p style="font-size: 1.15rem; line-height: 1.7; opacity: 0.9; margin-bottom: 2.5rem;">
   Thank you to everyone who submitted a session proposal for <strong>Durham HPC Days 2026</strong>.
   The Call for Sessions is now closed.
