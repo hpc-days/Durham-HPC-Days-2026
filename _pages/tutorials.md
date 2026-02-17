@@ -12,7 +12,7 @@ classes: wide
   margin-right: calc(50% - 50vw);
 
   height: 50vh;
-  background-image: url("https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/market-road-darker.png?raw=true");
+  background-image: url("https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/Banner-darker.png?raw=true");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -21,7 +21,7 @@ classes: wide
   display: flex;
   align-items: center;
   justify-content: center;
-  background-position: 50% 180%; 
+  background-position: 50% 100%; 
 }
 
 
@@ -42,7 +42,7 @@ classes: wide
 /* ===== Grid & Cards ===== */
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* tarjetas más estrechas */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
   margin: 3rem auto;
 }
