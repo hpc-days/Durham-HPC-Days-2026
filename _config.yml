@@ -120,6 +120,9 @@ collections:
   programme-2026:
     output: true
     permalink: /programme-2026/:path/
+  programme-days-2026:
+    output: true
+    permalink: /programme-days-2026/:path/
   tutorials:
     output: true
     permalink: /tutorials/:name/
