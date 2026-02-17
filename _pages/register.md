@@ -9,7 +9,7 @@ permalink: /register/
   width: 100vw;
   margin-left: calc(50% - 50vw);
   height: 50vh;
-  background-image: url("https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/banner.png?raw=true");
+  background-image: url("https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/Banner-darker.png?raw=true");
   background-attachment: fixed;
   background-position: 120% 80%;
   background-repeat: no-repeat;
