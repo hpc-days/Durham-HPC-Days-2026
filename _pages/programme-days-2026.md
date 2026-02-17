@@ -5,7 +5,8 @@ permalink: /programme-days-2026/
 classes: [full-programme]
 ---
 
-{% assign sessions = site["programme-days-2026"] | default: empty %}
+
+{% assign sessions = site.programme-2026 | sort: "start_time" %}
 {% assign sessions = sessions | sort: "start_time" %}
 {% assign tracks = "A,B,C" | split: "," %}
 {% assign days_order = "Monday,Tuesday,Wednesday,Thursday,Friday" | split: "," %}
