@@ -1,6 +1,6 @@
 ---
 title: "Scavanger hunt"
-day: "Thursday"
+day: "Wednesday"
 track: "B"
 start_time: "16:30"
 end_time: "18:00"

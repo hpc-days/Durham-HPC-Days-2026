@@ -21,20 +21,20 @@ organiser_link: "https://acit.surrey.ac.uk/index.html"
 
 
 
-day: "Wednesday"
+day: "Thursday"
 track: "A"
 
 start_time: "16:30"
 end_time: "18:00"
 
 
-day_1: "Wednesday"
-start_time_1: "16:30"
-end_time_1: "18:00"
+day_1: "Thursday"
+start_time_1: "09:00"
+end_time_1: "10:30"
 
 day_2: "Thursday"
-start_time_2: "09:00"
-end_time_2: "10:30"
+start_time_2: "16:30"
+end_time_2: "18:00"
 
 
 room: "Mountjoy Centre"

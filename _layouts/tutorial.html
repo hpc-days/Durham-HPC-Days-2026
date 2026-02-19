@@ -3,14 +3,23 @@ layout: default
 ---
 
 <!-- Hero Banner Superior -->
-<section class="tutorial-hero fade-in">
-  <div class="tutorial-hero-content">
+<section class="session-hero fade-in">
+  <div class="session-hero-content">
     <h1>{{ page.title }}</h1>
-
+{% if page.lead %}
+      {% assign sp_count = page.lead | split: "," | size %}
+      <p class="instructors">
+        <strong>Lead{% if sp_count > 1 %}s{% endif %}:</strong>
+        {% assign leads = page.lead | split: "," %}
+        {% for sp in leads %}
+          {{ sp | strip }}{% if forloop.last == false %}, {% endif %}
+        {% endfor %}
+      </p>
+          {% endif %}
     {% if page.speaker %}
       {% assign sp_count = page.speaker | split: "," | size %}
       <p class="instructors">
-        <strong>Instructor{% if sp_count > 1 %}s{% endif %}:</strong>
+        <strong>Speaker{% if sp_count > 1 %}s{% endif %}:</strong>
         {% assign speakers = page.speaker | split: "," %}
         {% for sp in speakers %}
           {{ sp | strip }}{% if forloop.last == false %}, {% endif %}
@@ -20,34 +29,52 @@ layout: default
   </div>
 </section>
 
-<div class="tutorial-page fade-in">
+<div class="session-page fade-in">
 
-  <!-- Sidebar lateral -->
-  <aside class="tutorial-sidebar fade-in">
-  
+    <!-- Sidebar lateral -->
+  <aside class="session-sidebar fade-in">
   
 
-            {% if page.start_time_1 %}
-      <div class="sidebar-section">
-        <h3>Session Part 1</h3>
-        <p>{{ page.day }}, {{ page.start_time_1 }} - {{ page.end_time_1 }}</p>
-      </div>
-    {% endif %}
-    
-            {% if page.start_time_2 %}
-      <div class="sidebar-section">
-        <h3>Session Part 2</h3>
-        <p>{{ page.day }}, {{ page.start_time_2 }} - {{ page.end_time_2 }}</p>
-      </div>
-    {% endif %}
-    
-                {% if page.start_time_3 %}
-      <div class="sidebar-section">
-        <h3>Session Part 3</h3>
-        <p>{{ page.day }}, {{ page.start_time_3 }} - {{ page.end_time_3 }}</p>
-      </div>
-    {% endif %}
-    
+{% if page.start_time_3 %}
+
+
+  <div class="sidebar-section">
+    <h3>Tutorial Part 1</h3>
+    <p>{{ page.day_1 }}, {{ page.start_time_1 }} - {{ page.end_time_1 }}</p>
+  </div>
+
+  <div class="sidebar-section">
+    <h3>Tutorial Part 2</h3>
+    <p>{{ page.day_2 }}, {{ page.start_time_2 }} - {{ page.end_time_2 }}</p>
+  </div>
+
+  <div class="sidebar-section">
+    <h3>Tutorial Part 3</h3>
+    <p>{{ page.day_3 }}, {{ page.start_time_3 }} - {{ page.end_time_3 }}</p>
+  </div>
+
+{% elsif page.start_time_2 %}
+
+
+  <div class="sidebar-section">
+    <h3>Tutorial Part 1</h3>
+    <p>{{ page.day_1 }}, {{ page.start_time_1 }} - {{ page.end_time_1 }}</p>
+  </div>
+
+  <div class="sidebar-section">
+    <h3>Tutorial Part 2</h3>
+    <p>{{ page.day_2 }}, {{ page.start_time_2 }} - {{ page.end_time_2 }}</p>
+  </div>
+
+{% else %}
+
+
+  <div class="sidebar-section">
+    <h3>Day & Time</h3>
+    <p>{{ page.day }}, {{ page.start_time }} - {{ page.end_time}}</p>
+  </div>
+
+{% endif %}
 
 
     {% if page.room and page.room != "TBC" %}
@@ -57,18 +84,51 @@ layout: default
       </div>
     {% endif %}
     
+    
+    
 
+       {% if page.lead %}
+  {% assign leads = page.lead | split: "," %}
+  {% assign lead_count = leads | size %}
+
+  <div class="sidebar-section speakers">
+    <h3>Lead{% if lead_count > 1 %}s{% endif %}</h3>
+
+    {% for sp in leads %}
+      <div class="speaker-card">
+        {% if page.lead_photos and page.lead_photos[forloop.index0] %}
+          <img
+            class="speaker-photo"
+            src="{{ page.lead_photos[forloop.index0] }}"
+            alt="{{ sp | strip }}">
+        {% endif %}
+
+        {% if page.lead_links and page.lead_links[forloop.index0] %}
+          <p><a href="{{ page.lead_links[forloop.index0] }}" target="_blank">
+            {{ sp | strip }}
+          </a></p>
+        {% else %}
+          <p>{{ sp | strip }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+    
+    
+    
         
         
             {% if page.speaker %}
-      <div class="sidebar-section instructors">
-        <h3>Instructor{% if sp_count > 1 %}s{% endif %}</h3>
+      <div class="sidebar-section speakers">
+        <h3>Speaker{% if sp_count > 1 %}s{% endif %}</h3>
         {% assign speakers = page.speaker | split: "," %}
         {% for sp in speakers %}
-          <div class="instructor-card">
+          <div class="speaker-card">
             {% if page.speaker_photos and page.speaker_photos[forloop.index0] %}
              <img
-  class="instructor-photo"
+  class="speaker-photo"
   src="{{ page.speaker_photos[forloop.index0] }}"
   alt="{{ sp | strip }}">
 
@@ -105,6 +165,25 @@ layout: default
       </div>
     {% endif %}
     
+            {% if page.organiser and page.organiser != "TBC" %}
+      <div class="sidebar-section  institution">
+        <h3>Organiser</h3>
+        {% if page.organiser_logo %}
+<div class="sidebar-section-logo">
+  <img
+    src="{{ page.organiser_logo }}">
+</div>
+        {% endif %}
+        
+        {% if page.organiser_link %}
+          <p><a href="{{ page.organiser_link }}" target="_blank">{{ page.organiser }}</a></p>
+        {% else %}
+          <p>{{ page.organiser }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+    
+    
     
     
 
@@ -116,7 +195,7 @@ layout: default
 
   </aside>
 
-  <main class="tutorial-content fade-in">
+  <main class="session-content fade-in">
 
     {% if page.description and page.description != "TBC" %}
       <section>
@@ -145,8 +224,8 @@ layout: default
 </div>
 
 <style>
-.tutorial-hero {
-  background: linear-gradient(90deg, #8B968D 0%, #002A41 100%);
+.session-hero {
+  background: linear-gradient(90deg, #828200 0%, #002A41 100%);
   color: #fff;
   text-align: center;
   padding: 3rem 1rem;
@@ -154,18 +233,18 @@ layout: default
   box-shadow: 0 10px 28px rgba(0,0,0,0.07);
 }
 
-.tutorial-hero h1 {
+.session-hero h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.tutorial-hero p.instructors {
+.session-hero p.speakers {
   font-size: 1.1rem;
   margin: 0;
   font-weight: 500;
 }
 
-.tutorial-page {
+.session-page {
   display: flex;
   max-width: 1100px;
   margin: 0 auto 3rem auto;
@@ -173,7 +252,7 @@ layout: default
   padding: 0 1rem;
 }
 
-.tutorial-sidebar {
+.session-sidebar {
   flex: 0 0 400px;
   background: #ffffff;
   border-radius: 18px;
@@ -184,18 +263,18 @@ layout: default
   height: fit-content;
 }
 
-.tutorial-sidebar .sidebar-section {
+.session-sidebar .sidebar-section {
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
-.tutorial-sidebar .sidebar-section:last-child {
+.session-sidebar .sidebar-section:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
   border-bottom: none;
 }
 
-.tutorial-sidebar h3 {
+.session-sidebar h3 {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -205,8 +284,8 @@ layout: default
   border-bottom: 1px solid #f0f0f0;
 }
 
-.tutorial-sidebar p,
-.tutorial-sidebar a {
+.session-sidebar p,
+.session-sidebar a {
   font-size: 0.8rem;
   color: #002A41;
   font-weight: 500;
@@ -215,7 +294,7 @@ layout: default
   text-decoration: none;
 }
 
-.tutorial-sidebar a:hover {
+.session-sidebar a:hover {
   text-decoration: underline;
 }
 
@@ -232,14 +311,14 @@ layout: default
   padding: 0.4rem;
 }
 
-.instructor-card {
+.speaker-card {
   display: flex;
   align-items: center;
   gap: 0.8rem;
   margin-top: 0.8rem;
 }
 
-.instructor-photo {
+.speaker-photo {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -247,23 +326,23 @@ layout: default
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.instructor-photo:hover {
+.speaker-photo:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 /* Main content */
-.tutorial-content {
+.session-content {
   flex: 1;
 }
 
-.tutorial-content h2 {
+.session-content h2 {
   margin-top: 2rem;
   font-size: 1.5rem;
   color: #68246d;
 }
 
-.tutorial-content p, .tutorial-content ul {
+.session-content p, .session-content ul {
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -286,13 +365,13 @@ ul {
 
 @media (max-width: 600px) {
 
-  .tutorial-page {
+  .session-page {
     flex-direction: column;
     gap: 1.2rem;
     padding: 0 1rem;
   }
 
-  .tutorial-sidebar {
+  .session-sidebar {
     order: 1;
     position: static;
     flex: none;
@@ -306,17 +385,17 @@ ul {
     gap: 0.4rem;
   }
 
-  .tutorial-sidebar .sidebar-section {
+  .session-sidebar .sidebar-section {
     margin: 0;
     padding: 0 0 0.4rem 0;
   }
 
-  .tutorial-sidebar .sidebar-section:last-child {
+  .session-sidebar .sidebar-section:last-child {
     border-bottom: none;
     padding-bottom: 0;
   }
 
-  .tutorial-sidebar h3 {
+  .session-sidebar h3 {
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -325,8 +404,8 @@ ul {
     font-weight: 600;
   }
 
-  .tutorial-sidebar p,
-  .tutorial-sidebar a {
+  .session-sidebar p,
+  .session-sidebar a {
     font-size: 0.9rem;
     color: #002A41;
     font-weight: 500;
@@ -335,7 +414,7 @@ ul {
     text-decoration: none;
   }
 
-  .tutorial-sidebar a:hover {
+  .session-sidebar a:hover {
     text-decoration: underline;
   }
 
@@ -347,14 +426,14 @@ ul {
     display: none;
   }
 
-  .instructor-card {
+  .speaker-card {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     margin: 0.3rem 0 0 0;
   }
 
-  .instructor-photo {
+  .speaker-photo {
     width: 80px;
     height: 80px;
     margin-top:0.2rem;
@@ -364,32 +443,33 @@ ul {
     display: block;
   }
 
-  .tutorial-content {
+  .session-content {
     order: 2;
     padding: 0 0.2rem;
   }
 
-  .tutorial-content h2 {
+  .session-content h2 {
     font-size: 2rem;
   }
 
-  .tutorial-content p,
-  .tutorial-content ul {
+  .session-content p,
+  .session-content ul {
     font-size: 0.95rem;
   }
 
-  .tutorial-hero {
+  .session-hero {
     padding: 1.5rem 1rem;
     border-radius: 0;
   }
 
-  .tutorial-hero h1 {
+  .session-hero h1 {
     font-size: 1.9rem;
   }
 
-  .tutorial-hero p.instructors {
-    display: none;
-  }
+.session-hero .instructors {
+  display: none;
+}
+
 }
 
 </style>

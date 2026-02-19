@@ -7,8 +7,11 @@ track: "B"
 start_time: "09:00"
 end_time: "10:30"
 
+day_1: "Tuesday"
 start_time_1: "09:00"
 end_time_1: "10:30"
+
+day_2: "Tuesday"
 start_time_2: "13:00"
 end_time_2: "14:30"
 

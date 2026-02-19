@@ -25,12 +25,12 @@ organiser_link: "https://www.cake.ac.uk/ke-fellowships/cohort1"
 
 
 
-day: "Thursday"
-track: "A"
+day: "Wednesday"
+track: "C"
 start_time: "09:00"
 end_time: "10:30"
 
-day_1: "Thursday"
+day_1: "Wednesday"
 start_time_1: "09:00"
 end_time_1: "10:30"
 

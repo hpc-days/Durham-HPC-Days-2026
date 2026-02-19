@@ -2,18 +2,29 @@
 title: "Node-level performance optimisation"
 speaker: "Georg Hager, Thomas Gruber"
 institutions: "FAU"
+
 day: "Tuesday"
 track: "A"
 start_time: "16:30"
 end_time: "18:00"
+
+
+day_1: "Tuesday"
 start_time_1: "09:00"
 end_time_1: "10:30"
-start_time_3: "16:00"
-end_time_3: "16:30"
+
+day_3: "Tuesday"
+start_time_3: "16:30"
+end_time_3: "18:00"
+
+day_2: "Tuesday"
 start_time_2: "13:00"
 end_time_2: "14:30"
-start_time_3: "16:00"
-end_time_3: "16:30"
+
+
+
+
+
 room: "Mountjoy Centre"
 layout: tutorial
 category: "Tutorial"

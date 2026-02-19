@@ -11,7 +11,7 @@ classes: [full-programme]
 
 
 
-{% assign tracks = "A,B" | split: "," %}
+{% assign tracks = "A,B,C,D" | split: "," %}
 {% assign days_order = "Monday,Tuesday,Wednesday,Thursday,Friday" | split: "," %}
 {% assign time_slots = all_sessions | map: "start_time" | uniq | sort %}
 

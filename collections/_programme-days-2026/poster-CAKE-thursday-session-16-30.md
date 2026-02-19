@@ -1,7 +1,7 @@
 ---
 title: "Poster Session"
 organiser: "CAKE"
-day: "Thursday"
+day: "Wednesday"
 track: "A"
 start_time: "16:30"
 end_time: "18:00"

@@ -6,10 +6,16 @@ day: "Monday"
 track: "A"
 start_time: "13:00"
 end_time: "14:30"
+
+
+day_1: "Monday"
 start_time_1: "13:00"
 end_time_1: "14:30"
+
+day_2: "Monday"
 start_time_2: "16:30"
 end_time_2: "18:00"
+
 room: "Mountjoy Centre • Durham University"
 layout: tutorial
 category: "Tutorial"

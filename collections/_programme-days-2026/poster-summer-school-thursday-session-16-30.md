@@ -1,6 +1,6 @@
 ---
 title: "Summer School Poster Session"
-day: "Thursday"
+day: "Wednesday"
 track: "C"
 start_time: "16:30"
 end_time: "18:00"
