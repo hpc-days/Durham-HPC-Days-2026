@@ -3,7 +3,7 @@ layout: splash
 permalink: /
 hidden: true
 header:
-  overlay_image: "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/Banner-darker.png?raw=true"
+  overlay_image: "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/Banner.png?raw=true"
 ---
 <style>
 body {
