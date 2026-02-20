@@ -6,7 +6,7 @@ layout: default
 <section class="session-hero fade-in">
   <div class="session-hero-content">
     <h1>{{ page.title }}</h1>
-{% if page.lead %}
+ {% if page.lead %}
       {% assign sp_count = page.lead | split: "," | size %}
       <p class="instructors">
         <strong>Lead{% if sp_count > 1 %}s{% endif %}:</strong>
@@ -15,7 +15,7 @@ layout: default
           {{ sp | strip }}{% if forloop.last == false %}, {% endif %}
         {% endfor %}
       </p>
-          {% endif %}
+    {% endif %}
     {% if page.speaker %}
       {% assign sp_count = page.speaker | split: "," | size %}
       <p class="instructors">
