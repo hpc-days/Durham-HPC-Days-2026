@@ -1,9 +1,12 @@
 ---
-title: "HPC SIG"
+title: "Past, present and future of HPC Services in the UK, and the people who make it work"
 
 
-lead: ""
+lead: "Deepak Aggarwal, Simon Burbidge, Simon Clifford, Marion Weinzierl"
 lead_photos:
+  - "https://shareing-dri.github.io/assets/profilepics/generic.jpg"
+  - "https://shareing-dri.github.io/assets/profilepics/generic.jpg"
+  - "https://shareing-dri.github.io/assets/profilepics/generic.jpg"
   - "https://shareing-dri.github.io/assets/profilepics/generic.jpg"
 lead_links: ""
 
@@ -22,7 +25,7 @@ end_time_1: "14:30"
 
 
 room: "Mountjoy Centre"
-layout: workshop
-category: "workshop"
+layout: talk
+category: "talk"
 description: ""
 ---
