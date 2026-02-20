@@ -2,7 +2,7 @@
 title: "RSE leads"
 
 
-lead: "Samantha Wittke"
+lead: "Samantha Finnigan"
 lead_photos:
   - "https://shareing-dri.github.io/assets/profilepics/generic.jpg"
 lead_links: ""
