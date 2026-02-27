@@ -85,7 +85,40 @@ layout: default
     {% endif %}
     
     
+            
+            {% if page.institutions and page.institutions != "TBC" %}
+      <div class="sidebar-section  institution">
+        <h3>Institution</h3>
+        {% if page.institution_logo %}
+<div class="sidebar-section-logo">
+  <img
+    src="{{ page.institution_logo }}">
+</div>
+        {% endif %}
+        
+        {% if page.institution_link %}
+          <p><a href="{{ page.institution_link }}" target="_blank">{{ page.institutions }}</a></p>
+        {% else %}
+          <p>{{ page.institutions }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
     
+            {% if page.organiser and page.organiser != "TBC" %}
+      <div class="sidebar-section  institution">
+        <h3>Organiser</h3>
+        {% if page.organiser_logo %}
+<div class="sidebar-section-logo">
+  <img
+    src="{{ page.organiser_logo }}">
+</div>
+        {% endif %}
+        
+        {% if page.organiser_link %}
+          <p><a href="{{ page.organiser_link }}" target="_blank">{{ page.organiser }}</a></p>
+        {% else %}
+          <p>{{ page.organiser }}</p>
+        {% endif %}
 
        {% if page.lead %}
   {% assign leads = page.lead | split: "," %}
@@ -146,40 +179,7 @@ layout: default
       </div>
     {% endif %}
             
-        
-            {% if page.institutions and page.institutions != "TBC" %}
-      <div class="sidebar-section  institution">
-        <h3>Institution</h3>
-        {% if page.institution_logo %}
-<div class="sidebar-section-logo">
-  <img
-    src="{{ page.institution_logo }}">
-</div>
-        {% endif %}
-        
-        {% if page.institution_link %}
-          <p><a href="{{ page.institution_link }}" target="_blank">{{ page.institutions }}</a></p>
-        {% else %}
-          <p>{{ page.institutions }}</p>
-        {% endif %}
-      </div>
-    {% endif %}
-    
-            {% if page.organiser and page.organiser != "TBC" %}
-      <div class="sidebar-section  institution">
-        <h3>Organiser</h3>
-        {% if page.organiser_logo %}
-<div class="sidebar-section-logo">
-  <img
-    src="{{ page.organiser_logo }}">
-</div>
-        {% endif %}
-        
-        {% if page.organiser_link %}
-          <p><a href="{{ page.organiser_link }}" target="_blank">{{ page.organiser }}</a></p>
-        {% else %}
-          <p>{{ page.organiser }}</p>
-        {% endif %}
+
       </div>
     {% endif %}
     
@@ -362,7 +362,6 @@ ul {
   opacity: 1;
   transform: translateY(0);
 }
-
 @media (max-width: 600px) {
 
   .session-page {
@@ -380,10 +379,19 @@ ul {
     padding: 0.8rem 1rem;
     border-radius: 16px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
+
+}
+.session-sidebar .sidebar-section {
+  grid-column: 1;
+}
+
+.session-sidebar .sidebar-section.speakers:first-of-type {
+  grid-column: 2;
+}
+
+.session-sidebar .sidebar-section.speakers:last-of-type {
+  grid-column: 1 / -1;
+}
 
   .session-sidebar .sidebar-section {
     margin: 0;
@@ -403,6 +411,10 @@ ul {
     margin: 0 0 0.15rem 0;
     font-weight: 600;
   }
+  
+  .sidebar-section.speakers h3 {
+  grid-column: 1 / -1;
+}
 
   .session-sidebar p,
   .session-sidebar a {
@@ -426,22 +438,29 @@ ul {
     display: none;
   }
 
-  .speaker-card {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 0.3rem 0 0 0;
-  }
+ .sidebar-section.speakers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
 
-  .speaker-photo {
-    width: 80px;
-    height: 80px;
-    margin-top:0.2rem;
-    margin-bottom:0.2rem;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-  }
+
+.speaker-card {
+  background: #f8fafc;
+  padding: 0.6rem;
+  border-radius: 12px;
+
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.speaker-photo {
+  width: 70px;
+  height: 70px;
+}
 
   .session-content {
     order: 2;
@@ -471,6 +490,7 @@ ul {
 }
 
 }
+
 
 </style>
 

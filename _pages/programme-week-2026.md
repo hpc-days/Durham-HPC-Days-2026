@@ -35,8 +35,38 @@ classes: [full-programme]
 <main class="programme-main">
 <br> <br> 
   <h1 style="margin-left:3%"> Weekly Programme Overview</h1>
+ 
+<div class="programme-legend">
+<h3 class="legend-title">Filter by session type</h3>
+  <div class="legend-item keynote" data-category="keynote">
+    <span class="legend-colour"></span> Keynotes
+  </div>
 
+  <div class="legend-item workshop" data-category="workshop">
+    <span class="legend-colour"></span> Workshops
+  </div>
+
+  <div class="legend-item talk" data-category="talk">
+    <span class="legend-colour"></span> Talks
+  </div>
+
+  <div class="legend-item tutorial" data-category="tutorial">
+    <span class="legend-colour"></span> Tutorials
+  </div>
+
+  <div class="legend-item poster" data-category="poster">
+    <span class="legend-colour"></span> Posters
+  </div>
+
+  <div class="legend-item social" data-category="social">
+    <span class="legend-colour"></span> Socials
+  </div>
+
+</div>
   <div class="week-grid">
+
+
+
 
     <!-- Header -->
     <div class="week-header">
@@ -92,16 +122,19 @@ classes: [full-programme]
         {{ s.title }}
       </a>
     </h3>
-    {% if s.lead or s.speaker %}
+{% if s.lead or s.speaker %}
   <p class="speaker">
+
     {% if s.lead %}
-      <strong>Lead:</strong> {{ s.lead }}
+      <strong>
+        Lead{% if s.lead contains "," %}s{% endif %}:
+      </strong>
+      {{ s.lead }}
     {% endif %}
+
     {% if s.lead and s.speaker %} · {% endif %}
-    {% if s.speaker %}
-      <strong>Speaker{% if s.speaker contains "," %}s{% endif %}:</strong>
-      {{ s.speaker }}
-    {% endif %}
+
+
   </p>
 {% endif %}
     {% if s.room %}<p class="room">Room: {{ s.room }}</p>{% endif %}
@@ -119,6 +152,9 @@ classes: [full-programme]
 
 
   </div>
+
+
+
 
 </main>
 </div>
@@ -245,6 +281,152 @@ classes: [full-programme]
   color: #002A41 !important;
 }
 
+
+.programme-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2rem 3%;
+  padding: 1rem 1.25rem;
+  background: #f8fafc;
+  border: 1px solid #e3e8ef;
+  border-radius: 16px;
+  align-items: center;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+
+  align-items: flex-start;
+}
+
+
+
+/* Each legend item becomes a pill */
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #e3e8ef;
+  cursor: pointer;
+  transition: 
+    all 0.2s ease,
+    transform 0.15s ease;
+}
+
+/* Hover */
+.legend-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Active state */
+.legend-item.active {
+  background: #002A41;
+  color: #ffffff;
+  border-color: #002A41;
+}
+
+/* Colour square */
+.legend-colour {
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  border: 4px solid;
+  flex-shrink: 0;
+}
+
+/* When active → colour square becomes lighter for contrast */
+.legend-item.active .legend-colour {
+  filter: brightness(1.1);
+}
+.legend-title {
+  margin-top: 0.7rem;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #5f6c7b;
+  font-weight: 600;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;   /* horizontal center */
+}
+}
+
+.legend-item.opening .legend-colour {
+  background-color: #68246D;
+  border-color: #68246D;
+}
+
+.legend-item.keynote .legend-colour {
+  background-color: #F5DBF2;
+  border-color: #78206E;
+}
+
+.legend-item.workshop .legend-colour {
+  background-color: #D3E4F5;
+  border-color: #194775;
+}
+
+.legend-item.talk .legend-colour {
+  background-color: #D1E5D2;
+  border-color: #315933;
+}
+
+.legend-item.session .legend-colour {
+  background-color: #F3E5F5;
+  border-color: #9C27B0;
+}
+
+.legend-item.tutorial .legend-colour {
+  background-color: #E6DDC0;
+  border-color: #534721;
+}
+
+.legend-item.poster .legend-colour {
+  background-color: #CEBCBC;
+  border-color: #7A5958;
+}
+
+.legend-item.coffee .legend-colour {
+  background-color: #F8FAFC;
+  border-color: #F8FAFC;
+}
+
+.legend-item.social .legend-colour {
+  background-color: #F8FAFC;
+  border-color: #F8FAFC;
+}
+
+
+.session-card.dimmed {
+  opacity: 0.15;
+  transform: scale(0.98);
+}
+
+.session-card.highlighted {
+  box-shadow: 0 0 0 0px rgba(0,42,65,0.6);
+  transform: scale(1.00);
+  z-index: 5;
+}
+
+.legend-item {
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.legend-item:hover {
+  transform: scale(1.0);
+}
+
+.legend-item.active {
+  font-weight: 700;
+}
+
+
 .session-card.opening { background-color: #68246D; color: #fff; border-left-color: #68246D; }
 .session-card.opening h3, .session-card.opening .speaker, .session-card.opening .room { color: #002A41; }
 
@@ -308,14 +490,125 @@ classes: [full-programme]
   cursor: pointer;
 }
 
+.week-grid::-webkit-scrollbar {
+  height: 6px;
+}
 
-
-
+.week-grid::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
 
 @media (max-width: 900px) {
-  .week-grid { overflow-x: auto; }
-  .week-header, .week-row { grid-template-columns: 80px repeat(5, minmax(200px, 1fr)); }
+
+  .week-grid {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .week-header,
+  .week-row {
+    grid-template-columns: 70px repeat(5, minmax(220px, 1fr));
+  }
+
+  .week-day-header,
+  .week-time-header {
+    font-size: 0.75rem;
+  }
+
+  .week-cell {
+    min-height: 70px;
+  }
+
+  .session-card h3 {
+    font-size: 0.65rem;
+  }
+  
+  .programme-legend {
+   display: none;
+  }
+
 }
 
 </style>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const legendItems = document.querySelectorAll(".legend-item");
+  const sessions = document.querySelectorAll(".session-card");
+
+  let activeCategory = null;
+
+  function highlightCategory(category) {
+    sessions.forEach(session => {
+      if (session.classList.contains(category)) {
+        session.classList.add("highlighted");
+        session.classList.remove("dimmed");
+      } else {
+        session.classList.add("dimmed");
+        session.classList.remove("highlighted");
+      }
+    });
+  }
+
+  function resetHighlight() {
+    sessions.forEach(session => {
+      session.classList.remove("highlighted", "dimmed");
+    });
+  }
+// Click outside legend resets everything
+document.addEventListener("click", function (event) {
+
+  // If no active filter, do nothing
+  if (!activeCategory) return;
+
+  const clickedInsideLegend = event.target.closest(".legend-item");
+
+  // If click is NOT inside legend, reset
+  if (!clickedInsideLegend) {
+    activeCategory = null;
+
+    legendItems.forEach(i => i.classList.remove("active"));
+    resetHighlight();
+  }
+
+});
+  legendItems.forEach(item => {
+
+    const category = item.dataset.category;
+
+    // Hover effect (only if nothing locked)
+    item.addEventListener("mouseenter", () => {
+      if (!activeCategory) highlightCategory(category);
+    });
+
+    item.addEventListener("mouseleave", () => {
+      if (!activeCategory) resetHighlight();
+    });
+
+    // Click to lock
+    item.addEventListener("click", () => {
+
+      if (activeCategory === category) {
+        // Clicking again resets
+        activeCategory = null;
+        item.classList.remove("active");
+        resetHighlight();
+      } else {
+        activeCategory = category;
+
+        legendItems.forEach(i => i.classList.remove("active"));
+        item.classList.add("active");
+
+        highlightCategory(category);
+      }
+
+    });
+
+  });
+
+});
+</script>
 

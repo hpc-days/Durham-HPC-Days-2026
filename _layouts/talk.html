@@ -39,17 +39,17 @@ layout: default
 
 
   <div class="sidebar-section">
-    <h3>Talk Part 1</h3>
+    <h3>SESSION 1</h3>
     <p>{{ page.day_1 }}, {{ page.start_time_1 }} - {{ page.end_time_1 }}</p>
   </div>
 
   <div class="sidebar-section">
-    <h3>Talk Part 2</h3>
+    <h3>SESSION 2</h3>
     <p>{{ page.day_2 }}, {{ page.start_time_2 }} - {{ page.end_time_2 }}</p>
   </div>
 
   <div class="sidebar-section">
-    <h3>Talk Part 3</h3>
+    <h3>SESSION 3</h3>
     <p>{{ page.day_3 }}, {{ page.start_time_3 }} - {{ page.end_time_3 }}</p>
   </div>
 
@@ -57,12 +57,12 @@ layout: default
 
 
   <div class="sidebar-section">
-    <h3>Talk Part 1</h3>
+    <h3>SESSION 1</h3>
     <p>{{ page.day_1 }}, {{ page.start_time_1 }} - {{ page.end_time_1 }}</p>
   </div>
 
   <div class="sidebar-section">
-    <h3>Talk Part 2</h3>
+    <h3>SESSION 2</h3>
     <p>{{ page.day_2 }}, {{ page.start_time_2 }} - {{ page.end_time_2 }}</p>
   </div>
 
@@ -384,10 +384,19 @@ ul {
     padding: 0.8rem 1rem;
     border-radius: 16px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
+
+}
+.session-sidebar .sidebar-section {
+  grid-column: 1;
+}
+
+.session-sidebar .sidebar-section.speakers:first-of-type {
+  grid-column: 2;
+}
+
+.session-sidebar .sidebar-section.speakers:last-of-type {
+  grid-column: 1 / -1;
+}
 
   .session-sidebar .sidebar-section {
     margin: 0;
@@ -407,6 +416,10 @@ ul {
     margin: 0 0 0.15rem 0;
     font-weight: 600;
   }
+  
+  .sidebar-section.speakers h3 {
+  grid-column: 1 / -1;
+}
 
   .session-sidebar p,
   .session-sidebar a {
@@ -430,22 +443,29 @@ ul {
     display: none;
   }
 
-  .speaker-card {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 0.3rem 0 0 0;
-  }
+ .sidebar-section.speakers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
 
-  .speaker-photo {
-    width: 80px;
-    height: 80px;
-    margin-top:0.2rem;
-    margin-bottom:0.2rem;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-  }
+
+.speaker-card {
+  background: #f8fafc;
+  padding: 0.6rem;
+  border-radius: 12px;
+
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.speaker-photo {
+  width: 70px;
+  height: 70px;
+}
 
   .session-content {
     order: 2;

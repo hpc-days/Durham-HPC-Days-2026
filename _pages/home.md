@@ -3,222 +3,257 @@ layout: splash
 permalink: /
 hidden: true
 header:
-  overlay_image: "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/Banner.png?raw=true"
+  overlay_image: "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/Banner-home.png?raw=true"
 ---
 <style>
+
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   color: #222;
   scroll-behavior: smooth;
 }
+
 h1, h2, h3 {
   font-weight: 600;
 }
+
 a {
   color: #0055aa;
   text-decoration: none;
 }
 
-s {
-  color: #0055aa;
-  text-decoration: none;
-  font-size: 4rem;
-}
-
-s:hover {
-  text-decoration: underline;
-}
 a:hover {
   text-decoration: underline;
 }
+
+
+
 .hero {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 3rem 1rem;
-  background: transparent;
   width: 100%;
 }
+
 .hero-inner {
   position: relative;
   max-width: 960px;
   width: 100%;
   margin: 0 auto;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
+
 .hero-video {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
 }
+
 #yt-player {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
 }
-.hero-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  z-index: 2;
-  padding: 1rem;
-}
+
 .hero-inner::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0,0,0,0.35);
   z-index: 1;
 }
+
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: white;
+  padding: 1.5rem;
+}
+
+.hero-content h1 {
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  max-width: 600px;
+  margin-bottom: 1rem;
+}
+
+
+
 .btn {
-  background: #002A41;
-  color: white !important;
-  padding: 0.9rem 2rem;
-  border-radius: 30px;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem 2.4rem;
+  border-radius: 999px;
+
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+
   text-decoration: none;
-  transition: all 0.3s ease;
-  display: inline-block;
-  font-size: 1.2rem;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
 }
 
-.btn:hover {
-  background: #003d80;
-  transform: translateY(-3px);
+.btn-purple {
+  background:  #002A41;
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(0, 42, 65, 0.25);
 }
 
-.btn.btn-purple {
-  background: #002A41;
-  color: #fff !important;
-  font-size: 0.8rem; 
-  transition: background 0.25s ease, transform 0.18s ease;
-  margin-top:0px !important;
-  font-weight: 800;
+.btn-purple:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 42, 65, 0.35);
+}
+
+.btn-purple:active {
+  transform: translateY(-1px);
+}
+
+.btn-purple:focus-visible {
+  outline: 3px solid rgba(0, 61, 128, 0.5);
+  outline-offset: 4px;
 }
 
 
 
 section {
   max-width: 900px;
-  margin: 3rem auto;
+  margin: 1rem auto;
   padding: 0 1.5rem;
   text-align: center;
 }
+
 section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  line-height: 0.3;
+  line-height: 1.2;
 }
+
 section p {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #ffff;
+  color: #333;
 }
+
+
+  .hero-content p {
+    font-size: 0.95rem;
+    color: #ffffff !important;
+  }
+  
+/* Custom text tag fix */
 t {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.7;
   color: #002A41;
+  display: block;
 }
+
+
+
+.dual-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin:0.5rem auto;
+  padding: 0 2rem;
+}
+
+.call-for-submissions {
+  background: #ffffff;
+  border-top: 4px solid #002A41;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+}
+
+.call-for-submissions:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.12);
+}
+
+.call-for-submissions h2 {
+  font-size: 1.4rem;
+  color: #002A41;
+  margin-bottom: 0.5rem;
+}
+
+.deadline-box {
+  font-size: 1rem;
+  background: #f5f7fa;
+  color: #002A41;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  font-weight: 500;
+  margin: 1rem 0 1.5rem 0;
+}
+
+
+
 .image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
   margin-top: 2rem;
 }
+
 .image-grid img {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
 .image-grid img:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
+
+
+
 .fade-in {
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s ease-out;
 }
+
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
-.footer-note {
-  text-align: center;
-  padding: 2rem 0;
-  background: #003366;
-  color: white;
-  font-size: 0.9rem;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.call-for-submissions {
-  background: #ffffff;
-  border-top: 4px solid #002A41;
-  box-shadow: 0 10px 18px rgba(0,0,0,0.05);
-  padding: 2rem 2rem;
-  border-radius: 22px;
-  text-align: center;
-  min-height: 260px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
-.call-for-submissions hover{
-  transform: translateY(-5px);
-  box-shadow: 0 35px 55px rgba(0,0,0,0.3);
-}
 
-.call-for-submissions h2 {
-  font-size: 1.5rem;
-  color: #002A41;
-  margin-bottom: 0.5rem;
-}
-.call-for-submissions .deadline-box {
-  font-size: 1rem;
-  background: white;
-  color: #002A41;
-  display: inline-block;
-  padding: 1rem 1rem;
-  border-radius: 15px;
-  font-weight: 500;
-  margin-top: 0.5rem;
-  margin
-}
-
-.dual-cards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(400px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 1rem auto;
-  padding: 0 2rem;
-  justify-content: center;  
-}
-.dual-cards .call-for-submissions {
-  margin: 0;
-}
 
 .page__content,
 .page__inner-wrap,
@@ -230,130 +265,64 @@ t {
 }
 
 
-/* Mobile stacking */
+
 @media (max-width: 900px) {
 
-  /* Hero adjustments */
+  .dual-cards {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
   .hero-inner {
-    max-width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
   }
+
   .hero-content h1 {
-    font-size: 1.6rem;
-    line-height: 2rem;
+    font-size: 1.5rem;
   }
+
   .hero-content p {
     font-size: 0.95rem;
-    line-height: 1.3rem;
-    max-width: 90%;
-    word-wrap: break-word;
+    color: #ffffff !important;
   }
+  
 
 
   .call-for-submissions {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem;
   }
-
 
   .call-for-submissions .btn {
     width: 100%;
-    max-width: none;
-    font-size: 1rem;
-    padding: 0.75rem 1.6rem;
+    padding: 1rem;
   }
 
   .image-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;fv
   }
+
   .image-grid img {
     height: auto;
   }
 
   section h2 {
     font-size: 1.5rem;
-    line-height: 1.8rem;
   }
-  section p, t {
-    font-size: 0.95rem;
-    line-height: 1.4rem;
-  }
-    .hero-content {
-    padding: 1rem;
-  }
-  .hero-content .btn {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 0.5rem auto;
-    font-size: 1rem;
-    padding: 0.8rem 1rem;
-  }
-
-  /* Fade-in elements spacing */
-  .fade-in {
-    margin: 1rem 0;
-  }
-
-.hero-content .btn-mobile-only {
-  display: none;
-}
-
 
 }
 
-
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  
   .hero-content h1,
-  .hero-content p,
-  .hero-content a.btn:not(.btn-mobile-only) {
+  .hero-content a:not([href*="youtu.be"]) {
     display: none;
   }
 
-  .hero-content .btn-mobile-only {
-    display: inline-block;
-    font-size: 1.1rem;
-    padding: 0.9rem 2rem;
-    margin: 0 auto;
-    
+
+  .hero-content {
+    justify-content: center;
   }
-
-  .hero-content h1 {
-    font-size: 1.3rem;
-    line-height: 1.5rem;
-  }
-  .hero-content p {
-    font-size: 0.9rem;
-    line-height: 1.2rem;
-  }
-  .call-for-submissions h2 {
-    font-size: 1.1rem;
-  }
-
-  .hero-inner::before {
-  background: rgba(0, 0, 0, 0.5); /* antes estaba 0.2 */
-  z-index: 1;
 }
-
-
-.hero-content h1,
-.hero-content p,
-.hero-content .btn {
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-}
-
-.hero-content .btn {
-  background: rgba(0,42,65,0.85);
-}
-.hero-content .btn.btn-purple {
-  background: rgba(104,36,109,0.85);
-}
-
-
-
-}
-
-
 
 </style>
 
@@ -397,13 +366,12 @@ t {
       <div id="yt-player"></div>
     </div>
     <div class="hero-content">
-      <!-- Contenido original -->
+    
       <h1>Durham HPC Days 2025 Video Recap</h1>
-      <p>Take a look back at Durham HPC Days 2025 in this short recap featuring our keynote speakers.</p>
      
-      <a href="https://durham.readthedocs.io/en/latest/hpcdays2025/index.html" class="btn" target="_blank" rel="noopener">Visit last year's website</a>
+      <a href="https://durham.readthedocs.io/en/latest/hpcdays2025/index.html" class="btn btn-purple" target="_blank" rel="noopener">Visit last year's website</a>
 
-      <a href="https://youtu.be/wPjtwACmaUg" class="btn btn-mobile-only" target="_blank" rel="noopener">HPC Days 2025 Video</a>
+      <a href="https://youtu.be/wPjtwACmaUg" class="btn btn-purple" target="_blank" rel="noopener">HPC Days 2025 Video</a>
     </div>
   </div>
 </div>
@@ -426,7 +394,7 @@ t {
     Discover the full schedule of keynotes, technical sessions, and social events for the upcoming conference.
     Check the programme to plan your participation and make the most of your experience at Durham HPC Days.<br>
   </t><br>
-  <a href="https://hpc-days.github.io/Durham-HPC-Days-2026/programme-week/" class="btn">Full programme coming up soon</a>
+  <a href="https://hpc-days.github.io/Durham-HPC-Days-2026/programme-week/" class="btn btn-purple">Full programme coming up soon</a>
 </section>
 
 <script>
@@ -481,4 +449,3 @@ function onYouTubeIframeAPIReady() {
   firstScript.parentNode.insertBefore(tag, firstScript);
 })();
 </script>
-
