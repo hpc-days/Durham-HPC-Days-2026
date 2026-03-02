@@ -104,23 +104,31 @@ layout: default
       </div>
     {% endif %}
     
-            {% if page.organiser and page.organiser != "TBC" %}
-      <div class="sidebar-section  institution">
-        <h3>Organiser</h3>
-        {% if page.organiser_logo %}
-<div class="sidebar-section-logo">
-  <img
-    src="{{ page.organiser_logo }}">
-</div>
-        {% endif %}
-        
-        {% if page.organiser_link %}
-          <p><a href="{{ page.organiser_link }}" target="_blank">{{ page.organiser }}</a></p>
-        {% else %}
-          <p>{{ page.organiser }}</p>
-        {% endif %}
+ {% if page.organiser and page.organiser != "TBC" %}
+  <div class="sidebar-section institution">
+    <h3>Organiser</h3>
 
-       {% if page.lead %}
+    {% if page.organiser_logo %}
+      <div class="sidebar-section-logo">
+        <img src="{{ page.organiser_logo }}">
+      </div>
+    {% endif %}
+
+    {% if page.organiser_link %}
+      <p>
+        <a href="{{ page.organiser_link }}" target="_blank">
+          {{ page.organiser }}
+        </a>
+      </p>
+    {% else %}
+      <p>{{ page.organiser }}</p>
+    {% endif %}
+  </div>
+{% endif %}
+
+
+
+{% if page.lead %}
   {% assign leads = page.lead | split: "," %}
   {% assign lead_count = leads | size %}
 
@@ -137,9 +145,11 @@ layout: default
         {% endif %}
 
         {% if page.lead_links and page.lead_links[forloop.index0] %}
-          <p><a href="{{ page.lead_links[forloop.index0] }}" target="_blank">
-            {{ sp | strip }}
-          </a></p>
+          <p>
+            <a href="{{ page.lead_links[forloop.index0] }}" target="_blank">
+              {{ sp | strip }}
+            </a>
+          </p>
         {% else %}
           <p>{{ sp | strip }}</p>
         {% endif %}
@@ -148,41 +158,37 @@ layout: default
   </div>
 {% endif %}
 
-    
-    
-    
-        
-        
-            {% if page.speaker %}
-      <div class="sidebar-section speakers">
-        <h3>Speaker{% if sp_count > 1 %}s{% endif %}</h3>
-        {% assign speakers = page.speaker | split: "," %}
-        {% for sp in speakers %}
-          <div class="speaker-card">
-            {% if page.speaker_photos and page.speaker_photos[forloop.index0] %}
-             <img
-  class="speaker-photo"
-  src="{{ page.speaker_photos[forloop.index0] }}"
-  alt="{{ sp | strip }}">
 
-            {% endif %}
-            
-            
-            
-            {% if page.speaker_links and page.speaker_links[forloop.index0] %}
-              <p><a href="{{ page.speaker_links[forloop.index0] }}" target="_blank">{{ sp | strip }}</a></p>
-            {% else %}
-              <p>{{ sp | strip }}</p>
-            {% endif %}
-          </div>
-        {% endfor %}
-      </div>
-    {% endif %}
-            
 
+{% if page.speaker %}
+  {% assign speakers = page.speaker | split: "," %}
+  {% assign speaker_count = speakers | size %}
+
+  <div class="sidebar-section speakers">
+    <h3>Speaker{% if speaker_count > 1 %}s{% endif %}</h3>
+
+    {% for sp in speakers %}
+      <div class="speaker-card">
+        {% if page.speaker_photos and page.speaker_photos[forloop.index0] %}
+          <img
+            class="speaker-photo"
+            src="{{ page.speaker_photos[forloop.index0] }}"
+            alt="{{ sp | strip }}">
+        {% endif %}
+
+        {% if page.speaker_links and page.speaker_links[forloop.index0] %}
+          <p>
+            <a href="{{ page.speaker_links[forloop.index0] }}" target="_blank">
+              {{ sp | strip }}
+            </a>
+          </p>
+        {% else %}
+          <p>{{ sp | strip }}</p>
+        {% endif %}
       </div>
-    {% endif %}
-    
+    {% endfor %}
+  </div>
+{% endif %}
     
     
     
