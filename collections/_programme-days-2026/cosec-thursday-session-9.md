@@ -15,12 +15,12 @@ title: "CoSeC"
 
 
 #FACILITATOR
-# Comma-separated list of the leads of the session
+# Comma-separated list of the facilitators of the session
 facilitator: "Damian Jones"
-# Leads photos (must match order of names above). 
+# Facilitators' photos (must match order of names above). 
 facilitator_photos:
   - "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/generic.jpg?raw=true"
-# Leads profile links (must match order of names above)
+# Facilitators' profile links (must match order of names above)
 facilitator_links:
   - ""
 
@@ -28,12 +28,13 @@ facilitator_links:
 #SPEAKERS
 # Comma-separated list of the speakers of the session
 speaker: ""
-# Speakers photos (must match order of names above). 
+# Speakers' photos (must match order of names above). 
 speaker_photos:
  - "https://shareing-dri.github.io/assets/profilepics/generic.jpg"
-# Speakers profile links (must match order of names above)
+# Speakers' profile links (must match order of names above)
 speaker_links:
   - ""
+
 
 
 
