@@ -15,12 +15,12 @@ title: "Research software development funding calls"
 
 
 #FACILITATOR
-# Comma-separated list of the leads of the session
+# Comma-separated list of the facilitators of the session
 facilitator: "Chris Johnson"
-# Leads photos (must match order of names above). 
+# facilitators photos (must match order of names above). 
 facilitator_photos:
   - "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/generic.jpg?raw=true"
-# Leads profile links (must match order of names above)
+# facilitators profile links (must match order of names above)
 facilitator_links:
   - ""
 
