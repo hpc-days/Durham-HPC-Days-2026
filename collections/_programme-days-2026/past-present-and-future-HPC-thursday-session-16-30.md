@@ -15,15 +15,15 @@ title: "Past, present and future of HPC Services in the UK, and the people who m
 
 
 #FACILITATOR
-# Comma-separated list of the leads of the session
+# Comma-separated list of the facilitators of the session
 facilitator: "Deepak Aggarwal, Simon Burbidge, Simon Clifford, Marion Weinzierl"
-# Leads photos (must match order of names above). 
+# Facilitators' photos (must match order of names above). 
 facilitator_photos:
   - "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/generic.jpg?raw=true"
   - "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/generic.jpg?raw=true"
   - "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/generic.jpg?raw=true"
   - "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/generic.jpg?raw=true"
-# Leads profile links (must match order of names above)
+# Facilitators' profile links (must match order of names above)
 facilitator_links:
   - ""
 
