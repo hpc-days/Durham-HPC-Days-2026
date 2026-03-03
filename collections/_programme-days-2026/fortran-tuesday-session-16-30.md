@@ -17,10 +17,10 @@ title: "Fortran Community Meetup"
 #LEADS
 # Comma-separated list of the leads of the session
 lead: "Liam Pattinson"
-# Leads photos (must match order of names above). 
+# Leads' photos (must match order of names above). 
 lead_photos:
   - "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/generic.jpg?raw=true"
-# Leads profile links (must match order of names above)
+# Leads' profile links (must match order of names above)
 lead_links:
   - ""
 
@@ -28,12 +28,12 @@ lead_links:
 #CONTRIBUTORS
 # Comma-separated list of the contributors of the session
 contributor: "Connor Aird, Joe Wallwork, Austen Rainer"
-# Leads photos (must match order of names above). 
+# Contributors' photos (must match order of names above). 
 contributor_photos:
 - "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/generic.jpg?raw=true"
 - "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/generic.jpg?raw=true"
 - "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/generic.jpg?raw=true"
-# Leads profile links (must match order of names above)
+# Contributors' profile links (must match order of names above)
 contributor_links:
   - ""
 
