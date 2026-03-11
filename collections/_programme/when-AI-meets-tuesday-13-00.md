@@ -10,7 +10,7 @@
 # SCHEDULING INFORMATION - COMPLETE INFORMATION
 
 # Full TITLE of the session/tutorial
-title: "WORKSHOP TBD"
+title: "Science & AI"
 
 
 
