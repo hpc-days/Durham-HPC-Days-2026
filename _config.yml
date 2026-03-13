@@ -14,6 +14,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Durham HPC Days
+url: "https://hpc-days.github.io"
+baseurl: "/Durham-HPC-Days-2026"
 email:
 description: >-
   Durham HPC Days website
