@@ -18,8 +18,8 @@ instructor: "Georg Hager, Thomas Gruber"
 
 # INSTRUCTORS photos (must match order of names above). 
 instructor_photos:
-  - "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/generic.jpg?raw=true"
-  - "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/images/generic.jpg?raw=true"
+  - "assets/images/generic.jpg"
+  - "assets/images/generic.jpg"
   
 # Instructor profile links (must match order of names above)
 instructor_links:
