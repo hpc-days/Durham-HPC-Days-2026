@@ -10,7 +10,7 @@
 # SCHEDULING INFORMATION - COMPLETE INFORMATION
 
 # Full TITLE of the session/tutorial
-title: "MEETING TBD"
+title: "Fortran Community Meetup"
 
 
 

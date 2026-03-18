@@ -10,7 +10,7 @@
 # SCHEDULING INFORMATION - COMPLETE INFORMATION
 
 # Full TITLE of the session/tutorial
-title: "TUTORIAL TBD"
+title: "Green HPC"
 
 
 # Comma-separated list of INSTRUCTORS
@@ -101,7 +101,7 @@ requirements: ""
 layout: tutorial
 category: "Tutorial"
 
-day: "Wednesday"
+day: "Thursday"
 track: "A"
 
 start_time: "09:00"

@@ -10,7 +10,7 @@
 # SCHEDULING INFORMATION - COMPLETE INFORMATION
 
 # Full TITLE of the session/tutorial
-title: "WORKSHOP TBD"
+title: "RIE's and RSE working together towards user friendly, sustainable HPC"
 
 
 

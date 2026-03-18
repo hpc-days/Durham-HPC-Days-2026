@@ -152,11 +152,13 @@ ul.checklist li::before {
 
 <section class="section-register">
   <div class="card-highlight">
-    <h2>Registration is now open</h2>
+    <h2>Registration closes on 20 April</h2>
     <p>
       Secure your place at <strong>Durham HPC Days 2026</strong>, a leading UK event
       in High Performance Computing, hosted at Durham University.
     </p>
+    
+      
 
     <a class="register-button"
        href="https://pay.durham.ac.uk/event-durham/durham-hpc-days-2026"

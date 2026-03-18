@@ -335,6 +335,13 @@ t {
 </section>
 
 
+
+<section id="about" class="fade-in">
+  <h2> Registration closes on 20 April</h2>
+ 
+</section>
+
+
 <div class="dual-cards fade-in">
 
 

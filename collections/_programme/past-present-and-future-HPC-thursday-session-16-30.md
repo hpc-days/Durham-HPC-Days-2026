@@ -10,7 +10,7 @@
 # SCHEDULING INFORMATION - COMPLETE INFORMATION
 
 # Full TITLE of the session/tutorial
-title: "TALKS TBD"
+title: "Past, present and future of HPC Services in the UK, and the people who make it work"
 
 
 
