@@ -10,7 +10,7 @@
 # SCHEDULING INFORMATION - COMPLETE INFORMATION
 
 # Full TITLE of the session/tutorial
-title: "RSE Leaders & Aspiring Leaders Meeting"
+title: "RSE Leaders & Aspiring Leaders Meeting: Policy & Funding"
 
 #LEADS
 # Comma-separated list of the leads of the session
@@ -82,7 +82,7 @@ institution_link: ""
 
 # ORGANISER
 # Comma-separated list of organisers
-organiser: "RSE Leaders Network SIG, Durham University Advanced Research Computing, SocRSE Policy & Funding Working Group"
+organiser: "Durham University Advanced Research Computing, SocRSE Policy & Funding Working Group, RSE Leaders Network"
 # Organisers logo
 organiser_logo: "assets/images/rse-leaders/rse-society.png"
 # Organisers website link
@@ -106,7 +106,7 @@ supported_link: ""
 # DESCRIPTION
 
 # Full session description (please use <br> to add a new paragraph). Add requirements if relevant. 
-description: "A gathering focused on the policy and funding landscape for RSEs. Participants will contribute to the Policy & Funding Working Group's strategy and shape advocacy priorities for the Society of RSE's future work.<br>The day includes a keynote, lightning talks (5-minute presentations on policy successes or challenges), and workshop sessions on stakeholder identification and policy evidence development.<br>Both in-person and virtual participation are available. Lightning talk submissions and bursary applications for travel support are welcome — see the <a href='https://lu.ma/0w6u5u47'>event page</a> for details."
+description: "This event will focus on the policy and funding landscape for RSEs. The Society has recently launched a Policy & Funding Working Group to help the Society better advocate for RSEs with institutions, funders, and policy makers. Attendees will contribute to the Working Group's strategy and help shape the key advocacy areas that the Society will focus on in the coming years.<br>The event is jointly hosted by Durham University Advanced Research Computing, SocRSE's Policy & Funding Working Group, and the RSE Leaders Network SIG.<br>Anyone is welcome to register, including those not attending the rest of HPC Days. Lunch will be provided. Virtual attendance is also available. If you require travel support to attend in-person, please indicate that when you register. See the <a href='https://lu.ma/0w6u5u47'>event page</a> for details and to register."
    
 
 requirements: ""
