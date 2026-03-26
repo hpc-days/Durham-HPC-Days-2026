@@ -397,6 +397,15 @@ t {
   <a href="https://hpc-days.github.io/Durham-HPC-Days-2026/programme-hpcdays-2026/" class="btn btn-purple">Full programme coming up soon</a>
 </section>
 
+<section id="sponsors" class="fade-in">
+<h2>Sponsors</h2>
+  <t style="max-width: 700px; margin: 0 auto 2rem;">
+    <img src="assets/images/HPCDaysSponsors.png" alt="HPC Days sponsors"/>
+    <br/>
+    <img src="assets/images/HPCDaysSponsors.gif" alt="HPC Days sponsors"/>
+  </t>
+</section
+
 <script>
 (function() {
   function onScroll() {

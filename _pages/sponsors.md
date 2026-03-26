@@ -45,7 +45,7 @@ permalink: /sponsors/
 <section style="background: linear-gradient(180deg, #0b132b 0%, #1c2541 100%); color: #fff; padding: 4rem 2rem; border-radius: 12px;">
   <div style="max-width: 950px; margin: 0 auto; text-align: center;">
     <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">Sponsor & Supporter Information</h1>
-
+    <img src="assets/images/HPCDaysSponsors.png" alt="HPC Days sponsors"/>
     <p style="font-size: 1.15rem; line-height: 1.7; opacity: 0.9; margin-bottom: 2.5rem;">
      If you are sponsoring and supporting HPC Days 2026, thank you very much! We would not be able to run the event without you!
 This page will hopefully include the information that you need to make a success of the event, but if there is information missing please contact us.
