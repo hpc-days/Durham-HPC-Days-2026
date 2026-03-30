@@ -27,9 +27,10 @@ lead_links:
 
 #CONTRIBUTORS
 # Comma-separated list of the contributors of the session
-contributor: "Connor Aird, Joe Wallwork, Austen Rainer"
+contributor: "Connor Aird, Joe Wallwork, Austen Rainer, Jason Klebes"
 # Contributors' photos (must match order of names above). 
 contributor_photos:
+  - "assets/images/generic.jpg"
   - "assets/images/generic.jpg"
   - "assets/images/generic.jpg"
   - "assets/images/generic.jpg"
