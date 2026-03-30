@@ -59,7 +59,7 @@ hidden: true
   <div class="ws-tutorials-grid ws-hero__grid"></div>
   <div class="ws-hero__content">
     <h1>Tutorials</h1>
-    <a href="/tutorials/" class="ws-hero-cta">
+    <a href="https://hpc-days.github.io/Durham-HPC-Days-2026/tutorials/" class="ws-hero-cta">
   Explore tutorials <span>→</span>
 </a>
   </div>
