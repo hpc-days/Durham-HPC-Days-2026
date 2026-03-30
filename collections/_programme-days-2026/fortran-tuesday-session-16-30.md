@@ -89,7 +89,7 @@ organiser_link: ""
 # Comma-separated list of supporters
 supported: "Software Sustainability Institute"
 # Institution logo
-supported_logo: "https://www.software.ac.uk/sites/default/files/2023-12/SSI_SUBMARK_LOGO_small.png"
+supported_logo: "../../assets/images/ssi_logo.png"
 # Institution website link
 supported_link: "https://www.software.ac.uk"
 
