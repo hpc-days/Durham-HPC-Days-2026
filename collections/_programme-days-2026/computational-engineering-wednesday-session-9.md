@@ -27,9 +27,10 @@ facilitator_links:
 
 #SPEAKERS
 # Comma-separated list of the speakers of the session
-speaker: "Ashutosh Shankarrao Londhe, Vahid Jafari, Henrique Bergallo Rocha"
+speaker: "Ashutosh Shankarrao Londhe, Vahid Jafari, Henrique Bergallo Rocha, Robert Bird"
 # Speakers photos (must match order of names above). 
 speaker_photos:
+  - "assets/images/generic.jpg"
   - "assets/images/generic.jpg"
   - "assets/images/generic.jpg"
   - "assets/images/generic.jpg"
@@ -121,7 +122,11 @@ Error estimation capabilities provided by the Macro-Micro-Coupling (MaMiCo) tool
 The results provide practical guidelines for selecting particle numbers, DSMC subdomain sizes, and ensemble strategies, enabling efficient and scalable high-fidelity simulations of hypersonic transitional flows on modern HPC architectures.
 
 <h3>Finite Element Method Scaling and Performance on MI300X GPUs Through MFEM-Enabled MOOSE • Henrique Bergallo Rocha</h3>
-With the new generation of GPU-accelerated HPC systems opening new avenues in large-scale physical modelling, nuclear fusion applications through the Finite Element Method (FEM) require code that is performant at scale, parallelisable, and that can faithfully reproduce highly coupled, complex multiphysics on meshes with up to O(10^10) degrees of freedom. MFEM-Enabled MOOSE, i.e. a build of the MOOSE framework that utilises the MFEM FEM library as opposed to libMesh, has been shown to fulfil these requirements on CPUs and on GPUs with a CUDA backend. However, so far the scalability and general performance of MFEM-Enabled MOOSE on recent AMD hardware has not been explored to great extent, which may turn to be a blind spot when it comes to the deployment of large HPC systems in the UK with AMD GPUs. In this talk, we present our results from benchmarking, profiling, and measuring the scalability of MFEM-Enabled MOOSE on the MI300X nodes in the CSD3 system. We perform weak and strong scaling analyses across a variety of sample FEM problems utilising different solvers and preconditioners. The sample problems studied represent different kinds of physics and span the entire De Rham complex, and they are tested to up to O(10^2) GPU cards on a single problem. We then compare these results to those tested on equivalent NVIDIA hardware and discuss their relative strengths and weaknesses."
+With the new generation of GPU-accelerated HPC systems opening new avenues in large-scale physical modelling, nuclear fusion applications through the Finite Element Method (FEM) require code that is performant at scale, parallelisable, and that can faithfully reproduce highly coupled, complex multiphysics on meshes with up to O(10^10) degrees of freedom. MFEM-Enabled MOOSE, i.e. a build of the MOOSE framework that utilises the MFEM FEM library as opposed to libMesh, has been shown to fulfil these requirements on CPUs and on GPUs with a CUDA backend. However, so far the scalability and general performance of MFEM-Enabled MOOSE on recent AMD hardware has not been explored to great extent, which may turn to be a blind spot when it comes to the deployment of large HPC systems in the UK with AMD GPUs. In this talk, we present our results from benchmarking, profiling, and measuring the scalability of MFEM-Enabled MOOSE on the MI300X nodes in the CSD3 system. We perform weak and strong scaling analyses across a variety of sample FEM problems utilising different solvers and preconditioners. The sample problems studied represent different kinds of physics and span the entire De Rham complex, and they are tested to up to O(10^2) GPU cards on a single problem. We then compare these results to those tested on equivalent NVIDIA hardware and discuss their relative strengths and weaknesses.
+
+
+<h3>Title • Robert Bird</h3>
+Description"
    
 
 requirements: ""

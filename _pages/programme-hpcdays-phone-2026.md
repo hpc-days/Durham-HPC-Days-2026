@@ -1,7 +1,7 @@
 ---
 layout: splash
 title: "Conference Programme"
-permalink: /programme-hpcdays-day-2026/
+permalink: /programme-hpcdays-days-2026/
 classes: [full-programme]
 ---
 
@@ -53,116 +53,127 @@ classes: [full-programme]
 
   <!-- Main content -->
   <main class="programme-main">
-    {% for current_day in days_order %}
-      {% assign day_sessions = sessions | where: "day", current_day %}
-      {%- comment -%}
-        If you want fixed events to appear across *all* days, remove the where filter below.
-      {%- endcomment -%}
-      {% assign fixed_events = site.data.fixed_events | where: "day", current_day %}
-      {% assign combined = day_sessions | concat: fixed_events %}
-      {% assign day_sessions = combined | sort: "start_time" %}
+  {% for current_day in days_order %}
+    {% assign day_sessions = sessions | where: "day", current_day %}
 
-      {% if day_sessions != empty %}
-        <section class="programme-day expanded" id="{{ current_day | downcase }}">
-          <h2 class="day-toggle">
-            <span class="arrow">&gt;</span> {{ current_day }}
-          </h2>
+    {% assign fixed_events = site.data.fixed_events | where: "day", current_day %}
+    {% assign combined = day_sessions | concat: fixed_events %}
+    {% assign day_sessions = combined | sort: "start_time" %}
 
-          <div class="programme-grid">
-            {% assign grouped_by_time = day_sessions | group_by: "start_time" %}
-            {% for time_slot in grouped_by_time %}
-              {% assign first_session = time_slot.items | first %}
-              {% assign session_count = time_slot.items | size %}
+    {% if day_sessions != empty %}
+      <section class="programme-day expanded" id="{{ current_day | downcase }}">
+        
+        <h2 class="day-toggle">
+          <span class="arrow">&gt;</span> {{ current_day }}
+        </h2>
 
-              {% if session_count == 1 %}
-                {% assign grid_template = "0.5fr 3fr" %}
-              {% elsif session_count == 2 %}
-                {% assign grid_template = "0.5fr 1.5fr 1.5fr" %}
-              {% elsif session_count == 3 %}
-                {% assign grid_template = "0.5fr 1fr 1fr 1fr" %}
-              {% else %}
-                {% capture grid_template %}0.5fr repeat({{ session_count }}, 1fr){% endcapture %}
-              {% endif %}
+<div class="programme-grid">
 
-              <div class="programme-time" style="grid-template-columns: {{ grid_template }}; gap: 0.5rem; align-items: stretch;">
-                <div class="time-label">
-                  {% if first_session.start_time and first_session.end_time %}
-                    {{ first_session.start_time }}<br>–<br>{{ first_session.end_time }}
-                  {% else %}
-                    {{ first_session.start_time }}
-                  {% endif %}
-                </div>
+  {% assign grouped_by_time = day_sessions | group_by: "start_time" %}
 
-   {% if session_count == 1 %}
-  {% assign this_session = first_session %}
-  {% assign category_class = this_session.category | downcase %}
+  {% for time_slot in grouped_by_time %}
+    {% assign first_session = time_slot.items | first %}
 
-  {% assign is_tbd = false %}
-  {% if this_session.title contains "TBD" %}
-    {% assign is_tbd = true %}
-  {% endif %}
+    <div class="programme-time-block">
 
-  {% if is_tbd %}
-    {% assign category_class = category_class | append: " tbd" %}
-  {% endif %}
+      <!-- TIME HEADER -->
+      <div class="time-header">
+        {% if first_session.start_time and first_session.end_time %}
+          {{ first_session.start_time }} – {{ first_session.end_time }}
+        {% else %}
+          {{ first_session.start_time }}
+        {% endif %}
+      </div>
 
-  {% if this_session.part_of %}
-    {% assign category_class = category_class | append: " split-session" %}
-  {% endif %}
+      <!-- SESSIONS STACKED -->
+      <div class="time-sessions">
+        {% for this_session in time_slot.items %}
 
-  <div class="session-card full-width {{ category_class }}"
-       id="{{ this_session.id | default: this_session.title | slugify }}"
-       {% if this_session.part_of %}data-part="{{ this_session.part_of }}"{% endif %}>
-       
-                    <h3>{{ this_session.title }}</h3>
+          {% assign category_class = this_session.category | downcase %}
 
-                  
+          {% if this_session.part_of %}
+            {% assign category_class = category_class | append: " split-session" %}
+          {% endif %}
+          
 
-                    {% if this_session.abstract %}
-                      {% assign plain_abstract = this_session.abstract | strip_html | strip_newlines | truncate: 90, "..." %}
-                      <p class="abstract">{{ plain_abstract }}</p>
-                      <a class="read-more" href="{{ this_session.url | relative_url }}">Read more →</a>
-                    {% endif %}
 
-                    
-                  </div>
 
-                {% else %}
-                  {%- comment -%}
-                    For multiple parallel sessions: simply render each card.
-                    If you want fixed columns by track (A/B/C) including empty placeholders,
-                    we can switch this to iterate over 'tracks' and pick a matching session per track.
-                  {%- endcomment -%}
-                  {% for this_session in time_slot.items %}
-                    {% assign category_class = this_session.category | downcase %}
-                    {% if this_session.part_of %}
-                      {% assign category_class = category_class | append: " split-session" %}
-                    {% endif %}
 
-                    <div class="session-card {{ category_class }}"
-                         id="{{ this_session.id | default: this_session.title | slugify }}"
-                         {% if this_session.part_of %}data-part="{{ this_session.part_of }}"{% endif %}>
-                      <h3><a href="{{ this_session.url | relative_url }}">{{ this_session.title }}</a></h3>
+          {% if this_session.title contains "TBD" %}
+            {% assign category_class = category_class | append: " tbd" %}
+          {% endif %}
 
-                     
+          <div class="session-card {{ category_class }}"
+               id="{{ this_session.id | default: this_session.title | slugify }}"
+               {% if this_session.part_of %}data-part="{{ this_session.part_of }}"{% endif %}>
+          {% if this_session.room %}
+  <p class="room">Room: {{ this_session.room }}</p>
+{% endif %}
+            <h3>
+              <a href="{{ this_session.url | relative_url }}">
+                {{ this_session.title }}
+              </a>
+            </h3>
 
-                      {% if this_session.abstract %}
-                        {% assign plain_abstract = this_session.abstract | strip_html | strip_newlines | truncate: 90, "..." %}
-                        <p class="abstract">{{ plain_abstract }}</p>
-                        <a class="read-more" href="{{ this_session.url | relative_url }}">Read more →</a>
-                      {% endif %}
+{% if this_session.abstract %}
+  {% assign plain_abstract = this_session.abstract | strip_html | strip_newlines | truncate: 90, "..." %}
+  <p class="abstract">{{ plain_abstract }}</p>
+  <a class="read-more" href="{{ this_session.url | relative_url }}">Read more →</a>
+{% endif %}
 
-                      
-                    </div>
-                  {% endfor %}
-                {% endif %}
-              </div><!-- programme-time -->
-            {% endfor %}
-          </div><!-- programme-grid -->
-        </section>
-      {% endif %}
-    {% endfor %}
-  </main>
+
+
+
+
+
+
+{% if this_session.lead or this_session.instructor or this_session.facilitator %}
+  <p class="speaker">
+
+    {% if this_session.lead %}
+      <strong>
+        Lead{% if this_session.lead contains "," %}s{% endif %}:
+      </strong>
+      {{ this_session.lead }}
+    {% endif %}
+
+    {% if this_session.lead and this_session.instructor %} · {% endif %}
+
+    {% if this_session.instructor %}
+      <strong>
+        Instructor{% if this_session.instructor contains "," %}s{% endif %}:
+      </strong>
+      {{ this_session.instructor }}
+    {% endif %}
+
+    {% if this_session.facilitator %}
+      {% if this_session.lead or this_session.instructor %} · {% endif %}
+      <strong>
+        Facilitator{% if this_session.facilitator contains "," %}s{% endif %}:
+      </strong>
+      {{ this_session.facilitator }}
+    {% endif %}
+
+  </p>
+{% endif %}
+
+
+
+          </div>
+
+        {% endfor %}
+      </div>
+
+    </div><!-- programme-time-block -->
+
+  {% endfor %}
+
+</div>
+
+      </section>
+    {% endif %}
+  {% endfor %}
+</main>
 </div>
 
      
@@ -200,6 +211,15 @@ classes: [full-programme]
   color: #ffffff;           
   background-color: #002A41;
   text-decoration: none;
+}
+
+.session-card .speaker {
+  font-size: 0.75rem;
+}
+
+.session-card .room {
+  font-size: 1rem;
+  opacity: 0.8;
 }
 
 .button-link:hover,
@@ -269,8 +289,8 @@ classes: [full-programme]
 }
 
 .programme-day {
- margin: 0 0 1rem 0; 
-  padding: 0.5rem 3%;  
+ margin: 0 0 0.1rem 0; 
+  padding: 0.2rem 3%;  
 }
 
 .programme-day h2 {
@@ -287,7 +307,7 @@ classes: [full-programme]
 .programme-grid {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.2rem;
 }
 
 .programme-time {
@@ -680,7 +700,7 @@ padding: 0.5rem;
 .session-card.coffee { background-color: #F8FAFC; border-left-color: #F8FAFC; }
 .session-card.social { background-color: #F8FAFC; border-left-color: #F8FAFC; }
 
-.session-card .speaker { font-size: 0.4rem; color: #333; margin:0; }
+.session-card .speaker { font-size: 0.7rem; color: #333; margin:0; }
 .session-card .room { font-size: 0.6rem; color: #444; margin:0; }
 
 .week-cell .session-card h3 a {
@@ -709,6 +729,38 @@ padding: 0.5rem;
     max-height: none; 
   }
 }
+
+
+.programme-time-block {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.time-header {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background: #002A41;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.time-sessions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.session-card {
+  border-left: 4px solid transparent; 
+}
+
+
 </style>
 
 <script>
