@@ -10,7 +10,7 @@
 # SCHEDULING INFORMATION - COMPLETE INFORMATION
 
 # Full TITLE of the session/tutorial
-title: "Model Parallelism: Building and Deploying Large Neural Networks"
+title: "Model Parallelism: Training Large Neural Networks"
 
 
 # Comma-separated list of INSTRUCTORS
@@ -18,8 +18,8 @@ instructor: "Andrea Pilzer, Paul Graham"
 
 # INSTRUCTORS photos (must match order of names above). 
 instructor_photos:
-  - "assets/images/generic.jpg"
-  - "assets/images/generic.jpg"
+  - "assets/images/andrea-pilzer.jpg"
+  - "assets/images/paul-graham.jpg"
   
 # Instructor profile links (must match order of names above)
 instructor_links:
@@ -53,7 +53,7 @@ instructor_links:
 
 # INSTITUTION
 # Comma-separated list of institutions
-institution: ""
+institution: "NVIDIA"
 # Institution logo
 institution_logo: "https://s3.amazonaws.com/cms.ipressroom.com/219/files/202512/692f56b83d6332f881bbc58b_nvidia-logo-horiz-blk-16x9+1/nvidia-logo-horiz-blk-16x9+1_3b6e36c5-dc74-4a75-86f4-5faefc2a7f7d-prv.png"
 # Institution website link
@@ -87,7 +87,14 @@ supported_link: ""
 # DESCRIPTION
 
 # Full session description (use | for multi-line formatting)
-description: ""
+description: |
+  This tutorial covers the full workflow of training large neural networks using model parallelism, split across two sessions that build on each other.
+
+  **Part 1 — Introduction to Training of Large Models [13:00–14:30]**
+  Theoretical foundations: scaling laws and parallelization techniques for large neural networks.
+
+  **Part 2 — Practical Session with Megatron Bridge [this session, 16:30–18:00]**
+  Hands-on session: setting up training scripts, running experiments with different distributed settings, and exploring lower precision training. The session is instructor-led with materials provided for replication on the Durham cluster.
    
 
 requirements: ""
