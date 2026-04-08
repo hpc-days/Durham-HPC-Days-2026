@@ -5,738 +5,680 @@ permalink: /programme-hpcdays-day-2026/
 classes: [full-programme]
 ---
 
-{% assign sessions = site["programme-days-2026"] | default: empty %}
-{% assign sessions = sessions | sort: "start_time" %}
-{% assign tracks = "A,B,C" | split: "," %}
+{% assign all_sessions = site.programme-days-2026
+  | where_exp: "s", "s.start_time"
+  | sort: "start_time" %}
+
+
+
+{% assign tracks = "A,B,C,D" | split: "," %}
 {% assign days_order = "Monday,Tuesday,Wednesday,Thursday,Friday" | split: "," %}
+{% assign time_slots = all_sessions | map: "start_time" | uniq | sort %}
 
-<div class="programme-top-button">
-  <a href="https://hpc-days.github.io/Durham-HPC-Days-2026/programme-week/" class="button-link">
-    See Full Week Programme
-  </a>
+{% assign fixed_sessions = 
+  "10:30|Coffee Break,12:00|Lunch,14:30|Break,16:00|Coffee Break" | split: "," %}
+
+
+{% for fs in fixed_sessions %}
+  {% assign fs_parts = fs | split: "|" %}
+  {% assign fs_time = fs_parts[0] %}
+  {% assign fs_title = fs_parts[1] %}
+  {% unless time_slots contains fs_time %}
+    {% assign time_slots = time_slots | push: fs_time %}
+  {% endunless %}
+{% endfor %}
+
+{% assign time_slots = time_slots | sort %}
+<div class="mobile-programme-landing">
+  <div class="mobile-landing-inner">
+    <h1>Durham HPC Days 2026</h1>
+    <p class="subtitle">Conference Programme - Mobile Version</p>
+    <a href="https://hpc-days.github.io/Durham-HPC-Days-2026/programme-days/" class="btn-see-programme">See Full Programme</a>
+  </div>
 </div>
-
 <div class="programme-container">
 
-  <aside class="programme-sidebar">
-    <h3>Programme</h3>
-    <ul class="accordion">
-      {% for current_day in days_order %}
+<main class="programme-main">
 
-        {% assign day_sessions = sessions | where: "day", current_day %}
-        {%- comment -%}
-          If you want fixed events to appear across *all* days, remove the where filter below.
-        {%- endcomment -%}
-        {% assign fixed_events = site.data.fixed_events | where: "day", current_day %}
-        {% assign combined = day_sessions | concat: fixed_events %}
-        {% assign day_sessions = combined | sort: "start_time" %}
 
-        {% if day_sessions != empty %}
-          <li class="accordion-item">
-            <div class="accordion-header">
-              <span class="arrow">&gt;</span> <span class="day-name">{{ current_day }}</span>
-            </div>
-            <ul class="accordion-content">
-              {% for session in day_sessions %}
-                <li>
-                  <a href="#{{ session.id | default: session.title | slugify }}">
-                    {{ session.start_time }} - {{ session.title }}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </aside>
+<br> <br> 
 
-  <!-- Main content -->
-  <main class="programme-main">
-    {% for current_day in days_order %}
-      {% assign day_sessions = sessions | where: "day", current_day %}
-      {%- comment -%}
-        If you want fixed events to appear across *all* days, remove the where filter below.
-      {%- endcomment -%}
-      {% assign fixed_events = site.data.fixed_events | where: "day", current_day %}
-      {% assign combined = day_sessions | concat: fixed_events %}
-      {% assign day_sessions = combined | sort: "start_time" %}
+<div class="programme-legend">
 
-      {% if day_sessions != empty %}
-        <section class="programme-day expanded" id="{{ current_day | downcase }}">
-          <h2 class="day-toggle">
-            <span class="arrow">&gt;</span> {{ current_day }}
-          </h2>
-
-          <div class="programme-grid">
-            {% assign grouped_by_time = day_sessions | group_by: "start_time" %}
-            {% for time_slot in grouped_by_time %}
-              {% assign first_session = time_slot.items | first %}
-              {% assign session_count = time_slot.items | size %}
-
-              {% if session_count == 1 %}
-                {% assign grid_template = "0.5fr 3fr" %}
-              {% elsif session_count == 2 %}
-                {% assign grid_template = "0.5fr 1.5fr 1.5fr" %}
-              {% elsif session_count == 3 %}
-                {% assign grid_template = "0.5fr 1fr 1fr 1fr" %}
-              {% else %}
-                {% capture grid_template %}0.5fr repeat({{ session_count }}, 1fr){% endcapture %}
-              {% endif %}
-
-              <div class="programme-time" style="grid-template-columns: {{ grid_template }}; gap: 0.5rem; align-items: stretch;">
-                <div class="time-label">
-                  {% if first_session.start_time and first_session.end_time %}
-                    {{ first_session.start_time }}<br>–<br>{{ first_session.end_time }}
-                  {% else %}
-                    {{ first_session.start_time }}
-                  {% endif %}
-                </div>
-
-   {% if session_count == 1 %}
-  {% assign this_session = first_session %}
-  {% assign category_class = this_session.category | downcase %}
-
-  {% assign is_tbd = false %}
-  {% if this_session.title contains "TBD" %}
-    {% assign is_tbd = true %}
-  {% endif %}
-
-  {% if is_tbd %}
-    {% assign category_class = category_class | append: " tbd" %}
-  {% endif %}
-
-  {% if this_session.part_of %}
-    {% assign category_class = category_class | append: " split-session" %}
-  {% endif %}
-
-  <div class="session-card full-width {{ category_class }}"
-       id="{{ this_session.id | default: this_session.title | slugify }}"
-       {% if this_session.part_of %}data-part="{{ this_session.part_of }}"{% endif %}>
-       
-                    <h3>{{ this_session.title }}</h3>
-
-                  
-
-                    {% if this_session.abstract %}
-                      {% assign plain_abstract = this_session.abstract | strip_html | strip_newlines | truncate: 90, "..." %}
-                      <p class="abstract">{{ plain_abstract }}</p>
-                      <a class="read-more" href="{{ this_session.url | relative_url }}">Read more →</a>
-                    {% endif %}
-
-                    
-                  </div>
-
-                {% else %}
-                  {%- comment -%}
-                    For multiple parallel sessions: simply render each card.
-                    If you want fixed columns by track (A/B/C) including empty placeholders,
-                    we can switch this to iterate over 'tracks' and pick a matching session per track.
-                  {%- endcomment -%}
-                  {% for this_session in time_slot.items %}
-                    {% assign category_class = this_session.category | downcase %}
-                    {% if this_session.part_of %}
-                      {% assign category_class = category_class | append: " split-session" %}
-                    {% endif %}
-
-                    <div class="session-card {{ category_class }}"
-                         id="{{ this_session.id | default: this_session.title | slugify }}"
-                         {% if this_session.part_of %}data-part="{{ this_session.part_of }}"{% endif %}>
-                      <h3><a href="{{ this_session.url | relative_url }}">{{ this_session.title }}</a></h3>
-
-                     
-
-                      {% if this_session.abstract %}
-                        {% assign plain_abstract = this_session.abstract | strip_html | strip_newlines | truncate: 90, "..." %}
-                        <p class="abstract">{{ plain_abstract }}</p>
-                        <a class="read-more" href="{{ this_session.url | relative_url }}">Read more →</a>
-                      {% endif %}
-
-                      
-                    </div>
-                  {% endfor %}
-                {% endif %}
-              </div><!-- programme-time -->
-            {% endfor %}
-          </div><!-- programme-grid -->
-        </section>
-      {% endif %}
-    {% endfor %}
-  </main>
+  <div class="legend-item keynote" data-category="keynote"><span class="legend-colour"></span> Keynotes</div>
+  <div class="legend-item workshop" data-category="workshop"><span class="legend-colour"></span> Workshops</div>
+  <div class="legend-item talk" data-category="talk"><span class="legend-colour"></span> Talks</div>
+  <div class="legend-item tutorial" data-category="tutorial"><span class="legend-colour"></span> Tutorials</div>
+  <div class="legend-item poster" data-category="poster"><span class="legend-colour"></span> Posters</div>
+  <div class="legend-item social" data-category="social"><span class="legend-colour"></span> Socials</div>
+  <div class="legend-item meeting" data-category="meeting"><span class="legend-colour"></span> Meetings</div>
 </div>
 
-     
-     
-     
+<div class="week-grid">
+
+  <!-- Header -->
+  <div class="week-header">
+    <div class="week-time-header">Time</div>
+    {% for day in days_order %}
+      <div class="week-day-header">{{ day }}</div>
+    {% endfor %}
+  </div>
+
+  <!-- Rows by time -->
+  {% for time in time_slots %}
+
+    {% assign is_fixed = false %}
+    {% assign fixed_title = "" %}
+
+    {% for fs in fixed_sessions %}
+      {% assign fs_parts = fs | split: "|" %}
+      {% if fs_parts[0] == time %}
+        {% assign is_fixed = true %}
+        {% assign fixed_title = fs_parts[1] %}
+      {% endif %}
+    {% endfor %}
+
+    {%- assign has_content = false -%}
+    {% for day in days_order %}
+      {% assign cell_sessions = all_sessions
+        | where: "day", day
+        | where: "start_time", time %}
+      {% if cell_sessions.size > 0 %}
+        {% assign has_content = true %}
+      {% endif %}
+    {% endfor %}
+
+    {% if has_content or is_fixed %}
+
+    <div class="week-row">
+
+      <!-- Time column -->
+      <div class="week-time">
+        {% assign start_time = time | split: "-" | first %}
+        {{ start_time }}
+      </div>
+
+      {% if is_fixed %}
+        <div class="week-cell coffee" style="grid-column: span 5; text-align:center;">
+          <h3>{{ fixed_title }}</h3>
+        </div>
+
+      {% else %}
+
+        {% for day in days_order %}
+          {% assign cell_sessions = all_sessions
+            | where: "day", day
+            | where: "start_time", time %}
+
+          <div class="week-cell">
+{% if cell_sessions.size == 0 %}
+  <div class="week-cell empty-cell"></div>
+{% else %}
+              {% assign cell_sessions = cell_sessions | sort: "track" %}
+
+              {% for s in cell_sessions %}
+              <div class="session-card {{ s.category | downcase }}">
+                <h3>
+                  <a href="{{ s.url | relative_url }}">
+                    {{ s.title }}
+                  </a>
+                </h3>
+
+                {% if s.lead or s.instructor or s.facilitator %}
+                <p class="speaker">
+
+                  {% if s.lead %}
+                    <strong>Lead{% if s.lead contains "," %}s{% endif %}:</strong>
+                    {{ s.lead }}
+                  {% endif %}
+
+                  {% if s.lead and s.instructor %} · {% endif %}
+
+                  {% if s.instructor %}
+                    <strong>Instructor{% if s.instructor contains "," %}s{% endif %}:</strong>
+                    {{ s.instructor }}
+                  {% endif %}
+
+                  {% if s.facilitator %}
+                    <strong>Facilitator{% if s.facilitator contains "," %}s{% endif %}:</strong>
+                    {{ s.facilitator }}
+                  {% endif %}
+
+                </p>
+                {% endif %}
+
+                {% if s.room %}
+                  <p class="room">Room: {{ s.room }}</p>
+                {% endif %}
+              </div>
+              {% endfor %}
+
+            {% endif %}
+          </div>
+        {% endfor %}
+
+      {% endif %}
+
+    </div>
+
+    {% endif %}
+
+  {% endfor %}
+
+</div>
+
+</main>
+</div>
+
 <style>
 
-.programme-top-button {
-  width: 100%;           
-  margin-top: 1.5rem;
-  text-align: center;    
-}
-
-.button-link {
-  display: inline-block;
-  width: 100%;          
-  max-width: 1200px;   
-  background-color: #002A41;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.button-link:hover {
-  background-color: #68246D;
-  color: #ffffff;
-}
-
-.button-link:link,
-.button-link:visited {
-  color: #ffffff;           
-  background-color: #002A41;
-  text-decoration: none;
-}
-
-.button-link:hover,
-.button-link:active {
-  background-color: #68246D;
-  color: #ffffff;
-}
-
-
-.programme-container {
-  display: flex;
-  gap: 2rem;
-}
-
-.programme-container {
-  display: flex;
-  gap: 1rem;
-   padding-top: 2rem; 
-}
-
-
-.programme-sidebar {
-  flex: 0 0 250px;
-  background: #f4f6f8;
-  padding: 1rem;
-  border-radius: 8px;
-  position: sticky;
-  top: 3.5rem;
-  max-height: calc(100vh - 4rem); 
-  overflow-y: scroll; 
-  overflow-x: hidden;
-  scrollbar-width: thin; 
-  scrollbar-color: #68246D;
-}
-.programme-note {
-  background: #002A41;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-top: 2rem;
-  font-style: italic;
-  font-size: 0.95rem;
-  opacity: 0.9;
-  transition: opacity 0.3s ease;
-}
-
-.programme-note:hover {
-  opacity: 1;
-}
-
-.programme-main {
-  flex: 1;
-}
-
-.programme-main {
-  flex: 1;
-}
-
-
+/* === FULL WIDTH PAGE === */
 .full-programme .page__inner-wrap,
-.full-programme .page__content {
-  max-width: none !important;
+.full-programme .page__content,
+.page__inner-wrap,
+.page__content {
+  max-width: 100% !important;
   width: 100% !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-.programme-day {
- margin: 0 0 1rem 0; 
-  padding: 0.5rem 3%;  
+.full-programme .page__content section {
+  padding: 0 !important;
 }
 
-.programme-day h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #002A41;
-  border-bottom: 2px solid #dce3ec;
-  padding-bottom: 0.3rem;
-  margin: 0 0 0.5rem 0; 
-  padding-bottom: 0.3rem;
-}
-
-
-.programme-grid {
+.programme-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  position: relative;
 }
 
-.programme-time {
+.week-grid {
   display: grid;
   gap: 0.5rem;
-  align-items: stretch;
-  background: #f8fafc;
-  border-radius: 10px;
-  padding: 0.5rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 
-.time-label {
-  font-weight: 800;
-  font-size: 0.8rem;
-  color: #ffffff;
-  background: #002A41;
-  border-radius: 8px;
-  align-items: center;
-  justify-content: center;
+.week-header,
+.week-row {
+  display: grid;
+  grid-template-columns: 90px repeat(5, 1fr);
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.week-day-header,
+.week-time-header {
+  font-weight: 700;
   text-align: center;
+  background: #002A41;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.week-time {
+  font-weight: 700;
+  text-align: center;
+  background: #f4f6f8;
+  border-radius: 8px;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.week-cell {
+  background: #fff;
+  border: 1px solid #dce3ec;
+  border-radius: 8px;
+  padding: 0.3rem;
+  min-height: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.week-cell.empty-cell {
+  background: #EEEEEE !important;
+  border: none !important;
+  box-shadow: none;
 }
 
 .session-card {
-  background: #ffffff;
-  border: 1px solid #dce3ec;
-  border-radius: 8px;
-  padding: 0.5rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  
+  margin-bottom: 0.3rem;
+  padding: 0.4rem;
+  border-left: 4px solid;
+  border-radius: 6px;
+  color: #002A41;
+  flex-grow: 1;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.session-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+.session-card:last-child {
+  margin-bottom: 0;
 }
 
 .session-card h3 {
-  font-size: 1.15rem;
-  color: #002A41;
-  margin-bottom: 0rem;
-   margin-top: 0rem;
-}
-
-.session-card h3 a {
-  text-decoration: none;
-  color: inherit;
-    margin-bottom: 0rem;
-   margin-top: 0rem;
-}
-
-.session-card h3 a:hover {
-  text-decoration: underline;
-    margin-bottom: 0rem;
-   margin-top: 0rem;
-}
-
-.speaker {
-    color: #555;
-  margin-bottom: 0rem;
-   margin-top: 0rem;
-}
-
-.session-card .speaker {
-font-size: 1rem;
-  color: #333;
-  margin-bottom: 0rem;
-    margin-top: 0rem;
-    text-align: left;
- font-style: normal !important;
-    
-}
-
-
-.session-card .abstract {
-font-size: 0.6rem;
-  color: #333;
-  margin-bottom: 0rem;
-    margin-top: 0rem;
-    text-align: left;
-    
-}
-
-
-.session-card.full-width {
-  grid-column: 2 / span 2;
-}
-
-.session-card.full-width h3 {
-  font-size: 1rem;
-  color: #002A41;
-  margin-bottom: 0rem;
-   margin-top: 0.1rem;
-   text-align: center;
-}
-
-
-.session-card .room {
-  font-size: 0.75rem;
-  color: #444;
-  line-height: 1.2;
-  margin-top: 0rem;
-    margin-bottom: 0rem;
-}
-
-.session-card .read-more {
-  font-size: 0.9rem;
-  color: #68246D;
-  text-decoration: none;
-  font-weight: 600;
-  margin-bottom: 0rem;
-    margin-top: 0rem;
-}
-
-.read-more:hover {
-  text-decoration: underline;
-}
-
-.no-session {
-  text-align: center;
-  color: #aaa;
-  margin-top: 1.5rem;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .programme-time {
-    grid-template-columns: 1fr;
-  }
-
-  .time-label {
-    margin-bottom: 0.5rem;
-  }
-}
-
-
-
-
-
-
-.programme-sidebar .accordion {
-  list-style: none;
-  padding-left: 0;
+  font-size: 0.7rem;
   margin: 0;
 }
 
-.accordion-item {
-  margin-bottom: 0.5rem;
+.session-card:hover {
+  filter: brightness(1) saturate(1.4);
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  cursor: pointer;
 }
 
-.accordion-header {
-  cursor: pointer;
+.session-card.dimmed {
+  opacity: 0.15;
+  transform: scale(0.98);
+}
+
+.session-card.highlighted {
+  transform: scale(1);
+  z-index: 5;
+}
+
+.session-card.opening {
+  background-color: #68246D;
+  color: #fff;
+  border-left-color: #68246D;
+}
+
+.session-card.opening h3,
+.session-card.opening .speaker,
+.session-card.opening .room {
+  color: #002A41;
+}
+
+.session-card.keynote {
+  background-color: #f1e6f4;
+  border-left-color: #68246d;
+}
+
+.session-card.meeting {
+  background-color: #f8e4f0;
+  border-left-color: #c85096;
+}
+
+.session-card.workshop {
+  background-color: #e3eff9;
+  border-left-color: #2975c1;
+}
+
+.session-card.talk {
+  background-color: #e2f3ea;
+  border-left-color: #00a86b;
+}
+
+.session-card.tutorial {
+  background-color: #fff4cc;
+  border-left-color: #f5b800;
+}
+
+.session-card.poster {
+  background-color: #f8dada;
+  border-left-color: #dc3232;
+}
+
+.session-card.social {
+  background-color: #ffe8cc;
+  border-left-color: #ff8c00;
+  flex-grow: 0 !important;
+  flex-shrink: 0;
+}
+
+.session-card.coffee {
+  background-color: #f8fafc;
+  border-left-color: #e2e8f0;
+}
+
+.week-cell:has(.session-card:not(.social)) .session-card.social {
+  flex-grow: 0;
+}
+
+.session-card .speaker {
+  font-size: 0.4rem;
+  color: #333;
+  margin: 0;
+}
+
+.session-card .room {
+  font-size: 0.6rem;
+  color: #444;
+  margin: 0;
+}
+
+.week-cell .session-card h3 a {
+  color: inherit !important;
+}
+
+.session-card.opening h3 a {
+  color: #ffffff !important;
+}
+
+.session-card.workshop h3 a,
+.session-card.talk h3 a,
+.session-card.session h3 a,
+.session-card.tutorial h3 a,
+.session-card.poster h3 a,
+.session-card.social h3 a {
+  color: #002A41 !important;
+}
+
+.week-cell.coffee {
   display: flex;
   align-items: center;
-  font-weight: 600;
-  color: #002A41;
-  padding: 0.3rem 0.5rem;
-  user-select: none;
-  border-radius: 6px;
-  transition: color 0.2s;
-  font-size: 0.75rem;
-}
-
-.accordion-header {
-  display: block;
-  font-weight: 600;
-  color: #002A41;
-  padding: 0.3rem 0.5rem;
-  font-size: 1rem;
-  white-space: nowrap;      
-  overflow: hidden;         
-  text-overflow: ellipsis;  
-  max-width: 200px;
-}
-
-.accordion-header:hover {
-  color: #68246D;
-}
-
-.accordion-item.active .accordion-header {
-  color: #68246D; 
-}
-
-.arrow {
-  display: inline-block;
-  margin-right: 0.5rem;
-  transition: transform 0.3s;
-}
-
-.accordion-item.active .arrow {
-  transform: rotate(90deg);
-}
-
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  margin-left: 0.5rem;
-  line-height: 0.5rem;
-}
-
-.accordion-content li a {
-  display: block;
-  padding: 0.1rem 0;
-  text-decoration: none;
-  color: #002A41;
-  font-size: 0.5rem;
-}
-
-.accordion-content li a:hover {
-  text-decoration: underline;
-}
-
-.accordion-item.active .accordion-content {
-  max-height: 500px;
-}
-
-
-
-
-.session-card.social .time-label {
-  font-weight: 800;
-  font-size: 0.8rem;
-  color: #ffffff;
-  background: #ffffff;
-  border-radius: 8px;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  padding: 0.3rem;
+  min-height: 70px;
 }
 
-.programme-time:has(.session-card.social) .time-label {
-  background: #F8FAFC; 
-  color: #002A41;      
+.week-cell.coffee h3 {
+  margin: 0;
+  font-size: 0.95rem;
 }
 
-
-.session-card.opening { background-color: #68246D; color: #fff; border-left-color: #68246D; }
-.session-card.opening h3, .session-card.opening .speaker, .session-card.opening .room { color: #002A41; }
-
-.session-card.tbd {
-  opacity: 0.35;
-  filter: saturate(0.6);
+.week-grid::-webkit-scrollbar {
+  height: 6px;
 }
 
-.session-card.tbd:hover {
-  opacity: 0.55;
+.week-grid::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
 }
 
-.session-card.highlighted {
-  opacity: 1;
-  filter: saturate(1.25) brightness(1.05);
-  transform: scale(1.01);
-  z-index: 5;
-}
-
-.session-card.highlighted {
-  opacity: 1;
-  filter: saturate(1.25) brightness(1.05);
-  box-shadow: 0 6px 14px rgba(0,42,65,0.15);
-  transform: scale(1.01);
-  z-index: 5;
-}
-.session-card.keynote { background-color: #DFDBF5; border-left-color: #2E2278; }
-.session-card.meeting { background-color: #F5DBF2; border-left-color: #78206E; }
-.session-card.workshop { background-color: #D3E4F5; border-left-color: #194775; }
-.session-card.talk { background-color: #D1E5D2; border-left-color: #315933; }
-.session-card.session { background-color: #F3E5F5; border-left-color: #9C27B0; }
-.session-card.tutorial { background-color: #E6DDC0; border-left-color: #534721; }
-.session-card.poster { background-color: #CEBCBC; border-left-color: #7A5958; }
-.session-card.coffee { background-color: #F8FAFC; border-left-color: #F8FAFC; }
-.session-card.social { background-color: #F8FAFC; border-left-color: #F8FAFC; }
-
-.session-card .speaker { font-size: 0.4rem; color: #333; margin:0; }
-.session-card .room { font-size: 0.6rem; color: #444; margin:0; }
-
-.week-cell .session-card h3 a {
-  color: inherit !important;
-}
-.session-card.opening h3 a {
-  color: #ffffff !important;
-}
-
-.session-card.workshop h3 a,
-.session-card.talk h3 a,
-.session-card.session h3 a,
-.session-card.tutorial h3 a,
-.session-card.poster h3 a,
-
-.session-card.social h3 a {
-  color: #002A41 !important;
-}
-
-
-@media (max-width: 768px) {
-   .programme-sidebar {
-    display: none;
+@media (max-width: 900px) {
+  .week-grid {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
   }
 
-  .programme-main {
-    flex: 1 1 100%;
-    padding: 0 1rem;
-  }
-  
-  .programme-time {
-    display: grid;
-    grid-template-columns: 0.75fr 2.25fr 2.25fr;
-    gap: 0.5rem;
-    align-items: stretch; 
-padding: 0.5rem;
+  .week-header,
+  .week-row {
+    grid-template-columns: 70px repeat(5, minmax(220px, 1fr));
   }
 
-  .time-label,
-    .time-label {
-    text-align: center;
-    background: #002A41;
-    color: #fff;    
-    border-radius: 8px;
-     padding-left: 0.5rem; 
-    padding-right: 0.5rem;
-    padding-top: 0.5rem;  
-      padding-bottom: 0.5rem; 
-}
+  .week-day-header,
+  .week-time-header {
+    font-size: 0.75rem;
   }
-  .session-card {
+
+  .week-cell {
+    min-height: 40px;
+  }
+
+  .session-card h3 {
+    font-size: 0.65rem;
+  }
+}
+/* === LEGEND === */
+.programme-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.5rem 3%;
+  padding: 1rem 1.25rem;
+  background: #f8fafc;
+  border: 1px solid #e3e8ef;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+}
+
+/* Legend pills */
+.legend-item {
+  display: flex;
+  align-items: centre;
+  gap: 0.6rem;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #e3e8ef;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.legend-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.legend-item.active {
+  background: #002A41;
+  color: #fff;
+  border-color: #002A41;
+  font-weight: 700;
+}
+
+/* Colour square */
+.legend-colour {
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  border: 4px solid;
+  flex-shrink: 0;
+}
+
+.legend-item.keynote .legend-colour {
+  background-color: var(--keynote-bg);
+  border-color: var(--keynote-border);
+}
+
+.legend-item.workshop .legend-colour {
+  background-color: var(--workshop-bg);
+  border-color: var(--workshop-border);
+}
+
+.legend-item.talk .legend-colour {
+  background-color: var(--talk-bg);
+  border-color: var(--talk-border);
+}
+
+.legend-item.tutorial .legend-colour {
+  background-color: var(--tutorial-bg);
+  border-color: var(--tutorial-border);
+}
+
+.legend-item.poster .legend-colour {
+  background-color: var(--poster-bg);
+  border-color: var(--poster-border);
+}
+
+.legend-item.social .legend-colour {
+  background-color: var(--social-bg);
+  border-color: var(--social-border);
+}
+
+.legend-item.meeting .legend-colour {
+  background-color: var(--meeting-bg);
+  border-color: var(--meeting-border);
+}
+
+/* Title */
+.legend-title {
+  width: 100%;
+  text-align: centre;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #5f6c7b;
+  font-weight: 600;
+}
+
+
+
+
+:root {
+  --keynote-bg: #f1e6f4;
+  --keynote-border: #68246d;
+
+  --workshop-bg: #e3eff9;
+  --workshop-border: #2975c1;
+
+  --talk-bg: #e2f3ea;
+  --talk-border: #00a86b;
+
+  --tutorial-bg: #fff4cc;
+  --tutorial-border: #f5b800;
+
+  --poster-bg: #f8dada;
+  --poster-border: #dc3232;
+
+  --social-bg: #ffe8cc;
+  --social-border: #ff8c00;
+
+  --meeting-bg: #f8e4f0;
+  --meeting-border: #c85096;
+}
+
+
+
+@media (max-width: 900px) {
+
+ 
+  .programme-container {
+    display: none !important;
+  }
+
+ 
+  .mobile-programme-landing {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 0.5rem;
-  }
-
- .programme-day .programme-grid {
-    max-height: 0;             
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-  }
-
-  .programme-day.expanded .programme-grid {
-    max-height: 2000px;        
-  }
-  .day-toggle {
-    cursor: pointer;
-    display: flex;
+    justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
-    background: #f4f6f8;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
+    text-align: center;
+    height: 100vh;
+    background: linear-gradient(180deg, #f4f6f8, #ffffff);
+    padding: 2rem 2rem;
+    margin-top: 2rem;
+  }
+
+  .mobile-landing-inner h1 {
+    font-size: 2rem;
+    color: #002A41;
     margin-bottom: 0.5rem;
-     margin: 0 0 1rem 0; 
-  padding: 0.5rem 3%;  
+    font-weight: 700;
   }
 
-  .day-toggle .arrow {
+  .mobile-landing-inner .subtitle {
+    font-size: 1rem;
+    color: #5f6c7b;
+    margin-bottom: 2rem;
+  }
+
+  .mobile-landing-inner .btn-see-programme {
     display: inline-block;
-    margin-right: 0.5rem;
-    transition: transform 0.3s ease;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #68246D;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .programme-day.expanded .arrow {
-    transform: rotate(90deg);
+  .mobile-landing-inner .btn-see-programme:hover {
+    background-color: #50205a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   }
-
-  .programme-day.expanded .arrow {
-    transform: rotate(90deg);
-  }
- .programme-day .programme-grid {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-  }
-  .programme-day.expanded .programme-grid {
-    max-height: 2000px;        
-  }
-}
 
 }
 
 
-.session-card.keynote { background-color: #F5DBF2; border-left-color: #78206E; }
-.session-card.workshop { background-color: #D3E4F5; border-left-color: #194775; }
-.session-card.talk { background-color: #D1E5D2; border-left-color: #315933; }
-.session-card.session { background-color: #F3E5F5; border-left-color: #9C27B0; }
-.session-card.tutorial { background-color: #E6DDC0; border-left-color: #534721; }
-.session-card.poster { background-color: #CEBCBC; border-left-color: #7A5958; }
-.session-card.coffee { background-color: #F8FAFC; border-left-color: #F8FAFC; }
-.session-card.social { background-color: #F8FAFC; border-left-color: #F8FAFC; }
-
-.session-card .speaker { font-size: 0.4rem; color: #333; margin:0; }
-.session-card .room { font-size: 0.6rem; color: #444; margin:0; }
-
-.week-cell .session-card h3 a {
-  color: inherit !important;
-}
-.session-card.opening h3 a {
-  color: #ffffff !important;
-}
-
-.session-card.workshop h3 a,
-.session-card.talk h3 a,
-.session-card.session h3 a,
-.session-card.tutorial h3 a,
-.session-card.poster h3 a,
-
-.session-card.social h3 a {
-  color: #002A41 !important;
-}
-
-
-@media (min-width: 769px) {
-  .day-toggle .arrow {
+@media (min-width: 901px) {
+  .mobile-programme-landing {
     display: none;
   }
-    .programme-day {
-    max-height: none; 
-  }
 }
+
+
+
 </style>
 
-<script>
-document.querySelectorAll('.accordion-header').forEach(header => {
-  header.addEventListener('click', () => {
-    const item = header.parentElement;
-    item.classList.toggle('active');
-  });
-});
-</script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
-  function initAccordion() {
-    document.querySelectorAll('.day-toggle').forEach(header => {
-      // Evitar añadir múltiples veces
-      header.removeEventListener('click', toggleDay);
-      header.addEventListener('click', toggleDay);
+  const legendItems = document.querySelectorAll(".legend-item");
+  const sessions = document.querySelectorAll(".session-card");
+
+  let activeCategory = null;
+
+  function highlightCategory(category) {
+    sessions.forEach(session => {
+      if (session.classList.contains(category)) {
+        session.classList.add("highlighted");
+        session.classList.remove("dimmed");
+      } else {
+        session.classList.add("dimmed");
+        session.classList.remove("highlighted");
+      }
     });
   }
 
-  function toggleDay(event) {
-    const daySection = event.currentTarget.closest('.programme-day');
-    daySection.classList.toggle('expanded');
+  function resetHighlight() {
+    sessions.forEach(session => {
+      session.classList.remove("highlighted", "dimmed");
+    });
   }
 
-  initAccordion();
+document.addEventListener("click", function (event) {
+
+
+  if (!activeCategory) return;
+
+  const clickedInsideLegend = event.target.closest(".legend-item");
+
+
+  if (!clickedInsideLegend) {
+    activeCategory = null;
+
+    legendItems.forEach(i => i.classList.remove("active"));
+    resetHighlight();
+  }
 
 });
+  legendItems.forEach(item => {
+
+    const category = item.dataset.category;
+
+
+    item.addEventListener("mouseenter", () => {
+      if (!activeCategory) highlightCategory(category);
+    });
+
+    item.addEventListener("mouseleave", () => {
+      if (!activeCategory) resetHighlight();
+    });
+
+
+    item.addEventListener("click", () => {
+
+      if (activeCategory === category) {
+        // Clicking again resets
+        activeCategory = null;
+        item.classList.remove("active");
+        resetHighlight();
+      } else {
+        activeCategory = category;
+
+        legendItems.forEach(i => i.classList.remove("active"));
+        item.classList.add("active");
+
+        highlightCategory(category);
+      }
+
+    });
+
+  });
+
+});
+
+
 </script>
