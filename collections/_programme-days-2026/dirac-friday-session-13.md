@@ -27,7 +27,7 @@ facilitator_links:
 
 #SPEAKERS
 # Comma-separated list of the speakers of the session
-speaker: "Luke Davis (UKRI), Luigi del Debbio (Edinburgh), Sarah Harris (Sheffield), Jonathan Hays (QMUL), Eugene Lim (KCL), Crispin Miller (Glasgow), Katherine Rooke (STFC), Matthieu Schaller (Leiden), Andrea Townsend-Nicholson (UCL), Mark Wilkinson (DiRAC), Scott Woodley (UCL)"
+speaker: "Luke Davis (UKRI), Luigi del Debbio (Edinburgh), Sarah Harris (Sheffield), Jonathan Hays (QMUL), Eugene Lim (KCL), Crispin Miller (Glasgow), Karina Rodriguez Echavarria (Brighton), Katherine Rooke (STFC), Matthieu Schaller (Leiden), Andrea Townsend-Nicholson (UCL), Mark Wilkinson (DiRAC), Scott Woodley (UCL)"
 # Speakers photos (must match order of names above). 
 speaker_photos:
  - ""
@@ -39,6 +39,7 @@ speaker_links:
   - "https://www.seresearch.qmul.ac.uk/ceap/people/jhays/"
   - "https://www.kcl.ac.uk/people/eugene-lim"
   - "https://www.crukscotlandinstitute.ac.uk/cruk-si-research/cruk-si-research-groups/crispin-miller-computational-biology.html"
+  - https://research.brighton.ac.uk/en/persons/karina-rodriguez-echavarria/
   - "https://www.linkedin.com/in/katherine-rooke-049b74a0/"
   - "https://home.strw.leidenuniv.nl/~schaller/"
   - "https://profiles.ucl.ac.uk/1732-andrea-townsendnicholson"
