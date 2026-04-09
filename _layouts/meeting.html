@@ -34,45 +34,79 @@ layout: default
 
     <!-- Sidebar lateral -->
   <aside class="session-sidebar fade-in">
-  
+ {% assign day_map = 
+  "Monday:15 Jun,Tuesday:16 Jun,Wednesday:17 Jun,Thursday:18 Jun,Friday:19 Jun" 
+  | split: "," %}
+
+{% comment %} Helper to convert day -> full date {% endcomment %}
+{% assign day_full = "" %}
 
 {% if page.start_time_3 %}
 
+  {% for i in (1..3) %}
+    {% assign day_key = "day_" | append: i %}
+    {% assign start_key = "start_time_" | append: i %}
+    {% assign end_key = "end_time_" | append: i %}
 
-  <div class="sidebar-section">
-    <h3>Session Part 1</h3>
-    <p>{{ page.day_1 }}, {{ page.start_time_1 }} - {{ page.end_time_1 }}</p>
-  </div>
+    {% assign day_value = page[day_key] %}
+    {% assign start_value = page[start_key] %}
+    {% assign end_value = page[end_key] %}
 
-  <div class="sidebar-section">
-    <h3>Session Part 2</h3>
-    <p>{{ page.day_2 }}, {{ page.start_time_2 }} - {{ page.end_time_2 }}</p>
-  </div>
+    {% assign day_full = day_value %}
 
-  <div class="sidebar-section">
-    <h3>Session Part 3</h3>
-    <p>{{ page.day_3 }}, {{ page.start_time_3 }} - {{ page.end_time_3 }}</p>
-  </div>
+    {% for d in day_map %}
+      {% assign parts = d | split: ":" %}
+      {% if parts[0] == day_value %}
+        {% assign day_full = parts[0] | append: " " | append: parts[1] %}
+      {% endif %}
+    {% endfor %}
+
+    <div class="sidebar-section">
+      <h3>Session Part {{ i }}</h3>
+      <p>{{ day_full }}, {{ start_value }} - {{ end_value }}</p>
+    </div>
+  {% endfor %}
 
 {% elsif page.start_time_2 %}
 
+  {% for i in (1..2) %}
+    {% assign day_key = "day_" | append: i %}
+    {% assign start_key = "start_time_" | append: i %}
+    {% assign end_key = "end_time_" | append: i %}
 
-  <div class="sidebar-section">
-    <h3>Session Part 1</h3>
-    <p>{{ page.day_1 }}, {{ page.start_time_1 }} - {{ page.end_time_1 }}</p>
-  </div>
+    {% assign day_value = page[day_key] %}
+    {% assign start_value = page[start_key] %}
+    {% assign end_value = page[end_key] %}
 
-  <div class="sidebar-section">
-    <h3>Session Part 2</h3>
-    <p>{{ page.day_2 }}, {{ page.start_time_2 }} - {{ page.end_time_2 }}</p>
-  </div>
+    {% assign day_full = day_value %}
+
+    {% for d in day_map %}
+      {% assign parts = d | split: ":" %}
+      {% if parts[0] == day_value %}
+        {% assign day_full = parts[0] | append: " " | append: parts[1] %}
+      {% endif %}
+    {% endfor %}
+
+    <div class="sidebar-section">
+      <h3>Session Part {{ i }}</h3>
+      <p>{{ day_full }}, {{ start_value }} - {{ end_value }}</p>
+    </div>
+  {% endfor %}
 
 {% else %}
 
+  {% assign day_full = page.day %}
+
+  {% for d in day_map %}
+    {% assign parts = d | split: ":" %}
+    {% if parts[0] == page.day %}
+      {% assign day_full = parts[0] | append: " " | append: parts[1] %}
+    {% endif %}
+  {% endfor %}
 
   <div class="sidebar-section">
     <h3>Day & Time</h3>
-    <p>{{ page.day }}, {{ page.start_time }} - {{ page.end_time}}</p>
+    <p>{{ day_full }}, {{ page.start_time }} - {{ page.end_time }}</p>
   </div>
 
 {% endif %}

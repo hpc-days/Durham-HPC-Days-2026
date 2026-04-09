@@ -8,7 +8,9 @@ classes: [full-programme]
 {% assign sessions = site["programme-days-2026"] | default: empty %}
 {% assign sessions = sessions | sort: "start_time" %}
 {% assign tracks = "A,B,C" | split: "," %}
-{% assign days_order = "Monday,Tuesday,Wednesday,Thursday,Friday" | split: "," %}
+{% assign days_order = 
+  "Monday 15 June,Tuesday 16 June,Wednesday 17 June,Thursday 18 June,Friday 19 June" 
+  | split: "," %}
 
 
 
@@ -19,11 +21,10 @@ classes: [full-programme]
     <ul class="accordion">
       {% for current_day in days_order %}
 
-        {% assign day_sessions = sessions | where: "day", current_day %}
-        {%- comment -%}
-          If you want fixed events to appear across *all* days, remove the where filter below.
-        {%- endcomment -%}
-        {% assign fixed_events = site.data.fixed_events | where: "day", current_day %}
+      {% assign day_name = current_day | split: " " | first %}
+
+{% assign day_sessions = sessions | where: "day", day_name %}
+{% assign fixed_events = site.data.fixed_events | where: "day", day_name %}
         {% assign combined = day_sessions | concat: fixed_events %}
         {% assign day_sessions = combined | sort: "start_time" %}
 
@@ -50,9 +51,10 @@ classes: [full-programme]
   <!-- Main content -->
   <main class="programme-main">
   {% for current_day in days_order %}
-    {% assign day_sessions = sessions | where: "day", current_day %}
+{% assign day_name = current_day | split: " " | first %}
 
-    {% assign fixed_events = site.data.fixed_events | where: "day", current_day %}
+{% assign day_sessions = sessions | where: "day", day_name %}
+{% assign fixed_events = site.data.fixed_events | where: "day", day_name %}
     {% assign combined = day_sessions | concat: fixed_events %}
     {% assign day_sessions = combined | sort: "start_time" %}
 
@@ -336,7 +338,7 @@ classes: [full-programme]
 }
 
 .session-card h3 {
-  font-size: 1.15rem;
+  font-size: 1rem;
   color: #002A41;
   margin-bottom: 0rem;
    margin-top: 0rem;
@@ -387,7 +389,7 @@ font-size: 0.6rem;
 }
 
 .session-card.full-width h3 {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #002A41;
   margin-bottom: 0rem;
    margin-top: 0.1rem;
@@ -848,6 +850,21 @@ padding: 0.5rem;
   border-left: 4px solid transparent; 
 }
 
+@media (max-width: 768px) {
+
+  .day-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem !important;
+    background: #f4f6f8;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    margin: 0 0 1rem 0; 
+    padding: 0.5rem 3%;  
+  }
+}
 
 </style>
 

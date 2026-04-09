@@ -12,7 +12,9 @@ classes: [full-programme]
 
 
 {% assign tracks = "A,B,C,D" | split: "," %}
-{% assign days_order = "Monday,Tuesday,Wednesday,Thursday,Friday" | split: "," %}
+{% assign days_order = 
+  "Monday 15 June,Tuesday 16 June,Wednesday 17 June,Thursday 18 June,Friday 19 June" 
+  | split: "," %}
 {% assign time_slots = all_sessions | map: "start_time" | uniq | sort %}
 
 {% assign fixed_sessions = 
@@ -59,9 +61,9 @@ classes: [full-programme]
   <!-- Header -->
   <div class="week-header">
     <div class="week-time-header">Time</div>
-    {% for day in days_order %}
-      <div class="week-day-header">{{ day }}</div>
-    {% endfor %}
+{% for day in days_order %}
+  <div class="week-day-header">{{ day }}</div>
+{% endfor %}
   </div>
 
   <!-- Rows by time -->
@@ -78,15 +80,20 @@ classes: [full-programme]
       {% endif %}
     {% endfor %}
 
-    {%- assign has_content = false -%}
-    {% for day in days_order %}
-      {% assign cell_sessions = all_sessions
-        | where: "day", day
-        | where: "start_time", time %}
-      {% if cell_sessions.size > 0 %}
-        {% assign has_content = true %}
-      {% endif %}
-    {% endfor %}
+{%- assign has_content = false -%}
+{% for day in days_order %}
+
+  {% assign day_name = day | split: " " | first %}
+
+  {% assign cell_sessions = all_sessions
+    | where: "day", day_name
+    | where: "start_time", time %}
+
+  {% if cell_sessions.size > 0 %}
+    {% assign has_content = true %}
+  {% endif %}
+
+{% endfor %}
 
     {% if has_content or is_fixed %}
 
@@ -105,24 +112,27 @@ classes: [full-programme]
 
       {% else %}
 
-        {% for day in days_order %}
-          {% assign cell_sessions = all_sessions
-            | where: "day", day
-            | where: "start_time", time %}
+{% for day in days_order %}
 
-          <div class="week-cell">
+  {% assign day_name = day | split: " " | first %}
+
+  {% assign cell_sessions = all_sessions
+    | where: "day", day_name
+    | where: "start_time", time %}
+
+  <div class="week-cell">
 {% if cell_sessions.size == 0 %}
   <div class="week-cell empty-cell"></div>
 {% else %}
-              {% assign cell_sessions = cell_sessions | sort: "track" %}
+      {% assign cell_sessions = cell_sessions | sort: "track" %}
 
-              {% for s in cell_sessions %}
-              <div class="session-card {{ s.category | downcase }}">
-                <h3>
-                  <a href="{{ s.url | relative_url }}">
-                    {{ s.title }}
-                  </a>
-                </h3>
+      {% for s in cell_sessions %}
+      <div class="session-card {{ s.category | downcase }}">
+        <h3>
+          <a href="{{ s.url | relative_url }}">
+            {{ s.title }}
+          </a>
+        </h3>
 
                 {% if s.lead or s.instructor or s.facilitator %}
                 <p class="speaker">
