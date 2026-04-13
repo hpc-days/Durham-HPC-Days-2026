@@ -100,7 +100,10 @@ supported_link: ""
 # DESCRIPTION
 
 # Full session description (please use <br> to add a new paragraph). Add requirements if relevant. 
-description: ""
+description: "This session is the main home for work at the intersection of scientific research and AI during Durham HPC Days, bringing together methods, applications and infrastructure focused on using HPC to power modern AI in science. We invite contributions that use machine learning, deep learning or data‑driven methods to accelerate or augment scientific discovery on CPUs, GPUs and emerging accelerators, including both mature results and work‑in‑progress studies. <br>
+
+We welcome talks from all domains – e.g. astrophysics and cosmology, climate and weather, materials and chemistry, life sciences, engineering, finance and the social sciences; as well as cross‑cutting work on scientific machine learning, surrogate models, AI‑guided simulation and experiment design, scalable training and inference, workflow orchestration, and robustness and trustworthiness of AI in scientific settings. We strongly encourage submissions from all career stages (from students and early‑career researchers to senior academics, RSEs and industry partners) and particularly from colleagues in under‑represented groups; both technical deep‑dives and application‑driven case studies are welcome."
+   
    
 
 requirements: ""
