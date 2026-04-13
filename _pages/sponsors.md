@@ -165,6 +165,12 @@ permalink: /sponsors/
         <img src="https://spectralogic.com/wp-content/uploads/SpectraLogo-2023.webp">
       </div>
        </a>
+
+	   <a href="https://www.peakaio.com/">
+      <div class="sponsor-logo">
+        <img src="https://www.peakaio.com/images/logos/peakaio-logo-org.png">
+      </div>
+       </a>
    
 
 
