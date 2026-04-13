@@ -100,12 +100,27 @@ supported_link: ""
 # DESCRIPTION
 
 # Full session description (please use <br> to add a new paragraph). Add requirements if relevant. 
-description: "This session is the main home for work at the intersection of scientific research and AI during Durham HPC Days, bringing together methods, applications and infrastructure focused on using HPC to power modern AI in science. We invite contributions that use machine learning, deep learning or data‑driven methods to accelerate or augment scientific discovery on CPUs, GPUs and emerging accelerators, including both mature results and work‑in‑progress studies. <br>
+This session serves as the main forum for work at the intersection of scientific research and Artificial Intelligence during Durham HPC Days, bringing together methods, applications, and infrastructure focused on using high-performance computing (HPC) to enable modern AI in science.
 
-We welcome talks from all domains – e.g. astrophysics and cosmology, climate and weather, materials and chemistry, life sciences, engineering, finance and the social sciences; as well as cross‑cutting work on scientific machine learning, surrogate models, AI‑guided simulation and experiment design, scalable training and inference, workflow orchestration, and robustness and trustworthiness of AI in scientific settings. We strongly encourage submissions from all career stages (from students and early‑career researchers to senior academics, RSEs and industry partners) and particularly from colleagues in under‑represented groups; both technical deep‑dives and application‑driven case studies are welcome."
-   
+We highlight contributions that use machine learning, deep learning, and data-driven approaches to accelerate or augment scientific discovery on CPUs, GPUs, and emerging accelerators, including both mature results and work-in-progress studies.
 
-requirements: ""
+The session spans a wide range of domains, including astrophysics and cosmology, climate and weather, materials and chemistry, life sciences, engineering, finance, and the social sciences. We also welcome cross-cutting work on scientific machine learning, surrogate models, AI-guided simulation and experiment design, scalable training and inference, workflow orchestration, and the robustness and trustworthiness of AI in scientific settings.
+
+We strongly encourage participation from all career stages (from students and early-career researchers to senior academics, Research Software Engineers, and industry partners), and particularly from colleagues in under-represented groups. Both technical deep-dives and application-driven case studies are welcome.
+
+## Call for contributions
+
+As part of this session, we invite short talks from researchers and practitioners working at the intersection of AI and HPC.
+
+To propose a talk or express interest in contributing, please submit your details via the following form:
+https://docs.google.com/forms/d/e/1FAIpQLSfkv-hJi23ZUvMAgCz8UBLDlhzfdSfTuWwnj6NEMMog82_x9Q/viewform
+
+Deadline for submission: April 10, 2026
+Outcomes communicated by April 16, 2026.
+
+(Note that you need to register for the HPC Days - registration deadline 20.4.2026 - to attend the workshop. )
+Register here: 
+https://hpc-days.github.io/Durham-HPC-Days-2026/register/
 
 
 # -------------------------
