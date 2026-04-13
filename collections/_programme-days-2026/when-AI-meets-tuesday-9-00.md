@@ -112,10 +112,10 @@ As part of this session, we invite short talks from researchers and practitioner
 <br>
 To propose a talk or express interest in contributing, please submit your details via the following form:
   
-https://docs.google.com/forms/d/e/1FAIpQLSfkv-hJi23ZUvMAgCz8UBLDlhzfdSfTuWwnj6NEMMog82_x9Q/viewform
+[https://docs.google.com/forms/d/e/1FAIpQLSfkv-hJi23ZUvMAgCz8UBLDlhzfdSfTuWwnj6NEMMog82_x9Q/viewform](https://forms.gle/ADJyGB7GGvx3yeVV7)
 <br>
-Deadline for submission: April 10, 2026
-Outcomes communicated by April 16, 2026.
+Deadline for submission: May 10, 2026
+Outcomes communicated by May 16, 2026.
 <br>
 (Note that you need to register for the HPC Days - registration deadline 20.4.2026 - to attend the workshop. )<br>
 Register here: <br>
