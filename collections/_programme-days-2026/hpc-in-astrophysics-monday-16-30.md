@@ -27,7 +27,7 @@ facilitator_links:
 
 #SPEAKERS
 # Comma-separated list of the speakers of the session
-speaker: "Sarah Johnston, Abouzied Nasar, Will Roper, Zhen Xiang, Romeel Dave, Kyle Oman, Britton Smith"
+speaker: "Sarah Johnston, Abouzied Nasar, Will Roper, Zhen Xiang, Romeel Dave, Britton Smith, Kyle Oman, Dmitry Nikolaenko"
 # Speakers photos (must match order of names above).
 speaker_photos:
   - "assets/images/profile/sarahjohnston.png"
@@ -35,8 +35,9 @@ speaker_photos:
   - "assets/images/profile/willjroper.jpg"
   - "assets/images/generic.jpg"
   - "assets/images/profile/rdave.jpg"
-  - "assets/images/profile/kyleoman.jpg"
   - "assets/images/profile/brittonsmith.jpg"
+  - "assets/images/profile/kyleoman.jpg"
+  - "assets/images/profile/dnikolaenko.jpg"
 # Speakers profile links (must match order of names above)
 speaker_links:
   - "https://sarahjohnston-astronomy.co.uk/"
@@ -44,8 +45,9 @@ speaker_links:
   - "https://willjroper.github.io/about.html"
   - "https://www.ph.ed.ac.uk/people/zhen-xiang"
   - "https://www.ph.ed.ac.uk/people/romeel-dave"
-  - "https://www.durham.ac.uk/staff/kyle-a-oman/"
   - "https://www.ph.ed.ac.uk/people/britton-smith"
+  - "https://www.durham.ac.uk/staff/kyle-a-oman/"
+  - "https://www.linkedin.com/in/dmitrynikolaenko/"
 
 
 
@@ -160,6 +162,17 @@ generation of astrophysical simulations.
 <h3> High-level tools for galaxy simulations analysis • Kyle Oman</h3>
 
 Galaxy formation simulations produce large outputs with information-rich metadata catalogues. Some analysis tasks can be completed with the metadata alone, others require small, sparsely distributed subsamples of the full outputs, while others still require full datasets that may not fit in memory. Such diverse access patterns pose challenges for data storage and software tools for data access. I will give an overview of how we have addressed some of these in the swiftsimio and swiftgalaxy analysis packages, and highlight others that remain.
+
+
+<h3>Peano and load balancing • Dmitry Nikolaenko </h3>
+
+Peano is an open-source framework for dynamically adaptive Cartesian meshes derived from spacetrees. It ties mesh traversal to mesh storage through space-filling curves (SFC), enabling scalable simulations on shared- and distributed-memory supercomputers. The framework underpins several scientific codes, including ExaHyPE 2 (hyperbolic PDE solvers) and Swift 2 (particle methods), and targets modern HPC platforms ranging from multicore workstations to GPU-accelerated supercomputer nodes.
+
+At the heart of Peano lies a hierarchical spacetree that is constructed level by level during the simulation set-up. Each node of this tree represents a spatial cell; leaves carry the actual computational work. As the mesh grows, the distribution of leaves across MPI ranks and CPU threads becomes uneven, leading to idle processors and wasted wall-clock time. Achieving a balanced partition is therefore critical for strong scaling.
+
+Peano's load balancing toolbox provides a suite of strategies — from simple spread-out schemes to recursive bipartition and cascade combinators — each triggering splitting calls at the right moment to redistribute subtrees across compute resources. A key challenge is that splitting decisions must be made online, without knowledge of the final mesh structure, while the cost of moving data grows with the current tree size.
+
+In this talk we present an offline load balancing approach that transforms this online problem: the mesh is first constructed without any decomposition and checkpointed; an offline analysis tool then inspects the complete spacetree, derives an optimal multi-level splitting sequence, and encodes it as a hardcoded strategy for a warm restart. We describe the Python API that automates this workflow — including leaf distribution, bottom-up topology propagation, and a planned hierarchical optimisation stage that minimises splitting cost whilst preserving load balance — and share lessons learned from applying it to black-hole simulations with the CCZ4 solver in ExaHyPE 2.
 "
 
 
