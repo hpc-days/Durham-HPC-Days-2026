@@ -16,7 +16,7 @@ title: "CoSeC"
 
 #FACILITATOR
 # Comma-separated list of the facilitators of the session
-facilitator: "Damian Jones"
+facilitator: "Wei Wang"
 # Facilitators' photos (must match order of names above). 
 facilitator_photos:
   - "assets/images/generic.jpg"
@@ -27,7 +27,7 @@ facilitator_links:
 
 #SPEAKERS
 # Comma-separated list of the speakers of the session
-speaker: ""
+speaker: "Stefano Rolfo, Myank Kumar, "
 # Speakers' photos (must match order of names above). 
 speaker_photos:
   - "assets/images/generic.jpg"
