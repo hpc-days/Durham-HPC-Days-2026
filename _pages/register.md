@@ -258,7 +258,7 @@ ul.checklist li::before {
 
 <section class="section-register">
   <div class="card-highlight">
-    <h2>Registration closes on 20 April</h2>
+    <h2>Registration <s>closes 20 April</s> <span style="color:red;"><strong>EXTENDED to 4th May!</strong></span> </h2>
     <p>
       Secure your place at <strong>Durham HPC Days 2026, from the 15th to the 19th of June</strong>, a leading UK event
       in High Performance Computing, hosted at Durham University.
