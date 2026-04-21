@@ -70,7 +70,7 @@ plugins:
 
 author:
   name   : "First Lastname"
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/eva-blue-banner.png"
   bio    : "My awesome biography constrained to a sentence or two goes here."
   links:
     - label: "Website"
@@ -132,6 +132,9 @@ collections:
   tutorials:
     output: true
     permalink: /programme-tutorials/:name/
+  workshops:
+    output: true
+    permalink: /programme-workshops/:name/
 
 category_archive:
   type: liquid

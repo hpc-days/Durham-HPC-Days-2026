@@ -101,22 +101,19 @@ requirements: ""
 layout: tutorial
 category: "Tutorial"
 
-day: "Wednesday"
+day: "Thursday"
 track: "A"
 
 start_time: "09:00"
 end_time: "10:30"
 
 
-day_1: "Tuesday"
-start_time_1: "16:30"
-end_time_1: "18:00"
+day_1: "Thursday"
+start_time_1: "09:00"
+end_time_1: "10:30"
 
-day_2: "Wednesday"
-start_time_2: "09:00"
-end_time_2: "10:30"
 
-room: "Mountjoy Centre"
+room: "VisLab"
 
 
 

@@ -129,7 +129,7 @@ end_time_1: "10:30"
 
 
 
-room: "Mountjoy Centre"
+room: "RH007"
 
 
 

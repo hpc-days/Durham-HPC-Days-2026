@@ -1,8 +1,8 @@
 ---
-title: "KEYNOTE TBD"
+title: "Keynote"
 
 
-lead: "Alice-Agnes Gabriel"
+lead: "Melyssa"
 lead_photos:
   - "https://shareing-dri.github.io/assets/profilepics/generic.jpg"
 lead_links: "https://www.alicegabriel.com/"

@@ -18,8 +18,8 @@ instructor: "Georg Hager, Thomas Gruber"
 
 # INSTRUCTORS photos (must match order of names above). 
 instructor_photos:
-  - /assets/images/generic.jpg
-  - /assets/images/generic.jpg
+  - "https://hpc.fau.de/files/2023/08/georg-hager-240x320.png"
+  - "https://hpc.fau.de/files/2021/03/thomas-gruber_2020.jpg"
   
 # Instructor profile links (must match order of names above)
 instructor_links:
@@ -92,7 +92,7 @@ description: "This course covers performance engineering approaches on the compu
 Even application developers who are fluent in OpenMP and MPI often lack a good grasp of how much performance could at best be achieved by their code. This is because parallelism takes us only half the way to good performance. Even worse, slow serial code tends to scale very well, hiding the fact that resources are wasted. This course conveys the required knowledge to develop a thorough understanding of the interactions between software and hardware. This process must start at the core, socket, and node level, where the code gets executed that does the actual computational work. We introduce the basic architectural features and bottlenecks of modern processors and compute nodes. Pipelining, SIMD, superscalarity, caches, memory interfaces, ccNUMA, etc., are covered. A cornerstone of node-level performance analysis is the Roofline model, which is introduced in due detail and applied to various examples from computational science. We also show how simple software tools can be used to acquire knowledge about the system, run code in a reproducible way, and validate hypotheses about resource consumption. Finally, once the architectural requirements of a code are understood and correlated with performance measurements, the potential benefit of code changes can often be predicted, replacing hope-for-the-best optimizations by a scientific process"
    
 
-requirements: ""
+requirements: "Basic understanding of C/C++/Fortran and basic knowledge of OpenMP parallelisation"
 
 
 # -------------------------
@@ -124,7 +124,7 @@ start_time_2: "13:00"
 end_time_2: "14:30"
 
 
-room: "Mountjoy Centre"
+room: "MCS0001"
 
 
 

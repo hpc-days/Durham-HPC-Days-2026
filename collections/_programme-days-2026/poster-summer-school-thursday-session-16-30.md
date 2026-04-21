@@ -4,7 +4,7 @@ day: "Friday"
 track: "C"
 start_time: "13:00"
 end_time: "14:30"
-room: "Mountjoy Centre"
+room: "MCS"
 layout: session
 category: "Poster"
 description: "Participants of the summer school present their poster drafts"

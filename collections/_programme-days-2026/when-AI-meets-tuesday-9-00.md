@@ -1,6 +1,6 @@
 ---
 # ============================================================
-# WORKSHOP
+# TALKS
 # Please complete all required fields before submitting a PR.
 # ============================================================
 
@@ -11,18 +11,18 @@
 
 # Full TITLE of the session/tutorial
 title: "Science & AI"
-
+# Description
 
 
 #FACILITATOR
 # Comma-separated list of the leads of the session
-lead: "Fawada Qaiser, Jeyan Thiyagalingam"
+facilitator: "Fawada Qaiser, Jeyan Thiyagalingam"
 # Leads photos (must match order of names above). 
-lead_photos:
+facilitator_photos:
   - "assets/images/generic.jpg"
   - "assets/images/generic.jpg"
 # Leads profile links (must match order of names above)
-lead_links:
+facilitator_links:
   - ""
 
 
@@ -100,11 +100,22 @@ supported_link: ""
 # DESCRIPTION
 
 # Full session description (please use <br> to add a new paragraph). Add requirements if relevant. 
-description: ""
-   
+description: "This session serves as the main forum for work at the intersection of scientific research and Artificial Intelligence during Durham HPC Days, bringing together methods, applications, and infrastructure focused on using high-performance computing (HPC) to enable modern AI in science.<br><br>
 
-requirements: ""
-
+We highlight contributions that use machine learning, deep learning, and data-driven approaches to accelerate or augment scientific discovery on CPUs, GPUs, and emerging accelerators, including both mature results and work-in-progress studies.
+<br><br>
+The session spans a wide range of domains, including astrophysics and cosmology, climate and weather, materials and chemistry, life sciences, engineering, finance, and the social sciences. We also welcome cross-cutting work on scientific machine learning, surrogate models, AI-guided simulation and experiment design, scalable training and inference, workflow orchestration, and the robustness and trustworthiness of AI in scientific settings.
+<br><br>
+We strongly encourage participation from all career stages (from students and early-career researchers to senior academics, Research Software Engineers, and industry partners), and particularly from colleagues in under-represented groups. Both technical deep-dives and application-driven case studies are welcome.
+<br><br>
+As part of this session, we invite short talks from researchers and practitioners working at the intersection of AI and HPC.
+<br><br>
+To propose a talk or express interest in contributing, please submit your details via the following form: https://docs.google.com/forms/d/e/1FAIpQLSeHOmlFKnq88BODiBWNrO4eVCz9oaEiJgnKsUTtzdPz_CJGGg/viewform
+<br><br>
+- Deadline for submission: May 10, 2026<br>
+- Outcomes communicated by May 16, 2026.<br>
+<br>
+(Note that you need to register for the HPC Days - registration deadline 20.4.2026 - to attend the workshop. <a href='https://hpc-days.github.io/Durham-HPC-Days-2026/register/'> Register here</a>)"
 
 # -------------------------
 # SCHEDULING INFORMATION - PLEASE DO NOT TOUCH THIS PART
@@ -112,8 +123,8 @@ requirements: ""
 
 
 
-layout: workshop
-category: "workshop"
+layout: talk
+category: "talk"
 
 
 day: "Tuesday"
@@ -133,7 +144,7 @@ end_time_2: "14:30"
 
 
 
-room: "Mountjoy Centre"
+room: "MJC2004"
 
 
 

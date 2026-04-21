@@ -1,14 +1,20 @@
 main:
   - title: "Register"
     url: /register/
-  - title: "Call for Sessions"
-    url: /call-for-sessions/
-  - title: "Call for Talks"
-    url: /call-for-talks/
+  - title: "Programme"
+    url: /programme-week-2026/
   - title: "Tutorials"
     url: /tutorials/
-  - title: "Programme"
-    url: /programme-hpcdays-2026/
+  - title: "Workshops"
+    url: /workshops/
+  - title: "Talks"
+    url: /talks/
+  - title: "Poster Session"
+    url: /posters/
+  - title: "Socials"
+    url: /socials/
+  - title: "Find your room"
+    url: /rooms/
   - title: "Sponsors"
     url: /sponsors/
   - title: "Past Durham HPC Days"

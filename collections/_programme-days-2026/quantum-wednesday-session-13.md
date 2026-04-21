@@ -122,16 +122,15 @@ start_time: "13:00"
 end_time: "14:30"
 
 day_1: "Wednesday"
-start_time_1: "13:00"
-end_time_1: "14:30"
+start_time_1: "09:00"
+end_time_1: "10:30"
 
-day_2: "Thursday"
-start_time_2: "09:00"
-end_time_2: "10:30"
+day_2: "Wednesday"
+start_time_2: "13:00"
+end_time_2: "14:30"
 
 
-
-room: "Mountjoy Centre"
+room: "MJC2006"
 
 
 

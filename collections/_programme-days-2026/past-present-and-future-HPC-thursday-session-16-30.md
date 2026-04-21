@@ -133,7 +133,7 @@ end_time_1: "18:00"
 
 
 
-room: "Mountjoy Centre"
+room: "MCS2068"
 
 
 

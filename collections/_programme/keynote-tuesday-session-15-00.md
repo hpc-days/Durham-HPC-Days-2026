@@ -1,5 +1,5 @@
 ---
-title: "KEYNOTE TBD"
+title: "Keynote"
 
 
 lead: "Alice-Agnes Gabriel"

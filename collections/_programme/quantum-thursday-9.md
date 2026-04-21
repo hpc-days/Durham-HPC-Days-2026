@@ -116,7 +116,7 @@ layout: talk
 category: "talk"
 
 
-day: "Thursday"
+day: "Wednesday"
 track: "A"
 start_time: "09:00"
 end_time: "10:30"

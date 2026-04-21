@@ -10,19 +10,27 @@
 # SCHEDULING INFORMATION - COMPLETE INFORMATION
 
 # Full TITLE of the session/tutorial
-title: "RSE leads"
+title: "RSE Leaders & Aspiring Leaders Meeting: Policy & Funding"
 
 
 
 #LEADS
 # Comma-separated list of the leads of the session
-lead: "Samantha Finnigan"
-# Leads photos (must match order of names above). 
+lead: "Samantha Finnigan, Marion Weinzierl, Elena Breitmoser, Michael Donnay, Twin Karmakharm"
+# Leads photos (must match order of names above).
 lead_photos:
-  - "assets/images/generic.jpg"
+  - "assets/images/rse-leaders/samantha-finnigan.jpg"
+  - "assets/images/rse-leaders/marion-weinzierl.jpg"
+  - "assets/images/rse-leaders/elena-breitmoser.jpg"
+  - "assets/images/rse-leaders/michael-donnay.jpg"
+  - "assets/images/rse-leaders/twin-karmakharm.jpg"
 # Leads profile links (must match order of names above)
 lead_links:
-  - ""
+  - "https://www.durham.ac.uk/staff/samantha-finnigan/"
+  - "https://iccs.cam.ac.uk/about-us/our-team/about-marion-weinzierl"
+  - "https://www.epcc.ed.ac.uk/about-us/our-team/dr-elena-breitmoser"
+  - "https://www.southampton.ac.uk/people/66cq5l/mr-michael-donnay"
+  - "https://rse.shef.ac.uk/contact/twin-karmakharm/"
 
 
 #CONTRIBUTORS
@@ -75,11 +83,11 @@ institution_link: ""
 
 # ORGANISER
 # Comma-separated list of organisers
-organiser: ""
+organiser: "Durham University Advanced Research Computing, SocRSE Policy & Funding Working Group, RSE Leaders Network"
 # Organisers logo
-organiser_logo: ""
+organiser_logo: "assets/images/rse-leaders/rse-society.png"
 # Organisers website link
-organiser_link: ""
+organiser_link: "https://lu.ma/0w6u5u47"
 
 
 # SUPPORTED
@@ -99,7 +107,7 @@ supported_link: ""
 # DESCRIPTION
 
 # Full session description (please use <br> to add a new paragraph). Add requirements if relevant. 
-description: ""
+description: "This event will focus on the policy and funding landscape for RSEs. The Society has recently launched a Policy & Funding Working Group to help the Society better advocate for RSEs with institutions, funders, and policy makers. Attendees will contribute to the Working Group's strategy and help shape the key advocacy areas that the Society will focus on in the coming years.<br>The event is jointly hosted by Durham University Advanced Research Computing, SocRSE's Policy & Funding Working Group, and the RSE Leaders Network SIG.<br>Anyone is welcome to register, including those not attending the rest of HPC Days. Lunch will be provided. Virtual attendance is also available. If you require travel support to attend in-person, please indicate that when you register. See the <a href='https://lu.ma/0w6u5u47'>event page</a> for details and to register."
    
 
 requirements: ""
@@ -133,7 +141,7 @@ day_3: "Monday"
 start_time_3: "16:30"
 end_time_3: "18:00"
 
-room: "Mountjoy Centre"
+room: "MJC2006"
 
 
 

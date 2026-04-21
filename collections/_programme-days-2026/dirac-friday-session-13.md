@@ -10,30 +10,41 @@
 # SCHEDULING INFORMATION - COMPLETE INFORMATION
 
 # Full TITLE of the session/tutorial
-title: "DiRAC"
+title: "Building Community"
 
 
 
 #FACILITATOR
 # Comma-separated list of the leads of the session
-facilitator: "DiRAC"
+facilitator: "Simon Hands"
 # Leads photos (must match order of names above). 
 facilitator_photos:
-  - ""
+  - "https://github.com/user-attachments/assets/3bfb9398-ee8f-4421-a492-2de1b817772d"
 # Leads profile links (must match order of names above)
 facilitator_links:
-  - ""
+  - "https://dirac.ac.uk/person/simon-hands/"
 
 
 #SPEAKERS
 # Comma-separated list of the speakers of the session
-speaker: ""
+speaker: "Luke Davis, Luigi del Debbio, Sarah Harris, Jonathan Hays, Eugene Lim, Crispin Miller, Karina Rodriguez Echavarria, Katherine Rooke, Matthieu Schaller, Andrea Townsend-Nicholson, Mark Wilkinson, Scott Woodley"
 # Speakers photos (must match order of names above). 
 speaker_photos:
  - ""
 # Speakers profile links (must match order of names above)
 speaker_links:
-  - ""
+  - "https://www.rc-harwell.ac.uk/who-we-are/governance/our-executive-board/luke-davis-epsrc"
+  - "https://higgs.ph.ed.ac.uk/people/del-debbio-luigi/"
+  - "https://www.ccpbiosim.ac.uk/people/core-team/sarah-harris"
+  - "https://www.seresearch.qmul.ac.uk/ceap/people/jhays/"
+  - "https://www.kcl.ac.uk/people/eugene-lim"
+  - "https://www.crukscotlandinstitute.ac.uk/cruk-si-research/cruk-si-research-groups/crispin-miller-computational-biology.html"
+  - https://research.brighton.ac.uk/en/persons/karina-rodriguez-echavarria/
+  - "https://www.linkedin.com/in/katherine-rooke-049b74a0/"
+  - "https://home.strw.leidenuniv.nl/~schaller/"
+  - "https://profiles.ucl.ac.uk/1732-andrea-townsendnicholson"
+  - "https://dirac.ac.uk/person/mark-wilkinson/"
+  - "https://profiles.ucl.ac.uk/7926-scott-woodley"
 
 
 
@@ -75,11 +86,12 @@ institution_link: ""
 
 # ORGANISER
 # Comma-separated list of organisers
-organiser: ""
+organiser: "DiRAC High Performance Computing"
 # Organisers logo
-organiser_logo: ""
+organiser_logo: "https://github.com/user-attachments/assets/56264f81-3e29-429c-bcbf-6da9103272f4"
+
 # Organisers website link
-organiser_link: ""
+organiser_link: "https://dirac.ac.uk"
 
 
 # SUPPORTED
@@ -99,7 +111,9 @@ supported_link: ""
 # DESCRIPTION
 
 # Full session description (please use <br> to add a new paragraph). Add requirements if relevant. 
-description: ""
+description: "Inspired by on-going UKRI discussions about plans to establish Community Centres of Excellence within the UKRI DRI, our vision is to bring together practitioners, community champions and programme managers from diverse areas of scientific computation in the UK to articulate what we each mean by 'community' and map out what challenges and opportunities may lie ahead.<br>
+
+The afternoon session will continue with presentations from practitioners representing diverse areas of HPC science, and conclude with a discussion compered by DiRAC Drector Mark Wilkinson."
    
 
 requirements: ""
@@ -119,19 +133,18 @@ day: "Friday"
 track: "A"
 
 start_time: "13:00"
-end_time: "14:30"
+end_time: "15:00"
 
 day_1: "Friday"
 start_time_1: "09:00"
 end_time_1: "10:30"
 
+
 day_2: "Friday"
 start_time_2: "13:00"
-end_time_2: "14:30"
+end_time_2: "15:00"
 
-
-
-room: "Mountjoy Centre"
+room: "MCS0001"
 
 
 

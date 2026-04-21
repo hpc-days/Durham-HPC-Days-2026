@@ -27,9 +27,10 @@ lead_links:
 
 #CONTRIBUTORS
 # Comma-separated list of the contributors of the session
-contributor: "Connor Aird, Joe Wallwork, Austen Rainer"
+contributor: "Connor Aird, Joe Wallwork, Austen Rainer, Jason Klebes"
 # Contributors' photos (must match order of names above). 
 contributor_photos:
+  - "assets/images/generic.jpg"
   - "assets/images/generic.jpg"
   - "assets/images/generic.jpg"
   - "assets/images/generic.jpg"
@@ -79,18 +80,18 @@ institution_link: ""
 # Comma-separated list of organisers
 organiser: ""
 # Organisers logo
-organiser_logo: "https://fortran-lang.org/_static/fortran-logo-256x256.png"
+organiser_logo: ""
 # Organisers website link
-organiser_link: "https://fortran-lang.org/"
+organiser_link: ""
 
 
 # SUPPORTED
 # Comma-separated list of supporters
-supported: ""
+supported: "Software Sustainability Institute"
 # Institution logo
-supported_logo: ""
+supported_logo: "assets/images/ssi_logo.png"
 # Institution website link
-supported_link: ""
+supported_link: "https://www.software.ac.uk"
 
 
 
@@ -123,7 +124,7 @@ start_time: "16:30"
 end_time: "18:00"
 
 
-room: "Mountjoy Centre"
+room: "RH007"
 
 
 

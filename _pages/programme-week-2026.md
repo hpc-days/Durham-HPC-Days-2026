@@ -12,7 +12,9 @@ classes: [full-programme]
 
 
 {% assign tracks = "A,B,C,D" | split: "," %}
-{% assign days_order = "Monday,Tuesday,Wednesday,Thursday,Friday" | split: "," %}
+{% assign days_order = 
+  "Monday 15 June,Tuesday 16 June,Wednesday 17 June,Thursday 18 June,Friday 19 June" 
+  | split: "," %}
 {% assign time_slots = all_sessions | map: "start_time" | uniq | sort %}
 
 {% assign fixed_sessions = 
@@ -29,70 +31,54 @@ classes: [full-programme]
 {% endfor %}
 
 {% assign time_slots = time_slots | sort %}
-
+<div class="mobile-programme-landing">
+  <div class="mobile-landing-inner">
+    <h1>Durham HPC Days 2026</h1>
+    <p class="subtitle">Conference Programme - Mobile Version</p>
+    <a href="https://hpc-days.github.io/Durham-HPC-Days-2026/programme-days/" class="btn-see-programme">See Full Programme</a>
+  </div>
+</div>
 <div class="programme-container">
 
 <main class="programme-main">
+
+
 <br> <br> 
-  <h1 style="margin-left:3%"> Weekly Programme Overview</h1>
- 
-<div class="programme-legend">
-<h3 class="legend-title">Filter by session type</h3>
-  <div class="legend-item keynote" data-category="keynote">
-    <span class="legend-colour"></span> Keynotes
-  </div>
 
-  <div class="legend-item workshop" data-category="workshop">
-    <span class="legend-colour"></span> Workshops
-  </div>
-
-  <div class="legend-item talk" data-category="talk">
-    <span class="legend-colour"></span> Talks
-  </div>
-
-  <div class="legend-item tutorial" data-category="tutorial">
-    <span class="legend-colour"></span> Tutorials
-  </div>
-
-  <div class="legend-item poster" data-category="poster">
-    <span class="legend-colour"></span> Posters
-  </div>
-
-  <div class="legend-item social" data-category="social">
-    <span class="legend-colour"></span> Socials
+  <div class="legend-link-wrapper">
+  <a href="{{ '/rooms/' | relative_url }}" class="legend-link">
+    🗺️ Check where the rooms are on the map
+  </a>
   </div>
   
-    <div class="legend-item meeting" data-category="meeting">
-    <span class="legend-colour"></span> Meetings
+<div class="programme-legend">
+
+  <div class="legend-item keynote" data-category="keynote"><span class="legend-colour"></span> Keynotes</div>
+  <div class="legend-item workshop" data-category="workshop"><span class="legend-colour"></span> Workshops</div>
+  <div class="legend-item talk" data-category="talk"><span class="legend-colour"></span> Talks</div>
+  <div class="legend-item tutorial" data-category="tutorial"><span class="legend-colour"></span> Tutorials</div>
+  <div class="legend-item poster" data-category="poster"><span class="legend-colour"></span> Posters</div>
+  <div class="legend-item social" data-category="social"><span class="legend-colour"></span> Socials</div>
+  <div class="legend-item meeting" data-category="meeting"><span class="legend-colour"></span> Meetings</div>
+
+</div>
+
+<div class="week-grid">
+
+  <!-- Header -->
+  <div class="week-header">
+    <div class="week-time-header">Time</div>
+{% for day in days_order %}
+  <div class="week-day-header">{{ day }}</div>
+{% endfor %}
   </div>
 
-</div>
-  <div class="week-grid">
-
-
-
-
-    <!-- Header -->
-    <div class="week-header">
-      <div class="week-time-header">Time</div>
-      {% for day in days_order %}
-        <div class="week-day-header">{{ day }}</div>
-      {% endfor %}
-    </div>
-
-    <!-- Rows by time -->
+  <!-- Rows by time -->
   {% for time in time_slots %}
-  <div class="week-row">
-
-    <!-- Time column -->
-    <!-- Time column -->
-<div class="week-time">
-  {% assign start_time = time | split: "-" | first %}
-  {{ start_time }}
-</div>
 
     {% assign is_fixed = false %}
     {% assign fixed_title = "" %}
+
     {% for fs in fixed_sessions %}
       {% assign fs_parts = fs | split: "|" %}
       {% if fs_parts[0] == time %}
@@ -101,164 +87,257 @@ classes: [full-programme]
       {% endif %}
     {% endfor %}
 
-    {% if is_fixed %}
-      <div class="week-cell coffee" style="grid-column: span 5; text-align:center;">
-        <h3>{{ fixed_title }}</h3>
+{%- assign has_content = false -%}
+{% for day in days_order %}
+
+  {% assign day_name = day | split: " " | first %}
+
+  {% assign cell_sessions = all_sessions
+    | where: "day", day_name
+    | where: "start_time", time %}
+
+  {% if cell_sessions.size > 0 %}
+    {% assign has_content = true %}
+  {% endif %}
+
+{% endfor %}
+
+    {% if has_content or is_fixed %}
+
+    <div class="week-row">
+
+      <!-- Time column -->
+      <div class="week-time">
+        {% assign start_time = time | split: "-" | first %}
+        {{ start_time }}
       </div>
-    {% else %}
-      <!-- Bucle normal por días -->
-      {% for day in days_order %}
-        {% assign cell_sessions = all_sessions
-          | where: "day", day
-          | where: "start_time", time %}
 
-        <div class="week-cell">
-          {% if cell_sessions.size == 0 %}
-            <span class="empty">–</span>
-          {% else %}
-          {% assign cell_sessions = cell_sessions | sort: "track" %}
+      {% if is_fixed %}
+        <div class="week-cell coffee" style="grid-column: span 5; text-align:center;">
+          <h3>{{ fixed_title }}</h3>
+        </div>
 
-{% for s in cell_sessions %}
-  <div class="session-card {{ s.category | downcase }}">
-    <h3>
-      <a href="{{ s.url | relative_url }}">
-        {% if s.track %}{% endif %}
-        {{ s.title }}
-      </a>
-    </h3>
-{% if s.lead or s.instructor or s.facilitator %}
-  <p class="speaker">
+      {% else %}
 
-    {% if s.lead %}
-      <strong>
-        Lead{% if s.lead contains "," %}s{% endif %}:
-      </strong>
-      {{ s.lead }}
+{% for day in days_order %}
+
+  {% assign day_name = day | split: " " | first %}
+
+  {% assign cell_sessions = all_sessions
+    | where: "day", day_name
+    | where: "start_time", time %}
+
+  <div class="week-cell">
+{% if cell_sessions.size == 0 %}
+  <div class="week-cell empty-cell"></div>
+{% else %}
+      {% assign cell_sessions = cell_sessions | sort: "track" %}
+
+      {% for s in cell_sessions %}
+      <div class="session-card {{ s.category | downcase }}">
+    <div class="session-header">
+  <h3 class="session-title">
+    <a href="{{ s.url | relative_url }}">
+      {{ s.title }}
+    </a>
+  </h3>
+
+  {% if s.lead or s.instructor or s.facilitator or s.room %}
+  <div class="session-meta">
+  
+     {% if s.room %}
+      <div class="meta-line room">
+        <span class="meta-label">Room: {{ s.room }}</span>
+      </div>
     {% endif %}
 
-    {% if s.lead and s.instructor %} · {% endif %}
+   {% if s.lead %}
+      <div class="meta-line speaker">
+        <span class="meta-label">Lead:</span>
+        <span class="meta-value">{{ s.lead }}</span>
+      </div>
+    {% endif %}
 
     {% if s.instructor %}
-      <strong>
-        Instructor{% if s.instructor contains "," %}s{% endif %}:
-      </strong>
-      {{ s.instructor }}
+      <div class="meta-line speaker">
+        <span class="meta-label">Instructor:</span>
+        <span class="meta-value">{{ s.instructor }}</span>
+      </div>
+    {% endif %}
+
+    {% if s.facilitator %}
+      <div class="meta-line speaker">
+        <span class="meta-label">Facilitator:</span>
+        <span class="meta-value">{{ s.facilitator }}</span>
+      </div>
     {% endif %}
     
-      {% if s.facilitator %}
-      <strong>
-        Facilitator{% if s.facilitator contains "," %}s{% endif %}:
-      </strong>
-      {{ s.facilitator }}
+      {% if s.speaker %}
+      <div class="meta-line speaker">
+        <span class="meta-label">Speaker:</span>
+        <span class="meta-value">{{ s.speaker }}</span>
+      </div>
     {% endif %}
 
-  </p>
-{% endif %}
+ 
 
-    {% if s.room %}<p class="room">Room: {{ s.room }}</p>{% endif %}
   </div>
-{% endfor %}
+  {% endif %}
+</div>
+                
+                
+                
+                
+              </div>
+              {% endfor %}
 
-          {% endif %}
-        </div>
-      {% endfor %}
+            {% endif %}
+          </div>
+        {% endfor %}
+
+      {% endif %}
+
+    </div>
+
     {% endif %}
 
-  </div>
-{% endfor %}
+  {% endfor %}
 
-
-
-  </div>
-
-
-
+</div>
 
 </main>
 </div>
 
 <style>
 
-
+/* === FULL WIDTH PAGE === */
 .full-programme .page__inner-wrap,
 .full-programme .page__content,
 .page__inner-wrap,
 .page__content {
   max-width: 100% !important;
   width: 100% !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-
-.full-programme .page__content section {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-.programme-container {
-  width: 100%;
   padding: 0 !important;
   margin: 0 !important;
 }
 
-.session-card.coffee {
-  background-color: #F8FAFC; 
-  border-left-color: #F8FAFC;
+.full-programme .page__content section {
+  padding: 0 !important;
 }
 
-.session-card.coffee h3 a {
-  color: #002A41 !important;
-  text-align: center;
-}
-
-
-/* Layout */
 .programme-container {
   width: 100%;
-  max-width: 100% !important;
-  padding: 0;    
-  margin: 0;  
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: relative;
 }
 
-/* Weekly grid */
 .week-grid {
   display: grid;
   gap: 0.5rem;
 }
 
-/* Header + rows */
+
+.session-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.session-title {
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+.session-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.meta-line {
+  display: flex;
+  gap: 0.2rem;
+  align-items: baseline;
+  font-size: 0.6rem;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.meta-label {
+  font-weight: 600;
+  flex-shrink: 0; 
+}
+
+.meta-value {
+  color: #333;
+  margin: 0;
+}
+
+.room {
+  color: #5f6c7b; !important;
+}
+
+.speaker {
+font-style: italic; 
+font-size: 0.5rem;
+}
+
+.meta-line {
+  display: block;
+}
+
+.legend-link-wrapper {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.legend-link {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: 999px;
+  background: #002A41;
+  color: #fff !important;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+}
+
+.legend-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+
 .week-header,
 .week-row {
   display: grid;
   grid-template-columns: 90px repeat(5, 1fr);
   gap: 0.5rem;
+  align-items: stretch;
 }
 
-/* Headers */
-.week-day-header {
-  font-weight: 700;
-  text-align: center;
-  background: #002A41;
-  color: #ffffff;
-  padding: 0.5rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-}
-
+.week-day-header,
 .week-time-header {
   font-weight: 700;
   text-align: center;
   background: #002A41;
-  color: #ffffff;
+  color: #fff;
   padding: 0.5rem;
   border-radius: 8px;
   font-size: 0.9rem;
 }
 
-/* Time column */
 .week-time {
   font-weight: 700;
   text-align: center;
@@ -268,162 +347,49 @@ classes: [full-programme]
   font-size: 0.85rem;
 }
 
-/* Cells */
 .week-cell {
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #dce3ec;
   border-radius: 8px;
   padding: 0.3rem;
-  min-height: 90px;
+  min-height: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-/* Empty cells */
-.week-cell .empty {
-  display: block;
-  text-align: center;
-  color: #ccc;
+.week-cell.empty-cell {
+  background: #EEEEEE !important;
+  border: none !important;
+  box-shadow: none;
 }
 
-/* Session cards */
-.week-cell .session-card {
+.session-card {
   margin-bottom: 0.3rem;
   padding: 0.4rem;
   border-left: 4px solid;
   border-radius: 6px;
   color: #002A41;
+  flex-grow: 1;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.week-cell .session-card h3 {
+.session-card:last-child {
+  margin-bottom: 0;
+}
+
+.session-card h3 {
   font-size: 0.7rem;
   margin: 0;
-  color: #002A41 !important;
 }
 
-
-.programme-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin: 2rem 3%;
-  padding: 1rem 1.25rem;
-  background: #f8fafc;
-  border: 1px solid #e3e8ef;
-  border-radius: 16px;
-  align-items: center;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.04);
-
-  align-items: flex-start;
-}
-
-
-
-/* Each legend item becomes a pill */
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.5rem 0.9rem;
-  font-size: 0.82rem;
-  font-weight: 500;
-  border-radius: 999px;
-  background: #ffffff;
-  border: 1px solid #e3e8ef;
+.session-card:hover {
+  filter: brightness(1) saturate(1.4);
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
   cursor: pointer;
-  transition: 
-    all 0.2s ease,
-    transform 0.15s ease;
 }
-
-/* Hover */
-.legend-item:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
-
-/* Active state */
-.legend-item.active {
-  background: #002A41;
-  color: #ffffff;
-  border-color: #002A41;
-}
-
-/* Colour square */
-.legend-colour {
-  width: 18px;
-  height: 18px;
-  border-radius: 6px;
-  border: 4px solid;
-  flex-shrink: 0;
-}
-
-/* When active → colour square becomes lighter for contrast */
-.legend-item.active .legend-colour {
-  filter: brightness(1.1);
-}
-.legend-title {
-  margin-top: 0.7rem;
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #5f6c7b;
-  font-weight: 600;
-  width: 100%;
-
-  display: flex;
-  justify-content: center;   /* horizontal center */
-}
-}
-
-.legend-item.opening .legend-colour {
-  background-color: #68246D;
-  border-color: #68246D;
-}
-
-.legend-item.keynote .legend-colour {
-  background-color: #DFDBF5;
-  border-color: #78206E;
-}
-
-.legend-item.meeting .legend-colour {
-  background-color: #F5DBF2;
-  border-color: #2E2278;
-}
-
-.legend-item.workshop .legend-colour {
-  background-color: #D3E4F5;
-  border-color: #194775;
-}
-
-.legend-item.talk .legend-colour {
-  background-color: #D1E5D2;
-  border-color: #315933;
-}
-
-.legend-item.session .legend-colour {
-  background-color: #F3E5F5;
-  border-color: #9C27B0;
-}
-
-.legend-item.tutorial .legend-colour {
-  background-color: #E6DDC0;
-  border-color: #534721;
-}
-
-.legend-item.poster .legend-colour {
-  background-color: #CEBCBC;
-  border-color: #7A5958;
-}
-
-.legend-item.coffee .legend-colour {
-  background-color: #F8FAFC;
-  border-color: #F8FAFC;
-}
-
-.legend-item.social .legend-colour {
-  background-color: #F8FAFC;
-  border-color: #F8FAFC;
-}
-
 
 .session-card.dimmed {
   opacity: 0.15;
@@ -431,46 +397,74 @@ classes: [full-programme]
 }
 
 .session-card.highlighted {
-  box-shadow: 0 0 0 0px rgba(0,42,65,0.6);
-  transform: scale(1.00);
+  transform: scale(1);
   z-index: 5;
 }
 
-.legend-item {
-  cursor: pointer;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+.session-card.opening {
+  background-color: #68246D;
+  color: #fff;
+  border-left-color: #68246D;
 }
 
-.legend-item:hover {
-  transform: scale(1.0);
+.session-card.opening h3,
+.session-card.opening .speaker,
+.session-card.opening .room {
+  color: #002A41;
 }
 
-.legend-item.active {
-  font-weight: 700;
+.session-card.keynote {
+  background-color: #f1e6f4;
+  border-left-color: #68246d;
+}
+
+.session-card.meeting {
+  background-color: #f8e4f0;
+  border-left-color: #c85096;
+}
+
+.session-card.workshop {
+  background-color: #e3eff9;
+  border-left-color: #2975c1;
+}
+
+.session-card.talk {
+  background-color: #e2f3ea;
+  border-left-color: #00a86b;
+}
+
+.session-card.tutorial {
+  background-color: #fff4cc;
+  border-left-color: #f5b800;
+}
+
+.session-card.poster {
+  background-color: #f8dada;
+  border-left-color: #dc3232;
+}
+
+.session-card.social {
+  background-color: #ffe8cc;
+  border-left-color: #ff8c00;
+  flex-grow: 0 !important;
+  flex-shrink: 0;
+}
+
+.session-card.coffee {
+  background-color: #f8fafc;
+  border-left-color: #e2e8f0;
+}
+
+.week-cell:has(.session-card:not(.social)) .session-card.social {
+  flex-grow: 0;
 }
 
 
-.session-card.opening { background-color: #68246D; color: #fff; border-left-color: #68246D; }
-.session-card.opening h3, .session-card.opening .speaker, .session-card.opening .room { color: #002A41; }
-
-
-
-.session-card.keynote { background-color: #DFDBF5; border-left-color: #2E2278; }
-.session-card.meeting { background-color: #F5DBF2; border-left-color: #78206E; }
-.session-card.workshop { background-color: #D3E4F5; border-left-color: #194775; }
-.session-card.talk { background-color: #D1E5D2; border-left-color: #315933; }
-.session-card.session { background-color: #F3E5F5; border-left-color: #9C27B0; }
-.session-card.tutorial { background-color: #E6DDC0; border-left-color: #534721; }
-.session-card.poster { background-color: #CEBCBC; border-left-color: #7A5958; }
-.session-card.coffee { background-color: #F8FAFC; border-left-color: #F8FAFC; }
-.session-card.social { background-color: #F8FAFC; border-left-color: #F8FAFC; }
-
-.session-card .speaker { font-size: 0.4rem; color: #333; margin:0; }
-.session-card .room { font-size: 0.6rem; color: #444; margin:0; }
 
 .week-cell .session-card h3 a {
   color: inherit !important;
 }
+
 .session-card.opening h3 a {
   color: #ffffff !important;
 }
@@ -480,38 +474,21 @@ classes: [full-programme]
 .session-card.session h3 a,
 .session-card.tutorial h3 a,
 .session-card.poster h3 a,
-
 .session-card.social h3 a {
   color: #002A41 !important;
 }
 
 .week-cell.coffee {
   display: flex;
-  align-items: center;  
+  align-items: center;
   justify-content: center;
-  padding: 0.3rem;  
+  padding: 0.3rem;
   min-height: 70px;
-  margin-top: 0; 
 }
 
 .week-cell.coffee h3 {
-  margin: 0; 
+  margin: 0;
   font-size: 0.95rem;
-}
-
-
-.week-cell .session-card {
-  transition: 
-    background-color 0.2s ease,
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
-}
-
-.week-cell .session-card:hover {
-  filter: brightness(1) saturate(1.4);
-  transform: scale(1.03);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-  cursor: pointer;
 }
 
 .week-grid::-webkit-scrollbar {
@@ -524,7 +501,6 @@ classes: [full-programme]
 }
 
 @media (max-width: 900px) {
-
   .week-grid {
     overflow-x: auto;
     padding-bottom: 0.5rem;
@@ -541,18 +517,196 @@ classes: [full-programme]
   }
 
   .week-cell {
-    min-height: 70px;
+    min-height: 40px;
   }
 
   .session-card h3 {
     font-size: 0.65rem;
   }
-  
-  .programme-legend {
-   display: none;
+}
+/* === LEGEND === */
+.programme-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.5rem 3%;
+  padding: 1rem 1.25rem;
+  background: #f8fafc;
+  border: 1px solid #e3e8ef;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+}
+
+/* Legend pills */
+.legend-item {
+  display: flex;
+  align-items: centre;
+  gap: 0.6rem;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #e3e8ef;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.legend-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.legend-item.active {
+  background: #002A41;
+  color: #fff;
+  border-color: #002A41;
+  font-weight: 700;
+}
+
+/* Colour square */
+.legend-colour {
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  border: 4px solid;
+  flex-shrink: 0;
+}
+
+.legend-item.keynote .legend-colour {
+  background-color: var(--keynote-bg);
+  border-color: var(--keynote-border);
+}
+
+.legend-item.workshop .legend-colour {
+  background-color: var(--workshop-bg);
+  border-color: var(--workshop-border);
+}
+
+.legend-item.talk .legend-colour {
+  background-color: var(--talk-bg);
+  border-color: var(--talk-border);
+}
+
+.legend-item.tutorial .legend-colour {
+  background-color: var(--tutorial-bg);
+  border-color: var(--tutorial-border);
+}
+
+.legend-item.poster .legend-colour {
+  background-color: var(--poster-bg);
+  border-color: var(--poster-border);
+}
+
+.legend-item.social .legend-colour {
+  background-color: var(--social-bg);
+  border-color: var(--social-border);
+}
+
+.legend-item.meeting .legend-colour {
+  background-color: var(--meeting-bg);
+  border-color: var(--meeting-border);
+}
+
+/* Title */
+.legend-title {
+  width: 100%;
+  text-align: centre;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #5f6c7b;
+  font-weight: 600;
+}
+
+
+
+
+:root {
+  --keynote-bg: #f1e6f4;
+  --keynote-border: #68246d;
+
+  --workshop-bg: #e3eff9;
+  --workshop-border: #2975c1;
+
+  --talk-bg: #e2f3ea;
+  --talk-border: #00a86b;
+
+  --tutorial-bg: #fff4cc;
+  --tutorial-border: #f5b800;
+
+  --poster-bg: #f8dada;
+  --poster-border: #dc3232;
+
+  --social-bg: #ffe8cc;
+  --social-border: #ff8c00;
+
+  --meeting-bg: #f8e4f0;
+  --meeting-border: #c85096;
+}
+
+
+
+@media (max-width: 900px) {
+
+ 
+  .programme-container {
+    display: none !important;
+  }
+
+ 
+  .mobile-programme-landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background: linear-gradient(180deg, #f4f6f8, #ffffff);
+    padding: 2rem 2rem;
+    margin-top: 2rem;
+  }
+
+  .mobile-landing-inner h1 {
+    font-size: 2rem;
+    color: #002A41;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  .mobile-landing-inner .subtitle {
+    font-size: 1rem;
+    color: #5f6c7b;
+    margin-bottom: 2rem;
+  }
+
+  .mobile-landing-inner .btn-see-programme {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #68246D;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .mobile-landing-inner .btn-see-programme:hover {
+    background-color: #50205a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   }
 
 }
+
+
+@media (min-width: 901px) {
+  .mobile-programme-landing {
+    display: none;
+  }
+}
+
+
 
 </style>
 
@@ -582,15 +736,15 @@ document.addEventListener("DOMContentLoaded", function () {
       session.classList.remove("highlighted", "dimmed");
     });
   }
-// Click outside legend resets everything
+
 document.addEventListener("click", function (event) {
 
-  // If no active filter, do nothing
+
   if (!activeCategory) return;
 
   const clickedInsideLegend = event.target.closest(".legend-item");
 
-  // If click is NOT inside legend, reset
+
   if (!clickedInsideLegend) {
     activeCategory = null;
 
@@ -603,7 +757,7 @@ document.addEventListener("click", function (event) {
 
     const category = item.dataset.category;
 
-    // Hover effect (only if nothing locked)
+
     item.addEventListener("mouseenter", () => {
       if (!activeCategory) highlightCategory(category);
     });
@@ -612,7 +766,7 @@ document.addEventListener("click", function (event) {
       if (!activeCategory) resetHighlight();
     });
 
-    // Click to lock
+
     item.addEventListener("click", () => {
 
       if (activeCategory === category) {
@@ -634,5 +788,10 @@ document.addEventListener("click", function (event) {
   });
 
 });
+
+
 </script>
+
+
+
 
