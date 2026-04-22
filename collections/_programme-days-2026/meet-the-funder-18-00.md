@@ -102,7 +102,7 @@ supported_link: ""
 # Full session description (please use <br> to add a new paragraph). Add requirements if relevant. 
 description: "Participants have the opportunity to speak to EPSRC's Afia Masood, Portfolio Manager for research software and digital infrastructure opportunities in an informal setting about current grants, future bids and recommendations how to engage with the council. 
 <br><br>
-There will also be an opportunity to ask about upcoming funding calls. Afia and her team will be around for the HPC Days and be available for 1:1 conversations (please book directly via email). This open session on the Thursday evening will however handle questions FCFS - bring you drink, food, and all the questions to EPSRC with you.
+There will also be an opportunity to ask about upcoming funding calls. Afia and her team will be around for the HPC Days and be available for 1:1 conversations (please book directly via email). This open session on the Thursday evening will however handle questions FCFS - bring your drink, food, and all the questions to EPSRC with you.
 <br><br>
 <strong>Check out the HPC Days video from last year featuring Afia’s insights:</strong>
 <br><br>
