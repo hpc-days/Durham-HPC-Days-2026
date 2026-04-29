@@ -31,13 +31,8 @@ classes: [full-programme]
 {% endfor %}
 
 {% assign time_slots = time_slots | sort %}
-<div class="mobile-programme-landing">
-  <div class="mobile-landing-inner">
-    <h1>Durham HPC Days 2026</h1>
-    <p class="subtitle">Conference Programme - Mobile Version</p>
-    <a href="https://hpc-days.github.io/Durham-HPC-Days-2026/programme-days/" class="btn-see-programme">See Full Programme</a>
-  </div>
-</div>
+
+
 <div class="programme-container">
 
 <main class="programme-main">
@@ -711,8 +706,15 @@ font-size: 0.5rem;
 </style>
 
 
+
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+
+  if (window.innerWidth <= 900) {
+    window.location.replace("https://hpc-days.github.io/Durham-HPC-Days-2026/programme-days/");
+    return;
+  }
 
   const legendItems = document.querySelectorAll(".legend-item");
   const sessions = document.querySelectorAll(".session-card");

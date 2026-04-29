@@ -171,8 +171,25 @@ permalink: /sponsors/
         <img src="https://www.peakaio.com/images/logos/peakaio-logo-org.png">
       </div>
        </a>
-   
-
+       
+               <a href="https://www.amd.com/en.html">
+      <div class="sponsor-logo">
+        <img src="https://media.licdn.com/dms/image/v2/D560BAQFCdxxVA_xhqQ/company-logo_200_200/B56ZnuIjafHUAM-/0/1760636844195/amd_logo?e=2147483647&v=beta&t=oM29UWcjmkCmT-aq0bZ_DEd-eqpPMQ-WR_FxQr-qHuM">
+      </div>
+       </a>
+       
+       
+               <a href="https://www.vastdata.com/">
+      <div class="sponsor-logo">
+        <img src="https://www.azken.com/blog/wp-content/uploads/2023/11/vast-data-logo-e1699353382846.png">
+      </div>
+       </a>
+       
+          <a href="https://www.cerio.ai/about/">
+      <div class="sponsor-logo">
+        <img src="https://media.licdn.com/dms/image/v2/D4E0BAQHXQBXfdTL5CQ/company-logo_200_200/company-logo_200_200/0/1696902111021/rockport_networks_inc__logo?e=1778716800&v=beta&t=t-VbfOn9xbXHlCrktMXJmXScWka56JMWKRPJ8IosSaY">
+      </div>
+       </a>
 
 
       <!-- Add more as needed -->
