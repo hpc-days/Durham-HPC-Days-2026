@@ -27,7 +27,7 @@ lead_links:
 
 #CONTRIBUTORS
 # Comma-separated list of the speakers of the session
-contributor: "Alfredo Pinelli, Kelly Zhang, Bidipta Sarkar, Sylvain Laizet, Georgios Rigas, Junyan Hu"
+contributor: "Alfredo Pinelli, Bidipta Sarkar, Sylvain Laizet, Georgios Rigas, Shruti Mishra, Junyan Hu"
 # Contributors' photos (must match order of names above). 
 contributor_photos:
   - "assets/images/generic.jpg"
