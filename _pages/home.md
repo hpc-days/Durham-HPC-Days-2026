@@ -22,14 +22,9 @@ hidden: true
     The <strong>Durham HPC Days</strong> bring together researchers, developers, and practitioners
     to explore the frontiers of high-performance computing, data analysis, and scientific innovation.
   </p>
-      <div class="register-meta">
-        📅 15–19 June 2026 &nbsp;&nbsp;•&nbsp;&nbsp; ⏳ Registration <s>closes 20 April</s> <span style="color:red;"><strong>EXTENDED to 1st May!</strong></span>
-      </div>
 
-      <a href="https://pay.durham.ac.uk/event-durham/durham-hpc-days-2026" 
-         class="btn btn-primary">
-         Register now
-      </a>
+  <br> 
+     <br>
     </div>
     
 </div>

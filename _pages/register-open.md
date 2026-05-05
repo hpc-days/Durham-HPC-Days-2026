@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Register
-permalink: /register/
+permalink: /register-open/
 ---
 
 <style>
@@ -258,8 +258,29 @@ ul.checklist li::before {
 
 <section class="section-register">
   <div class="card-highlight">
-    <h2>Registration is now closed </h2>
-  
+    <h2>Registration <s>closes 20 April</s> <span style="color:red;"><strong>EXTENDED to 1st May!</strong></span> </h2>
+    <p>
+      Secure your place at <strong>Durham HPC Days 2026, from the 15th to the 19th of June</strong>, a leading UK event
+      in High Performance Computing, hosted at Durham University.
+    </p>
+<p class="price">
+  🎟️ Registration fee: <strong>£50</strong>
+</p>
+      
+
+    <a class="register-button"
+       href="https://pay.durham.ac.uk/event-durham/durham-hpc-days-2026"
+       target="_blank" rel="noopener">
+       Register Now
+    </a>
+
+    <p class="small-text">
+      You will be redirected to the official Durham University registration system.
+    </p>
+    
+        <p class="small-text">
+      Lunch and light dinners will be provided to all registered attendees throughout the conference week. These meals are kindly subsidised by our sponsors.
+    </p>
     
   </div>
 
