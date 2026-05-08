@@ -313,6 +313,11 @@ encouraged to attend the Ceilidh on the Tuesday evening.
         If you would like a visitor parking permit, please provide name, car reg details, and the times you’d like the permit for, to Alastair, at least a few days in advance. There may not be enough spaces, so some walking may be required. However, vehicle access up to the venue is possible, for dropping off kit.
       </p>
 
+      <h2 style="font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem;">Internet access</h2>
+      <p>
+      Wifi access is available through "TheCloud@Durham".  This will require registration via a captive portal (name, email, etc) once connected.
+      </p>
+
 
 
       <h2 style="font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem;">Arrival</h2>
