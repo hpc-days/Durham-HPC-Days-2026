@@ -289,7 +289,7 @@ If you wish to remain beyond Thursday lunchtime, it will be necessary to move th
 
       <h2 style="font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem;">Talks and sessions</h2>
       <p style="margin-bottom: 1rem;">
-e encourage engagement throughout the week, and you are very welcome to
+We encourage engagement throughout the week, and you are very welcome to
 attend any of the talks or tutorials while you are here.  You are also
 encouraged to attend the Ceilidh on the Tuesday evening.
       </p>
