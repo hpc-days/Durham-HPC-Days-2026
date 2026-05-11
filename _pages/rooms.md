@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       name: "Mountjoy Centre: Main entrance",
-      lat: 54.76497,
+      lat: 54.76445,
       lon: -1.570938,
       color: "green"
     },

@@ -286,7 +286,7 @@ hidden: true
        
                <a href="https://www.vastdata.com/">
       <div class="sponsor-logo">
-        <img src="https://www.azken.com/blog/wp-content/uploads/2023/11/vast-data-logo-e1699353382846.png">
+        <img src="https://media.datacenterdynamics.com/media/images/vast-stacked-logo-hex-blue.original.png"/>
       </div>
        </a>
        
@@ -323,7 +323,7 @@ hidden: true
 
      <a href="https://midasimmersion.com/">
       <div class="sponsor-logo">
-        <img src="https://midasimmersion.com/wp-content/uploads/midas-logo-nw25.webp"/>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ600jBke7tEbherj_Qolde-FiHvrc6nuq-RA&s">
       </div>
        </a>
 

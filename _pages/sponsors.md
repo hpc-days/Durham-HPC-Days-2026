@@ -181,7 +181,7 @@ permalink: /sponsors/
        
                <a href="https://www.vastdata.com/">
       <div class="sponsor-logo">
-        <img src="https://www.azken.com/blog/wp-content/uploads/2023/11/vast-data-logo-e1699353382846.png">
+        <img src="https://media.datacenterdynamics.com/media/images/vast-stacked-logo-hex-blue.original.png"/>
       </div>
        </a>
        
@@ -200,7 +200,7 @@ permalink: /sponsors/
 
                  <a href="https://www.bios-it.co.uk/home.aspx">
       <div class="sponsor-logo">
-        <img src="https://media.licdn.com/dms/image/v2/C4E0BAQG7i6L8ZnTHqw/company-logo_200_200/company-logo_200_200/0/1630564451226/bios_it_logo?e=2147483647&v=beta&t=qTte_UB3GWiohyKQaOdEc4jePDPzDY9J1D7q1H32vW0">
+        <img src="assets/images/biositlogo.png">
       </div>
        </a>
        
@@ -289,7 +289,7 @@ If you wish to remain beyond Thursday lunchtime, it will be necessary to move th
 
       <h2 style="font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem;">Talks and sessions</h2>
       <p style="margin-bottom: 1rem;">
-e encourage engagement throughout the week, and you are very welcome to
+We encourage engagement throughout the week, and you are very welcome to
 attend any of the talks or tutorials while you are here.  You are also
 encouraged to attend the Ceilidh on the Tuesday evening.
       </p>
@@ -311,6 +311,11 @@ encouraged to attend the Ceilidh on the Tuesday evening.
       <h2 style="font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem;">Parking</h2>
       <p>
         If you would like a visitor parking permit, please provide name, car reg details, and the times you’d like the permit for, to Alastair, at least a few days in advance. There may not be enough spaces, so some walking may be required. However, vehicle access up to the venue is possible, for dropping off kit.
+      </p>
+
+      <h2 style="font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem;">Internet access</h2>
+      <p>
+      Wifi access is available through "TheCloud@Durham".  This will require registration via a captive portal (name, email, etc) once connected.
       </p>
 
 
