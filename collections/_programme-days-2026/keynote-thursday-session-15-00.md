@@ -1,9 +1,9 @@
 ---
-title: "TBD"
+title: "Keynote"
 
 
 
-speaker: "TBD"
+speaker: "Luke Davis"
 speaker_photos:
   - ""
 speaker_links: ""

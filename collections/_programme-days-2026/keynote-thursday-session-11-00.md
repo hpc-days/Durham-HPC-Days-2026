@@ -1,12 +1,13 @@
 ---
-title: "TBD"
+title: "Keynote"
 
 
-
-speaker: "TBD"
+speaker: "Albert Reuther"
 speaker_photos:
   - ""
 speaker_links: ""
+
+
 
 
 
@@ -26,5 +27,5 @@ institution_link: ""
 room: "MCS0001"
 layout: keynote
 category: "keynote"
-description: ""
+description: "TBD"
 ---

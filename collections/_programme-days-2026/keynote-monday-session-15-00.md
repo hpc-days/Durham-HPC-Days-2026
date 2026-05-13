@@ -1,8 +1,8 @@
 ---
-title: "TBD"
+title: "Keynote"
 
 
-speaker: "TBD"
+speaker: "Sven-Bodo Scholz"
 speaker_photos:
   - ""
 speaker_links: ""
@@ -15,7 +15,6 @@ track: "A"
 start_time: "15:00"
 end_time: "16:00"
 
-  
 institution: ""
 institution_logo: ""
 institution_link: ""
@@ -24,5 +23,5 @@ institution_link: ""
 room: "MCS0001"
 layout: keynote
 category: "keynote"
-description: ""
+description: "TBD"
 ---
