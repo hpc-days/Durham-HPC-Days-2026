@@ -10,13 +10,13 @@
 # SCHEDULING INFORMATION - COMPLETE INFORMATION
 
 # Full TITLE of the session/tutorial
-title: "AMD/OpenMP"
+title: "Accelerating Scientific Applications with OpenMP for GPUs"
 
 
 
 #FACILITATOR
 # Comma-separated list of the leads of the session
-facilitator: "AMD"
+facilitator: "Johanna Potyka, Giacomo Capodaglio"
 # Leads photos (must match order of names above). 
 facilitator_photos:
   - ""
@@ -65,7 +65,7 @@ speaker_links:
 
 # INSTITUTION
 # Comma-separated list of institutions
-institution: ""
+institution: "AMD HPC and Sovereign AI Customer Enablement"
 # Institution logo
 institution_logo: ""
 # Institution website link
@@ -99,7 +99,7 @@ supported_link: ""
 # DESCRIPTION
 
 # Full session description (please use <br> to add a new paragraph). Add requirements if relevant. 
-description: ""
+description: "2 x 1.5 hours including hands-on.<br><br>Target audience:<br>Part 1: attendees with some HPC background but little or no prior experience with OpenMP GPU offload.<br>Part 2: attendees with prior exposure to OpenMP offload, including participants from Part 1.<br><br>OpenMP has become a valuable option for porting scientific applications to GPUs: what makes it attractive are portability, relative simplicity and a quick ramp up time compared to other GPU programming approaches. In this tutorial, we will show how to implement OpenMP offloading in practice for C/C++ and Fortran applications.<br>This hands-on tutorial is organized into two parts:<br><br>First, we introduce the fundamentals of OpenMP offload for GPUs and discuss how unified shared memory on systems such as the AMD Instinct MI300A can simplify the transition of your codebase from CPU to GPU. Participants will explore these concepts through practical exercises in C/C++ and Fortran, with a particular focus on how OpenMP can support incremental porting of existing CPU HPC applications.<br>In the second part, we move towards intermediate and advanced topics, focusing on performance-oriented OpenMP programming: using application examples, we will discuss common performance pitfalls, how to address them and strategies for improving GPU utilization in real codes. We will also compare OpenMP target offload with HIP, a lower-level GPU programming model from AMD. With this information, attendees will be empowered to make a well-informed decision on the choice of programming model for their own CPU to GPU porting.<br><br>Attendees will be allowed to perform the hands-on portion of the tutorial on an AMD Instinct MI300A system that features different ROCm versions as well as the latest Fortran compilers from AMD."
    
 
 requirements: ""
