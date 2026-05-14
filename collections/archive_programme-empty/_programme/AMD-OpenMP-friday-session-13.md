@@ -1,6 +1,6 @@
 ---
 # ============================================================
-# WORKSHOP
+# TALKS
 # Please complete all required fields before submitting a PR.
 # ============================================================
 
@@ -10,31 +10,29 @@
 # SCHEDULING INFORMATION - COMPLETE INFORMATION
 
 # Full TITLE of the session/tutorial
-title: "What's inside the black box? Compiler developments for HPC"
+title: "TUTORIAL TBD"
 
 
-#LEADS
+
+#FACILITATOR
 # Comma-separated list of the leads of the session
-lead: "Pawel Radtke"
-# Leads' photos (must match order of names above). 
-lead_photos:
-  - "assets/images/generic.jpg"
-# Leads' profile links (must match order of names above)
-lead_links:
+facilitator: "AMD"
+# Leads photos (must match order of names above). 
+facilitator_photos:
+  - ""
+# Leads profile links (must match order of names above)
+facilitator_links:
   - ""
 
 
-#Contributos
-# Comma-separated list of the contributors of the session
-contributor: "Sven-Bodo Sholz, Nick Brown, Maurice Jamieson, Shounak Chakraborty"
-# Contributors'photos (must match order of names above). 
-contributor_photos:
-  - "assets/images/generic.jpg"
-  - "assets/images/generic.jpg"
-  - "assets/images/generic.jpg"
-  - "assets/images/generic.jpg"
-# Contributors' profile links (must match order of names above)
-contributor_links:
+#SPEAKERS
+# Comma-separated list of the speakers of the session
+speaker: ""
+# Speakers photos (must match order of names above). 
+speaker_photos:
+ - ""
+# Speakers profile links (must match order of names above)
+speaker_links:
   - ""
 
 
@@ -101,7 +99,7 @@ supported_link: ""
 # DESCRIPTION
 
 # Full session description (please use <br> to add a new paragraph). Add requirements if relevant. 
-description: "What’s inside the black box? Compiler developments for HPC brings together compiler developers, standards contributors, and HPC practitioners to discuss how recent advancements in compilation techniques impact the performance, portability, and correctness of scientific codes on today’s increasingly heterogeneous systems. Speakers from academia and industry will highlight emerging compiler infrastructures, advances in optimisation, directive-based programming, data layout, accelerator support, tools for understanding and guiding optimisation decisions, and domain-specific approaches that raise productivity while preserving trust, reproducibility, and predictable behaviour in high-performance computing workflows for real-world scientific applications."
+description: ""
    
 
 requirements: ""
@@ -113,29 +111,28 @@ requirements: ""
 
 
 
-layout: workshop
-category: "workshop"
+layout: talk
+category: "talk"
 
 
-day: "Thursday"
+day: "Friday"
 track: "B"
 
 start_time: "13:00"
 end_time: "14:30"
 
+day_1: "Friday"
+start_time_1: "09:00"
+end_time_1: "10:30"
 
-day_1: "Thursday"
-start_time_1: "13:00"
-end_time_1: "14:30"
+day_2: "Friday"
+start_time_2: "13:00"
+end_time_2: "14:30"
 
 
 
-
-
-
-room: "MJC2004"
+room: "Mountjoy Centre"
 
 
 
 ---
-

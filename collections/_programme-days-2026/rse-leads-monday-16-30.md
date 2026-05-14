@@ -140,7 +140,7 @@ day_3: "Monday"
 start_time_3: "16:30"
 end_time_3: "18:00"
 
-room: "MJC2006"
+room: "RH007"
 
 
 
