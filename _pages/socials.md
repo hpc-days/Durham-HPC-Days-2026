@@ -7,7 +7,9 @@ classes: wide
 ---
 <style>
 
-
+body {
+  background: #faf8f4;
+}
 
   .ws-hero {
     position: relative;
@@ -103,26 +105,27 @@ classes: wide
 
 
 .description {
- 
-
-  
   text-align: center;
- 
-  line-height: 1.6;
-  
-    max-width: 700px;
-  margin: 2rem auto 0.5rem;
-  font-size: 1.05rem;
-  color: #555;
-}
 
+  max-width: 820px;
+
+  margin: 4rem auto 2rem;
+  padding: 0 1.5rem;
+
+  font-size: 1.15rem;
+  line-height: 1.9;
+
+  color: #44525e;
+}
 
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.8rem;
-  margin: 3rem auto 4rem;
-  padding: 0 1rem;
+  grid-template-columns: minmax(320px, 820px);
+  justify-content: center;
+  gap: 2rem;
+
+  margin: 3rem auto 5rem;
+  padding: 0 1.5rem;
 }
 
 
@@ -150,20 +153,17 @@ border-top: 6px solid #f5b800;
 
 
 .card-title {
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 650;
   color: #002A41;
 
-  line-height: 1.35;
-  margin-bottom: 0.8rem;
+  line-height: 1.2;
+  margin-bottom: 1.4rem;
 
-
-  display: -webkit-box;
-  -webkit-line-clamp: 4; 
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-
-  min-height: 2.8em;
+  letter-spacing: -0.02em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 
@@ -189,15 +189,55 @@ border-top: 6px solid #f5b800;
 }
 
 
-.parallax-hero {
+.parallax-hero-banner {
   height: 42vh;
   background-position: center 70%;
 }
 
-.parallax-hero h1 {
+.parallax-hero-banner h1 {
   font-size: 3rem;
 }
 
+
+.parallax-hero {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  height: 50vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.image-1 {
+  background-image: url('https://images.pexels.com/photos/30505255/pexels-photo-30505255.jpeg');
+    background-position: 50% 100%; 
+}
+
+
+.image-2 {
+  background-image: url('https://images.pexels.com/photos/5920661/pexels-photo-5920661.jpeg');
+    background-position: 50% 50%; 
+}
+
+
+.image-3 {
+  background-image: url('https://images.pexels.com/photos/36429592/pexels-photo-36429592.jpeg');
+    background-position: 50% 50%; 
+}
+
+
+.image-4 {
+  background-image: url('https://images.pexels.com/photos/23884118/pexels-photo-23884118.jpeg');
+    background-position: 50% -20%; 
+}
 
 
 
@@ -217,20 +257,25 @@ border-top: 6px solid #f5b800;
 
 
 .card-icon {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  opacity: 0.8;
-  width: 18px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  width: 24px;
+  opacity: 0.95;
   flex-shrink: 0;
 }
 
-
-.card-text {
-  font-size: 0.82rem;
-  color: #002A41;
-  line-height: 1.4;
+.card-intro {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4b5b68;
+  margin-bottom: 1.4rem;
 }
 
+.card-text {
+  font-size: 0.95rem;
+  color: #243746;
+  line-height: 1.7;
+}
 
 .card-text div {
   margin-bottom: 0.1rem;
@@ -259,7 +304,7 @@ border-top: 6px solid #f5b800;
 
 
 
-  .parallax-hero {
+  .parallax-hero-banner {
     background-attachment: scroll;
     height: 38vh;
   }
@@ -277,6 +322,7 @@ border-top: 6px solid #f5b800;
   padding: 0 1.5rem;
 }
 
+
   .about-grid {
     gap: 1.5rem;
   }
@@ -289,6 +335,24 @@ border-top: 6px solid #f5b800;
 }
 
 
+@media (max-width: 768px) {
+
+  .card-text {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .about-card {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+}
+
 </style>
 
 <section class="ws-hero">
@@ -297,16 +361,188 @@ border-top: 6px solid #f5b800;
   <div class="ws-hero__content">
     <p class="ws-hero__eyebrow">Durham HPC Days 2026</p>
     <h1>Socials</h1>
-    <p class="ws-hero__sub">
-    More details coming up soon</p>
   </div>
   </div>
 </section>
 
 <section class="description">
   <p>
-    Welcome to the Durham HPC Days 2026 social events. 
-    More details coming up soon.
+Durham HPC Days 2026 is not only about talks, tutorials, and workshops -
+it is also an opportunity to explore Durham, meet new people, exchange ideas,
+build connections across the community, and enjoy the city together throughout the week!
   </p>
+
+
 </section>
 
+
+<section class="parallax-hero image-1">
+</section>
+
+<section class="about-grid">
+
+  <!-- CEILIDH -->
+  <div class="about-card">
+    <div>
+      <div class="card-title">
+        Tuesday Evening Ceilidh
+      </div>
+
+      <div class="card-details">
+
+        <div class="card-row">
+          <div class="card-icon">🕖</div>
+          <div class="card-text">
+            Tuesday evening · 7:00pm to 9:00pm
+          </div>
+        </div>
+        
+
+        <div class="card-row">
+          <div class="card-icon">🎻</div>
+          <div class="card-text">
+            Our main social event of the week will be a traditional ceilidh led by local musicians and dancers.
+          </div>
+        </div>
+
+        <div class="card-row">
+          <div class="card-icon">🎶</div>
+          <div class="card-text">
+            Music will include Scottish, Irish, and Northumbrian jigs and reels, accompanied by group folk dancing guided by a caller.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="parallax-hero image-2">
+</section>
+
+
+<section class="about-grid">
+
+
+  <!-- FOOD TRUCKS -->
+  <div class="about-card">
+    <div>
+      <div class="card-title">
+        Evening Food Trucks & Informal Gatherings
+      </div>
+
+      <div class="card-details">
+
+        <div class="card-row">
+          <div class="card-icon">🍴</div>
+          <div class="card-text">
+            Dinner will be provided every evening by a selection of local food trucks.
+          </div>
+        </div>
+
+        <div class="card-row">
+          <div class="card-icon">📍</div>
+          <div class="card-text">
+            Food trucks will be located next to the Mountjoy Centre, creating a relaxed social and networking space for attendees after the day's sessions.
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+
+<section class="parallax-hero image-3">
+</section>
+
+
+
+<section class="about-grid">
+
+  <!-- MORNING RUNS -->
+  <div class="about-card">
+    <div>
+      <div class="card-title">
+        Morning Runs Along the River
+      </div>
+
+      <div class="card-details">
+
+        <div class="card-row">
+          <div class="card-icon">🏃</div>
+          <div class="card-text">
+            From Tuesday to Friday, optional organised morning runs will take place at 6:30am before the conference sessions begin.
+          </div>
+        </div>
+
+        <div class="card-row">
+          <div class="card-icon">🌤️</div>
+          <div class="card-text">
+            These easy 5k runs will follow scenic routes around the River Wear and through Durham city centre.
+          </div>
+        </div>
+
+        <div class="card-row">
+          <div class="card-icon">📍</div>
+          <div class="card-text">
+            Departure locations will be announced closer to the event.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+<section class="parallax-hero image-4">
+</section>
+
+
+<section class="about-grid">
+
+
+  <!-- MORNING WALKS -->
+  <div class="about-card">
+    <div>
+      <div class="card-title">
+        Guided Walks to Campus
+      </div>
+
+      <div class="card-details">
+
+        <div class="card-row">
+          <div class="card-icon">🚶</div>
+          <div class="card-text">
+            Daily organised walks will depart from Durham city centre at 8:00am.
+          </div>
+        </div>
+
+        <div class="card-row">
+          <div class="card-icon">🏰</div>
+          <div class="card-text">
+            Each day will feature a different route passing through some of Durham’s most recognisable landmarks and green spaces. Routes may include the Cathedral, Castle, river bridges, Botanic Gardens, and surrounding areas.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="description">
+  <p>
+    Additional details, meeting points, and routes will be released closer to the event.
+    Participation in all social activities is optional, and attendees are welcome to join as many or as few activities as they wish throughout the week.
+  </p>
+</section>
