@@ -295,7 +295,7 @@ hidden: true
        
           <a href="https://www.cerio.ai/about/">
       <div class="sponsor-logo">
-        <img src="https://media.licdn.com/dms/image/v2/D4E0BAQHXQBXfdTL5CQ/company-logo_200_200/company-logo_200_200/0/1696902111021/rockport_networks_inc__logo?e=1778716800&v=beta&t=t-VbfOn9xbXHlCrktMXJmXScWka56JMWKRPJ8IosSaY">
+        <img src="https://media.licdn.com/dms/image/v2/D4E0BAQHXQBXfdTL5CQ/company-logo_200_200/company-logo_200_200/0/1696902111021/rockport_networks_inc__logo?e=2147483647&v=beta&t=FtlSAqR4iyzjknbR2_hDBhx7wRiP4_KOeXl6N2hMEeU">
       </div>
        </a>
        
