@@ -14,6 +14,18 @@ classes: [full-programme]
 
 
 
+<script>
+(function () {
+
+  const isPhone = window.matchMedia("(max-width: 768px)").matches;
+
+  if (!isPhone) {
+    window.location.replace("/programme-week-2026/");
+  }
+
+})();
+</script>
+
 <div class="programme-container">
 
   <aside class="programme-sidebar">
@@ -880,6 +892,9 @@ document.querySelectorAll('.accordion-header').forEach(header => {
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+
+
+
 
   function initAccordion() {
     document.querySelectorAll('.day-toggle').forEach(header => {

@@ -7,9 +7,6 @@ classes: wide
 ---
 <style>
 
-body {
-  background: #faf8f4;
-}
 
   .ws-hero {
     position: relative;
@@ -294,10 +291,6 @@ border-top: 6px solid #f5b800;
     gap: 1.2rem;
   }
 
-  .ws-hero__eyebrow {
-    display: none;
-  }
-  
   .card-title {
     -webkit-line-clamp: 2;
   }
@@ -309,19 +302,6 @@ border-top: 6px solid #f5b800;
     height: 38vh;
   }
   
-    .ws-hero {
-    height: 30vh;
-    min-height: 150px;
-      align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  }
-
-.ws-hero__content {
-  padding: 0 1.5rem;
-}
-
 
   .about-grid {
     gap: 1.5rem;
@@ -376,16 +356,62 @@ border-top: 6px solid #f5b800;
   }
 }
 
+ 
+  @media(max-width:768px){
+
+.ws-hero{
+height:35vh;
+align-items:center;
+text-align:center;
+}
+
+.ws-hero__content{
+padding:0 1.5rem;
+  text-align: center !important;
+
+  margin: 4rem auto 2rem;
+}
+
+.ws-hero__eyebrow{
+display:none;
+
+  .ws-hero__content {
+    padding: 0 1.5rem;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .ws-hero h1 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ws-hero__sub {
+    text-align: center;
+  }
+  
+  
+}
+
+
+  
+  
+}
+
 
 </style>
 
 <section class="ws-hero">
   <div class="ws-hero__overlay"></div>
   <div class="ws-hero__grid"></div>
+
   <div class="ws-hero__content">
     <p class="ws-hero__eyebrow">Durham HPC Days 2026</p>
     <h1>Socials</h1>
-  </div>
+    <p class="ws-hero__sub">
+      
+    </p>
   </div>
 </section>
 

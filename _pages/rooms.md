@@ -173,22 +173,49 @@ background:
     letter-spacing: 0.01em;
   }
   
-  @media(max-width:768px){
 
-.ws-hero{
-height:35vh;
-align-items:center;
-text-align:center;
+@media (max-width: 768px) {
+  .about-grid {
+    gap: 1.2rem;
+  }
+
+  .ws-hero__eyebrow {
+    display: none;
+  }
+  
+  .card-title {
+    -webkit-line-clamp: 2;
+  }
+
+
+
+  .parallax-hero {
+    background-attachment: scroll;
+    height: 38vh;
+  }
+  
+    .ws-hero {
+    height: 30vh;
+    min-height: 150px;
+      align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  }
+
+.ws-hero__content {
+  padding: 0 1.5rem;
 }
 
-.ws-hero__content{
-padding:0 1.5rem;
-}
+  .about-grid {
+    gap: 1.5rem;
+  }
 
-.ws-hero__eyebrow{
-display:none;
-}
-
+  .card-title {
+    font-size: 1.05rem;
+    -webkit-line-clamp: 2; 
+    min-height: 2.8em;
+  }
 }
 
 #campus-map {

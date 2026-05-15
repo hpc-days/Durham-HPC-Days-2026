@@ -104,8 +104,8 @@ hidden: true
   <div class="ws-social-grid ws-hero__grid"></div>
   <div class="ws-hero__content">
     <h1>Socials</h1>
-    <a href="/" class="ws-hero-cta">
-  Coming up soon <span>→</span>
+    <a href="https://hpc-days.github.io/Durham-HPC-Days-2026/socials/" class="ws-hero-cta">
+  Explore our socials <span>→</span>
 </a>
   </div>
 </section>
