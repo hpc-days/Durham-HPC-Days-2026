@@ -5,7 +5,6 @@ hybrid: "https://events.teams.microsoft.com/event/6201bfc9-47ee-4d54-8f98-526a86
 
 speaker: "Luke Davis"
 speaker_photos:
-  - ""
 speaker_links: ""
 
 

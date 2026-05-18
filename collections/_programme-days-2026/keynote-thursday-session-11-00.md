@@ -4,7 +4,6 @@ hybrid: "https://events.teams.microsoft.com/event/02301006-7804-4933-ace7-cf7218
 
 speaker: "Albert Reuther"
 speaker_photos:
-  - ""
 speaker_links: ""
 
 

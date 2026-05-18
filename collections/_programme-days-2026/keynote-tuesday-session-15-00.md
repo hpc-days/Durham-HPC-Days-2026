@@ -4,7 +4,6 @@ hybrid: "https://events.teams.microsoft.com/event/f14c45ea-90ca-4394-af21-bc7a6a
 
 speaker: "Alice-Agnes Gabriel"
 speaker_photos:
-  - "https://shareing-dri.github.io/assets/profilepics/generic.jpg"
 speaker_links: "https://www.alicegabriel.com/"
 
 

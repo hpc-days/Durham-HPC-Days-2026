@@ -4,7 +4,6 @@ hybrid: "https://events.teams.microsoft.com/event/4b1409db-915f-4185-8245-efbdf0
 
 speaker: "Timo Betcke"
 speaker_photos:
-  - ""
 speaker_links: ""
 
 

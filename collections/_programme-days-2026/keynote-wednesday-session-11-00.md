@@ -4,7 +4,6 @@ hybrid: "https://events.teams.microsoft.com/event/d1bf1fca-48f8-4d5e-8a55-f8c5bf
 
 speaker: "Melyssa Fratkin"
 speaker_photos:
-  - "https://shareing-dri.github.io/assets/profilepics/generic.jpg"
 speaker_links: ""
 
 
