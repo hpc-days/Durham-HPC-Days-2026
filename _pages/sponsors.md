@@ -300,12 +300,10 @@ encouraged to attend the Ceilidh on the Tuesday evening.
         If you wish to ship goods to Durham, please send to:
       </p>
       <address style="line-height: 1.6; opacity: 0.9;">
-		Prof. Tobias Weinzierl <br>
-		Department of Maths and Computer Science<br>
-		Upper Mountjoy Campus<br>
-		Stockton Road<br>
-		Durham<br>
-		DH1 3LE
+Institute for Data Science (IDAS)<br />
+Maimie Yelland <br />
+Mountjoy Centre<br />
+DH1 3UP Durham
       </address>
 
       <h2 style="font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem;">Parking</h2>
