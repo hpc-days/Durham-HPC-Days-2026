@@ -309,6 +309,8 @@ ul.checklist li::before {
   
 The University has their own <a href= "https://www.durham.ac.uk/event-durham/" > Events team </a>. They also provide B&B accommodation. However, as we approach the new term, it is not likely that they have “spare” rooms.
     
+As it is graduation week in Durham, hotel spaces may be in short supply.  However Newcastle is only 11 minutes away from Durham by train, with regular and frequent services, and plenty of city centre hotels.
+
 
 
 

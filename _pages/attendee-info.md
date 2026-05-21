@@ -333,6 +333,10 @@ Durham DH1 3UP
     <li><a href="https://www.marriott.com">Durham Marriott Hotel</a></li>
     <li><a href="https://www.travelodge.co.uk/hotels/204/Durham-hotel">Travelodge Durham</a></li>
   </ul>
+<p>
+As it is graduation week in Durham, hotel spaces may be in short supply.  However Newcastle is only 11 minutes away from Durham by train, with regular and frequent services, and plenty of city centre hotels.
+</p>
+
 </div>
 
 
