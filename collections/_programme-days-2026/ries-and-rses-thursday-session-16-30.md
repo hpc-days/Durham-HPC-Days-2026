@@ -134,7 +134,7 @@ end_time_2: "18:00"
 
 
 
-room: "MCS0001"
+room: "MJC2004"
 
 
 
