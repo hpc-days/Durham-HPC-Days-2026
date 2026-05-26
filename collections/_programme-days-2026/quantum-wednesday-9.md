@@ -103,8 +103,21 @@ supported_link: ""
 # Full session description (please use <br> to add a new paragraph). Add requirements if relevant. 
 description: "This session will explore how quantum computing can be integrated into HPC. It is designed to bring together both classical computing specialists interested in the potential of quantum technologies and quantum experts looking for meaningful applications in classical scientific domains.
 The session will begin with a series of talks setting out the broader quantum-HPC landscape, including current capabilities, integration models, and emerging opportunities. The second part will open with application-focused talks to provide practical context and inspiration, before moving into an interactive breakout discussion.
-During the breakout, participants will be grouped by domain science area. Each group will first map out a tangible, representative classical workflow in its domain, then consider where quantum methods could realistically contribute, accelerate, or transform parts of that workflow. Quantum-classical experts will be available throughout the room to support and guide the discussions. By the end of the session, participants will have developed a clearer view of where quantum computing may offer value, where it is unlikely to help, and what practical steps are needed to move from possibility to application.
-"
+During the breakout, participants will be grouped by domain science area. Each group will first map out a tangible, representative classical workflow in its domain, then consider where quantum methods could realistically contribute, accelerate, or transform parts of that workflow. Quantum-classical experts will be available throughout the room to support and guide the discussions. By the end of the session, participants will have developed a clearer view of where quantum computing may offer value, where it is unlikely to help, and what practical steps are needed to move from possibility to application.<br><br>
+
+
+<strong>Schedule:</strong><br>
+<ul>
+  <li><strong>09:00–09:20</strong> — Beyond GEMM: GPU Optimization Strategies for Sparse, Irregular Graph Algorithms in Real-Time Quantum Error Correction — Jules Gransden, Riverlane</li>
+  <li><strong>09:20–09:40</strong> — QRMI — an open-source vendor neutral software for quantum resource management — Oscar Wallis, STFC UKRI</li>
+  <li><strong>09:40–10:00</strong> — NQCC Software Stack: Kwon — Tim Boyle, STFC UKRI</li>
+  <li><strong>10:00–10:30</strong> — Integrating quantum computing with HPC – prospects and challenges — Viv Kendon, University of Strathclyde</li>
+  <li><strong>13:00–13:20</strong> — Fourier extensions for block encoding matrix functions with exponential convergence — Peter Brearley, The University of Manchester</li>
+  <li><strong>13:20–13:40</strong> — Accelerating advanced computing: Quantum, HPC and AI — Chris Derson, Fsas Technologies, Fujitsu</li>
+  <li><strong>13:40–14:30</strong> — Breakout Discussion</li>
+</ul>"
+
+
    
 
 requirements: ""
