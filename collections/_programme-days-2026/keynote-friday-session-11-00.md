@@ -1,5 +1,5 @@
 ---
-title: "TBD"
+title: "CCMI - PhD Training on the Interface of Data, Software, and Computation"
 hybrid: "https://events.teams.microsoft.com/event/4b1409db-915f-4185-8245-efbdf0b946b4@7250d88b-4b68-4529-be44-d59a2d8a6f94"
 
 speaker: "Timo Betcke"
@@ -25,7 +25,9 @@ institution_link: ""
 room: "MCS0001"
 layout: keynote
 category: "keynote"
-description: ""
+description: "The EPSRC Centre for Doctoral Training in Collaborative Computational Modelling at the Interface (CCMI) is a newly created Doctoral Training Centre between UCL and Imperial College. Its vision is to create a modern graduate training programme that lifts Research Software Engineering from being a Professional Service to being a core academic activity of a Computational Researcher. In our first cohort we had 20 students and are  soon welcoming 16 more students for the second cohort, aiming to train over 70 students in the lifetime of the CDT.
+
+In this talk I will give an overview of what the CDT is and how we try to tackle the core training challenges on the interface of data, software, and computation."
 
 bio: ""
 ---
