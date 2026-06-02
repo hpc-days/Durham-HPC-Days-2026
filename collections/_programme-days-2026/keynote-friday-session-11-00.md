@@ -17,9 +17,6 @@ end_time: "12:00"
 
   
 
-institutions: ""
-institutions_logo: ""
-institution_link: ""
 
 
 room: "MCS0001"
@@ -29,5 +26,5 @@ description: "The EPSRC Centre for Doctoral Training in Collaborative Computatio
 
 In this talk I will give an overview of what the CDT is and how we try to tackle the core training challenges on the interface of data, software, and computation."
 
-bio: ""
+
 ---

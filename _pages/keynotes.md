@@ -155,6 +155,21 @@ linear-gradient(
   color: #002A41;
 
   line-height: 1.35;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  min-height: 3.4em;
+}
+
+.card-speaker {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #002A41;
+
+  line-height: 1.35;
   margin-bottom: 0.8rem;
 
 
@@ -162,8 +177,6 @@ linear-gradient(
   -webkit-line-clamp: 4; 
   -webkit-box-orient: vertical;
   overflow: hidden;
-
-  min-height: 2.8em;
 }
 
 
@@ -359,7 +372,6 @@ linear-gradient(
 <div class="about-card">
 
   <div class="card-title">{{ workshop.title }}</div>
-
   <div class="card-details">
 
   {% if workshop.start_time_2 %}
@@ -386,6 +398,7 @@ linear-gradient(
     
     
     
+    
   {% elsif workshop.start_time %}
     <div class="card-row">
     
@@ -405,6 +418,13 @@ linear-gradient(
       <div class="card-text">{{ workshop.room }}</div>
     </div>
   {% endif %}
+
+
+    <div class="card-row">
+      <div class="card-icon">🎤</div>
+      <div class="card-text">{{ workshop.speaker }}</div>
+    </div>
+
 
 
 

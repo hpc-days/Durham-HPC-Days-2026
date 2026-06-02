@@ -53,6 +53,19 @@ hidden: true
 
 
 <section class="ws-hero ws-hero-sessions full-bleed">
+  <div class="ws-keynotes ws-hero__overlay"></div>
+  <div class="ws-keynotes-grid ws-hero__grid"></div>
+  <div class="ws-hero__content">
+    <h1>Keynotes</h1>
+    <a href="https://hpc-days.github.io/Durham-HPC-Days-2026/keynotes/" class="ws-hero-cta">
+  Explore the keynotes <span>→</span>
+</a>
+  </div>
+</section>
+
+
+
+<section class="ws-hero ws-hero-sessions full-bleed">
   <div class="ws-tutorials ws-hero__overlay"></div>
   <div class="ws-tutorials-grid ws-hero__grid"></div>
   <div class="ws-hero__content">

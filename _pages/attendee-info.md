@@ -227,9 +227,9 @@ Durham DH1 3UP
   </p>
 
   <ul class="checklist">
-    <li><strong>Department of Computer Science</strong> - main lectures and sessions</li>
-    <li><strong>Rohan House</strong> - selected sessions and activities</li>
-    <li><strong>Mountjoy Centre</strong> - registration, catering, and additional sessions</li>
+    <li><strong>Mathematical Science and Computer Science Building (MCS) </strong> - main lectures and sessions</li>
+    <li><strong>Rohan House (RH)</strong> - selected sessions and activities</li>
+    <li><strong>Mountjoy Centre (MJC)</strong> - registration, catering, and additional sessions</li>
   </ul>
 
   <p>
@@ -237,6 +237,9 @@ Durham DH1 3UP
     Please refer to the  <a href="https://hpc-days.github.io/Durham-HPC-Days-2026/rooms/">Conference Rooms Map</a> for routes and building entrances.
   </p>
 
+<p>
+  A <strong>Quiet Room</strong> will be available throughout the conference in <strong>MCS 2053</strong>. This space is intended for attendees who would like a quiet place to work, or simply take a break from the conference. Please help us keep the room quiet by taking phone calls, online meetings, and conversations elsewhere.
+</p>
   <p>
     We recommend checking the programme each day to confirm the correct venue for your sessions.
   </p>
