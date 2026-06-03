@@ -112,7 +112,6 @@ We will look back on how past technologies have shaped the sector and the dRTP r
 <br><br>
 
 <b>Agenda:</b>
-<br><br>
 
 <table>
   <tr>
@@ -136,7 +135,7 @@ We will look back on how past technologies have shaped the sector and the dRTP r
     <td>Jannetta Steyn</td>
   </tr>
   <tr>
-    <td>17.15 - 17.55/td>
+    <td>17.15 - 17.55</td>
     <td>Panel discussion on the Future of HPC and HPC Services</td>
     <td>Chair: Deepak</td>
   </tr>  
