@@ -153,7 +153,7 @@ We will look back on how past technologies have shaped the sector and the dRTP r
   <li>Andy Turner (EPCC)</li>
   <li>Wojciech Turek (University of Cambridge)</li>
   <li>Mark Wilkinson (DiRAC)</li>
-  <li>tbc (UCL)</li>
+  <li>Silvia Ramos (UCL)</li>
 </ul>
   
 more tbc
