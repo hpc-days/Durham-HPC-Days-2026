@@ -109,6 +109,25 @@ supported_link: ""
 description: "This is a joint session organised by the HPC SIG and the HPC RSE SIG.
 <br><br>
 We will look back on how past technologies have shaped the sector and the dRTP roles, review current development and challenges, and think about where these developments - in particular the AI boom and recently appointed national supercomputers and resources - will lead the computational research community in the coming years.
+
+**Agenda:**
+
+| Slot          | Topic                                                  |Speaker            |
+| --------      | -------                                                |  -------          |
+| 16.30 - 16.40 | Intro from HPC SIG and HPC RSE SIG                     | Deepak and Marion |
+| 16.40 - 17.00 | History of HPC                                         | Simon and Simon   |
+| 17.00 - 17.15 | HPC Carpentries                                        | Jannetta Steyn    |
+| 17.15 - 17.55 | Panel discussion on the Future of HPC and HPC Services | Chair: Deepak     | 
+| 17.55 - 18.00 | Wrap-up                                                | Marion            |
+
+**Confirmed Panellists:**
+- Andy Turner (EPCC)
+- Wojciech Turek (University of Cambridge)
+- tbc (UCL)
+- Mark Wilkinson (DiRAC)
+  
+more tbc
+
 "
    
 
