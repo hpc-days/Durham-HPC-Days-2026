@@ -8,7 +8,7 @@ end_time: "18:00"
 
 #SPEAKERS
 # Comma-separated list of the speakers of the session
-speaker: "BIOS-IT, Dell, FSAS Technologies, Midas, Novatech, Spectra Logic, VAST"
+speaker: "BIOS-IT, Dell, Fsas Technologies, Midas, Novatech, Spectra Logic, VAST"
 # Speakers photos (must match order of names above). 
 speaker_photos:
 - "assets/images/biositlogo.png"
@@ -43,7 +43,7 @@ description: >
   <ul>
     <li>16:30 - BIOS-IT</li>
     <li>16:40 - Dell</li>
-    <li>16:50 - FSAS Technologies</li>
+    <li>16:50 - Fsas Technologies</li>
     <li>17:00 - Midas</li>
     <li>17:10 - Novatech</li>
     <li>17:20 - Spectra Logic</li>

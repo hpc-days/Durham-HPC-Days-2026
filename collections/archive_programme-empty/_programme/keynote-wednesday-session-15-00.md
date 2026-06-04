@@ -16,5 +16,5 @@ description: "Join us for a fast-paced vendor showcase featuring a series of sho
 
 <br/>This will be followed by a panel session.<br/><br/>
 
-Participating vendors include BeeGFS, BIOS-It, Computacenter, Dell, DDN, FSAS Technologies, Midas, Novatech, OCF, PeakAIO, Spectra Logic, StackHPC, VAST and Vespertec"
+Participating vendors include BeeGFS, BIOS-It, Computacenter, Dell, DDN, Fsas Technologies, Midas, Novatech, OCF, PeakAIO, Spectra Logic, StackHPC, VAST and Vespertec"
 ---
