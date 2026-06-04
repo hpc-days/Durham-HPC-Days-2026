@@ -344,3 +344,31 @@ If you experience any issues receiving your Microsoft Teams invitation, problems
 📧 Contact: <a href="mailto:YOUR_EMAIL_HERE">eva.fernandez-amez@durham.ac.uk</a>
 
 </div>
+
+
+<div style="
+max-width:1200px;
+margin:2rem auto 0;
+padding:1.2rem 1.5rem;
+border-radius:16px;
+background:#fff4cc;
+border-left:5px solid #f5b800;
+color:#555;
+line-height:1.6;
+">
+
+<strong>Code of Conduct</strong><br>
+
+    All participants are expected to adhere to the
+    <a href="https://www.cake.ac.uk/CAKEbox/code-of-conduct/"
+       target="_blank"
+       rel="noopener noreferrer">
+      CAKE Code of Conduct
+    </a>.
+    Concerns or incidents may be reported to the conference organisers or
+    directly to the CAKE team using the contact details provided on the Code
+    of Conduct page.
+ 
+</div>
+
+

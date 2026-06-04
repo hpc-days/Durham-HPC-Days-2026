@@ -52,6 +52,11 @@ hidden: true
 </section>
 
 
+
+
+
+
+
 <section class="ws-hero ws-hero-sessions full-bleed">
   <div class="ws-keynotes ws-hero__overlay"></div>
   <div class="ws-keynotes-grid ws-hero__grid"></div>
@@ -124,7 +129,26 @@ hidden: true
 </section>
 
 
+<section id="programme" class="fade-in">
+  <h2>💬 Join the HPC Days Slack Channel</h2>
 
+   <t style="max-width: 700px; margin: 0 auto 2rem;">
+    Stay connected with other attendees, ask questions, and receive conference updates through our Slack channel.
+  
+
+ 
+    HPC Days uses the CAKE Slack workspace. If you are not already a member, please join the workspace first:
+ </t>
+   
+   <t style="max-width: 700px; margin: 0 auto 2rem;">
+    Once you have joined the workspace, search for and join the HPC Days conference channel:
+    <strong>#hpc-days26</strong>.
+  </t>
+
+
+  <a href="https://join.slack.com/t/cake-dri/shared_invite/zt-3dvw46q4g-eode0z4zTvpzoBv~fsQv~w/" class="btn btn-purple">Join the CAKE Slack workspace</a>
+
+</section>
 
 <section id="featured-sessions" class="fade-in">
   <h2>🎤 Featured Sessions</h2>

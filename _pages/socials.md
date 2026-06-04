@@ -426,6 +426,122 @@ build connections across the community, and enjoy the city together throughout t
 </section>
 
 
+
+<section class="parallax-hero image-4">
+</section>
+
+
+
+
+
+
+<section class="about-grid">
+
+  <!-- MORNING RUNS -->
+  <div class="about-card">
+    <div>
+      <div class="card-title">
+           Morning Walk Around Durham
+      </div>
+
+
+    <div class="card-details">
+
+      <div class="card-row">
+        <div class="card-icon">🚶</div>
+        <div class="card-text">
+          Join an informal morning walk before the conference sessions begin and explore some of Durham's most iconic landmarks.
+        </div>
+      </div>
+
+
+      <div class="card-row">
+        <div class="card-icon">🏰</div>
+        <div class="card-text">
+          The route will take in Durham Market Place, Durham Castle, Durham Cathedral, and scenic paths along the River Wear.
+        </div>
+      </div>
+
+      <div class="card-row">
+        <div class="card-icon">📍</div>
+        <div class="card-text">
+          Meet at Durham Market Place. 
+              <a href="https://maps.app.goo.gl/vwP3oDikWWd8y4sY8" target="_blank">
+      View meeting point
+    </a>.
+  
+        </div>
+      </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="parallax-hero image-3">
+</section>
+
+
+
+
+
+
+<section class="about-grid">
+
+  <!-- MORNING RUNS -->
+  <div class="about-card">
+    <div>
+      <div class="card-title">
+        Morning Runs Along the River
+      </div>
+
+      <div class="card-details">
+
+        <div class="card-row">
+          <div class="card-icon">🏃</div>
+          <div class="card-text">
+            From Tuesday to Friday, optional organised morning runs will take place at 6:30am before the conference sessions begin.
+          </div>
+        </div>
+
+        <div class="card-row">
+          <div class="card-icon">🌤️</div>
+          <div class="card-text">
+            The route follows the River Wear, running out and back with a short loop at the end. The course is flat and crosses four bridges, offering scenic views of Durham.
+          </div>
+        </div>
+
+        <div class="card-row">
+          <div class="card-icon">📏</div>
+          <div class="card-text">
+            Runners can choose to turn around at approximately 2 miles or 3.1 miles, depending on their pace and experience.
+          </div>
+        </div>
+
+<div class="card-row">
+  <div class="card-icon">📍</div>
+  <div class="card-text">
+    Meet at Penny Ferry Bridge, adjacent to Durham University Business School.
+    <a href="https://maps.app.goo.gl/AaFi6FSBaPyV7ZXL9" target="_blank">
+      View meeting point
+    </a>.
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
 <section class="parallax-hero image-1">
 </section>
 
@@ -508,91 +624,8 @@ build connections across the community, and enjoy the city together throughout t
 </section>
 
 
-<section class="parallax-hero image-3">
-</section>
 
 
 
-<section class="about-grid">
-
-  <!-- MORNING RUNS -->
-  <div class="about-card">
-    <div>
-      <div class="card-title">
-        Morning Runs Along the River
-      </div>
-
-      <div class="card-details">
-
-        <div class="card-row">
-          <div class="card-icon">🏃</div>
-          <div class="card-text">
-            From Tuesday to Friday, optional organised morning runs will take place at 6:30am before the conference sessions begin.
-          </div>
-        </div>
-
-        <div class="card-row">
-          <div class="card-icon">🌤️</div>
-          <div class="card-text">
-            These easy 5k runs will follow scenic routes around the River Wear and through Durham city centre.
-          </div>
-        </div>
-
-        <div class="card-row">
-          <div class="card-icon">📍</div>
-          <div class="card-text">
-            Departure locations will be announced closer to the event.
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-</section>
 
 
-
-<section class="parallax-hero image-4">
-</section>
-
-
-<section class="about-grid">
-
-
-  <!-- MORNING WALKS -->
-  <div class="about-card">
-    <div>
-      <div class="card-title">
-        Guided Walks to Campus
-      </div>
-
-      <div class="card-details">
-
-        <div class="card-row">
-          <div class="card-icon">🚶</div>
-          <div class="card-text">
-            Daily organised walks will depart from Durham city centre at 8:00am.
-          </div>
-        </div>
-
-        <div class="card-row">
-          <div class="card-icon">🏰</div>
-          <div class="card-text">
-            Each day will feature a different route passing through some of Durham’s most recognisable landmarks and green spaces. Routes may include the Cathedral, Castle, river bridges, Botanic Gardens, and surrounding areas.
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-</section>
-
-
-<section class="description">
-  <p>
-    Additional details, meeting points, and routes will be released closer to the event.
-    Participation in all social activities is optional, and attendees are welcome to join as many or as few activities as they wish throughout the week.
-  </p>
-</section>

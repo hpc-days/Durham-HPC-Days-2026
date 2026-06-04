@@ -376,4 +376,37 @@ As it is graduation week in Durham, hotel spaces may be in short supply.  Howeve
 📧 Contact: <a href="mailto:YOUR_EMAIL_HERE">eva.fernandez-amez@durham.ac.uk</a>
 </div>
 
+
+
+<div class="info-card">
+  <h2>Code of Conduct</h2>
+
+  <p>
+     We are committed to providing a welcoming environment for all participants. All attendees, speakers, exhibitors,
+    sponsors, volunteers, and organisers are expected to follow the event's
+    Code of Conduct throughout the conference.
+  </p>
+
+
+    <p>
+    Please read the full Code of Conduct here:
+    <a href="https://www.cake.ac.uk/CAKEbox/code-of-conduct/"
+       target="_blank"
+       rel="noopener noreferrer">
+      CAKE Code of Conduct
+    </a>.
+  </p>
+
+  <p>
+    If you experience or witness behaviour that violates the Code of Conduct,
+    please contact a member of the organising team. Reports may also be made
+    directly to the CAKE team using the contact information provided on the
+    Code of Conduct page.
+  </p>
+
+</div>
+
+
+
+
 </section>
