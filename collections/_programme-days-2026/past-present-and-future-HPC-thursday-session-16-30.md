@@ -154,9 +154,8 @@ We will look back on how past technologies have shaped the sector and the dRTP r
   <li>Wojciech Turek (University of Cambridge)</li>
   <li>Mark Wilkinson (DiRAC)</li>
   <li>Silvia Ramos (UCL)</li>
+  <li>Luke Davis (UKRI)</li>
 </ul>
-  
-more tbc
 
 "
    
