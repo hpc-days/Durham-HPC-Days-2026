@@ -145,8 +145,8 @@ category: "workshop"
 day: "Thursday"
 track: "C"
 
-start_time: "13:00"
-end_time: "14:30"
+start_time: "16:30"
+end_time: "18:00"
 
 day_1: "Thursday"
 start_time_1: "13:00"
