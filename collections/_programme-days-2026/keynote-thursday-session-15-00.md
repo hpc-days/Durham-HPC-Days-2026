@@ -25,5 +25,5 @@ institution_link: ""
 room: "MCS0001"
 layout: keynote
 category: "keynote"
-description: ""
+description: "In this presentation Luke will talk about the UK Compute Roadmap written by DSIT and UKRI and published in July 2025.12 months on, we are still in an exciting place for Computational Science,  covering an update on the state of implementation, as well as the work still to do to achieve the vision."
 ---
