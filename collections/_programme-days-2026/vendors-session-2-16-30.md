@@ -37,7 +37,7 @@ room: "Mountjoy Centre"
 layout: session
 category: "Poster"
 description: >
-  <p>This session offers a series of focused presentations from selected vendors, providing a deeper look into their technologies and solutions for high-performance computing. With a smaller audience, attendees will have the opportunity to engage more directly and explore specific tools and services in greater detail.</p>
+  <p>This session offers a series of focused presentations from selected vendors, providing a deeper look into their technologies and solutions for high-performance computing. With a smaller audience, attendees will have the opportunity to engage more directly and explore specific tools and services in greater detail.  Each talk will be up to 8 minutes long.</p>
 
   <p><strong>Schedule:</strong></p>
   <ul>
