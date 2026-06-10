@@ -465,7 +465,7 @@ build connections across the community, and enjoy the city together throughout t
       <div class="card-row">
         <div class="card-icon">📍</div>
         <div class="card-text">
-          Meet at Durham Market Place. 
+          Meet at Durham Market Place at 8:00 am. 
               <a href="https://maps.app.goo.gl/vwP3oDikWWd8y4sY8" target="_blank">
       View meeting point
     </a>.
