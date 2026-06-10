@@ -279,21 +279,14 @@ border-top: 6px solid #f5b800;
 }
 
 
-.card-text {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+
 
 @media (max-width: 768px) {
   .about-grid {
     gap: 1.2rem;
   }
 
-  .card-title {
-    -webkit-line-clamp: 2;
-  }
+
 
 
 
@@ -307,11 +300,7 @@ border-top: 6px solid #f5b800;
     gap: 1.5rem;
   }
 
-  .card-title {
-    font-size: 1.05rem;
-    -webkit-line-clamp: 2; 
-    min-height: 2.8em;
-  }
+
 }
 
 
