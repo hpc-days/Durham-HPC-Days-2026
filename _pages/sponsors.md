@@ -206,7 +206,7 @@ permalink: /sponsors/
        
                         <a href="https://www.computacenter.com/en-gb">
       <div class="sponsor-logo">
-        <img src="https://reciteme.com/wp-content/uploads/2015/06/Computacenter-quote-image-logo-1024x1024.png">
+        <img src="../assets/images/computacenterlogo.png"/>
       </div>
        </a>
        
