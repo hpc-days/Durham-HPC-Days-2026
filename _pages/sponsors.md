@@ -235,6 +235,12 @@ permalink: /sponsors/
       </div>
       </a>
 
+     <a href="https://www.durham.ac.uk/">
+      <div class="sponsor-logo">
+        <img src="https://durham.readthedocs.io/en/latest/_static/logo.png">
+      </div>
+       </a>
+
 
       <!-- Add more as needed -->
 
