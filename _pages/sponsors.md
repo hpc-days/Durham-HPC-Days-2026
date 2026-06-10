@@ -231,9 +231,15 @@ permalink: /sponsors/
 
       <a href="https://www.cornelis.com" target="_blank" rel="noopener noreferrer">
       <div class="sponsor-logo">
-        <img src="assets/images/cornelislogo.png" alt="Cornelis">
+        <img src="../assets/images/cornelislogo.png" alt="Cornelis">
       </div>
       </a>
+
+     <a href="https://www.durham.ac.uk/">
+      <div class="sponsor-logo">
+        <img src="https://durham.readthedocs.io/en/latest/_static/logo.png">
+      </div>
+       </a>
 
 
       <!-- Add more as needed -->
