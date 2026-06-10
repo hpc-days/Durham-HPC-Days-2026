@@ -279,21 +279,14 @@ border-top: 6px solid #f5b800;
 }
 
 
-.card-text {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+
 
 @media (max-width: 768px) {
   .about-grid {
     gap: 1.2rem;
   }
 
-  .card-title {
-    -webkit-line-clamp: 2;
-  }
+
 
 
 
@@ -307,11 +300,7 @@ border-top: 6px solid #f5b800;
     gap: 1.5rem;
   }
 
-  .card-title {
-    font-size: 1.05rem;
-    -webkit-line-clamp: 2; 
-    min-height: 2.8em;
-  }
+
 }
 
 
@@ -465,7 +454,7 @@ build connections across the community, and enjoy the city together throughout t
       <div class="card-row">
         <div class="card-icon">📍</div>
         <div class="card-text">
-          Meet at Durham Market Place. 
+          Meet at Durham Market Place at 8:00 am. 
               <a href="https://maps.app.goo.gl/vwP3oDikWWd8y4sY8" target="_blank">
       View meeting point
     </a>.
