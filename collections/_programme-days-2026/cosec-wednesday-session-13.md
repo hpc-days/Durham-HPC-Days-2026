@@ -16,21 +16,26 @@ hybrid: "https://events.teams.microsoft.com/event/ed1ff0b8-4a82-4a28-99f3-a39f87
 
 #FACILITATOR
 # Comma-separated list of the facilitators of the session
-facilitator: "Wei Wang"
+facilitator: "Wei Wang, Damian Jones"
 # Facilitators' photos (must match order of names above). 
 facilitator_photos:
-  - "assets/images/WWang.jpg"
+  - "assets/images/profile/WWang.jpeg"
+  - "assets/images/profile/DJones.jpeg"
 # Facilitators' profile links (must match order of names above)
 facilitator_links:
   - "https://www.sc.stfc.ac.uk/team/?searchquery=dr-wei-wang"
-
+  - "https://www.sc.stfc.ac.uk/team/?searchquery=damian-jones"
 
 #SPEAKERS
 # Comma-separated list of the speakers of the session
 speaker: "Stephen Longshaw, Stefano Rolfo, Mayank Kumar, Tom Durrant, Wei Wang"
 # Speakers' photos (must match order of names above). 
 speaker_photos:
-  - ""
+  - "assets/images/profile/SLongshaw.jpeg"
+  - "assets/images/profile/SRolfo.jpg"
+  - "assets/images/profile/MKumar.jpeg"
+  - "assets/images/profile/TDurrant.jpeg"
+  - "assets/images/profile/WWang.jpeg"
 # Speakers' profile links (must match order of names above)
 speaker_links:
   - "https://www.sc.stfc.ac.uk/team/?searchquery=stephen-longshaw-dr"
