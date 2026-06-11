@@ -10,7 +10,7 @@
 # SCHEDULING INFORMATION - COMPLETE INFORMATION
 
 # Full TITLE of the session/tutorial
-title: "CoSeC"
+title: "CoSeC Knowledge Exchange: HPC Across Computational Research Communities "
 hybrid: "https://events.teams.microsoft.com/event/ed1ff0b8-4a82-4a28-99f3-a39f87975e90@7250d88b-4b68-4529-be44-d59a2d8a6f94"
 
 
@@ -19,31 +19,28 @@ hybrid: "https://events.teams.microsoft.com/event/ed1ff0b8-4a82-4a28-99f3-a39f87
 facilitator: "Wei Wang"
 # Facilitators' photos (must match order of names above). 
 facilitator_photos:
-  - "assets/images/generic.jpg"
+  - "assets/images/WWang.jpg"
 # Facilitators' profile links (must match order of names above)
 facilitator_links:
-  - ""
+  - "https://www.sc.stfc.ac.uk/team/?searchquery=dr-wei-wang"
 
 
 #SPEAKERS
 # Comma-separated list of the speakers of the session
-speaker: "Stefano Rolfo, Myank Kumar, "
+speaker: "Stephen Longshaw, Stefano Rolfo, Mayank Kumar, Tom Durrant, Wei Wang"
 # Speakers' photos (must match order of names above). 
 speaker_photos:
-  - "assets/images/generic.jpg"
+  - ""
 # Speakers' profile links (must match order of names above)
 speaker_links:
-  - ""
-
-
+  - "https://www.sc.stfc.ac.uk/team/?searchquery=stephen-longshaw-dr"
+  - "https://www.sc.stfc.ac.uk/team/?searchquery=dr-stefano-rolfo"
+  - "https://www.sc.stfc.ac.uk/team/?searchquery=mr-mayank-kumar"
+  - "https://www.sc.stfc.ac.uk/team/?searchquery=thomas-durrant-dr"
+  - "https://www.sc.stfc.ac.uk/team/?searchquery=dr-wei-wang"
 
 
 # -------------------------
-
-
-
-
-
 
 
 # ------------------------------------------------
@@ -99,9 +96,7 @@ supported_link: ""
 # DESCRIPTION
 
 # Full session description (please use <br> to add a new paragraph). Add requirements if relevant. 
-description: ""
-   
-
+description: "This CoSeC session brings together representatives from several Collaborative Computational Projects (CCPs) and High-End Computing (HEC) communities to discuss how high-performance computing (HPC) is used across different research domains. The session will highlight the diversity of HPC workloads supported by CoSeC, including turbulence, wave-structure interaction, molecular simulation, engineering modelling, and nuclear thermal hydraulics. <br> The aim is to compare computational patterns across domains, identify shared challenges and opportunities, and gather community input to help inform future UK national HPC services beyond ARCHER2. <br>Agenda<br> 13:00-13:05 Welcome - Wei Wang <br> 13:05-13:15 CoSeC Overview: HPC Roles Across Computational Research Communities - Stephen Longshaw<br>13:15-13:25 CCP-Turbulence and UKTC: a community based effort to support high fidelity fluid modelling for the UK academic and industrial ecosystem - Stefano Rolfo<br>13:25-13:35 CCP-WSI - Mayank Kumar<br>13:35-13:45 CCP5 - Tom Durrant<br>13:45-13:55 CCP-NTH: HPC for nuclear thermal hydraulics and emerging AI/HPC workflows - Wei Wang<br> 13:55-14:25 Structured panel and audience discussion: shared HPC workload patterns, bottlenecks, and future national HPC service needs - All speakers<br> 14:25-14:30 Summary and next steps - Stephen Longshaw / CoSeC office<br>The panel discussion will focus on common HPC workload patterns across communities, shared technical and community bottlenecks, and requirements for future UK national HPC services. Audience input may be gathered through brief questions and Slido if available.<br>"
 requirements: ""
 
 
