@@ -104,7 +104,7 @@ NFCS+ projects based around large scale data transfer. Steps taken towards this 
 
 This session will start with the presentation for 20-30 minutes, and then a discussion will follow to capture and gather user requirements for large-scale data movement, insights into how this can be achieved, visibility of upcoming projects, etc.
 
-If you have any data, and may need to move it in the future, this session is for you!
+If you have any data, and may need to move it in the future, this session is for you!"
 
 
 requirements: ""
