@@ -101,7 +101,11 @@ supported_link: ""
 # Full session description (please use <br> to add a new paragraph). Add requirements if relevant. 
 description: "Large-scale data transfer between HPC facilities ought to be a solved problem. However, from a user perspective, it is often unnecessarily complex. This session will explore use cases and successes in large scale transfer, and report on outcomes from several
 NFCS+ projects based around large scale data transfer. Steps taken towards this in areas such as cosmology, nuclear fusion and astronomy will be presented, including facilities with large data sets such as the Vera Rubin telescope. "
-   
+
+This session will start with the presentation for 20-30 minutes, and then a discussion will follow to capture and gather user requirements for large-scale data movement, insights into how this can be achieved, visibility of upcoming projects, etc.
+
+If you have any data, and may need to move it in the future, this session is for you!
+
 
 requirements: ""
 
