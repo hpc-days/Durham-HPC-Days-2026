@@ -10,7 +10,7 @@
 # SCHEDULING INFORMATION - COMPLETE INFORMATION
 
 # Full TITLE of the session/tutorial
-title: "Lustre User Group UK Summer Meeting"
+title: "Cancelled: Lustre User Group UK Summer Meeting"
 
 
 
@@ -100,7 +100,7 @@ supported_link: ""
 # DESCRIPTION
 
 # Full session description (please use <br> to add a new paragraph). Add requirements if relevant. 
-description: "The summer meeting of Lustre User Group UK talking all things Lustre and HPC storage including getting started with Lustre, user stories, technical updates and an expert panel to answer your questions."
+description: "The LUG has been cancelled this time, due to lack of staff availability to lead on training."
    
 
 requirements: ""
