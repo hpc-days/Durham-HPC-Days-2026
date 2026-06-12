@@ -6,6 +6,17 @@ layout: default
 <section class="session-hero fade-in">
   <div class="ws-hero__grid"></div>
   <div class="session-hero-content">
+
+
+    
+        {% if page.category %}
+  <span class="session-category">
+    {{ page.category }}
+  </span>
+{% endif %}
+
+
+
     <h1>{{ page.title }}</h1>
 {% if page.lead %}
       {% assign sp_count = page.lead | split: "," | size %}
@@ -321,7 +332,7 @@ layout: default
 .session-hero {
   width: 100vw;
     margin-left: calc(50% - 50vw);
-    height: 40vh;
+    height: 60vh;
     min-height: 320px;
   background: 
     linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), /* contrast layer */
@@ -508,6 +519,25 @@ ul {
   text-decoration: none;
   box-shadow: 0 10px 22px rgba(0,0,0,0.2);
 }
+
+.session-category {
+  display: inline-block;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 
 @media (max-width: 600px) {
   .register-btn {

@@ -16,20 +16,20 @@ hybrid: "https://events.teams.microsoft.com/event/2975807b-6894-4e65-96f6-7e60cc
 
 #LEADS
 # Comma-separated list of the leads of the session
-lead: "Gokberk Kabacaoglu"
+facilitator: "Gokberk Kabacaoglu"
 # Leads photos (must match order of names above). 
-lead_photos:
+facilitator_photos:
   - "assets/images/generic.jpg"
 # Leads profile links (must match order of names above)
-lead_links:
+facilitator_links:
   - ""
 
 
 #CONTRIBUTORS
 # Comma-separated list of the speakers of the session
-contributor: "Bidipta Sarkar, Junyan Hu, Andrew Mole, Shruti Mishra,  Giorgio Maria Cavallazzi"
+speaker: "Bidipta Sarkar, Junyan Hu, Andrew Mole, Shruti Mishra,  Giorgio Maria Cavallazzi"
 # Contributors' photos (must match order of names above). 
-contributor_photos:
+speaker_photos:
   - "assets/images/generic.jpg"
   - "assets/images/generic.jpg"
   - "assets/images/generic.jpg"
@@ -38,7 +38,7 @@ contributor_photos:
   - "assets/images/generic.jpg"
   - "assets/images/generic.jpg"
 # Contributors' profile links (must match order of names above)
-contributor_links:
+speaker_links:
   - "https://bsarkar321.github.io/"
   - "https://www.durham.ac.uk/staff/junyan-hu/"
   - "https://profiles.imperial.ac.uk/a.mole"
@@ -139,8 +139,8 @@ requirements: ""
 
 
 
-layout: workshop
-category: "workshop"
+layout: talk
+category: "talk"
 
 day: "Thursday"
 track: "C"

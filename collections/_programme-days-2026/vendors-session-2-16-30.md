@@ -34,7 +34,7 @@ speaker_links:
   - "https://www.cornelis.com"  
   
 
-room: "Mountjoy Centre"
+room: "MJC2006"
 layout: session
 category: "Poster"
 description: >

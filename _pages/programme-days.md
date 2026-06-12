@@ -26,6 +26,22 @@ classes: [full-programme]
 })();
 </script>
 
+
+  <div class="legend-link-wrapper">
+  <a href="{{ '/rooms/' | relative_url }}" class="legend-link">
+    🗺️ Check where the rooms are on the map
+  </a>
+
+     <a href="https://raw.githubusercontent.com/hpc-days/Durham-HPC-Days-2026/main/assets/images/booklet-hpcdays-26.pdf" class="legend-link">
+    📖 Download Programme Booklet (1,1 MB)
+  </a>
+
+     <a href="https://raw.githubusercontent.com/hpc-days/Durham-HPC-Days-2026/main/assets/images/summary-booklet-hpcdays-26.pdf" class="legend-link">
+      📄 Download Programme Summary (850 KB)
+  </a>
+
+  </div>
+
 <div class="programme-container">
 
   <aside class="programme-sidebar">
@@ -108,7 +124,6 @@ classes: [full-programme]
 
 
 
-
           {% if this_session.title contains "TBD" %}
             {% assign category_class = category_class | append: " tbd" %}
           {% endif %}
@@ -117,7 +132,16 @@ classes: [full-programme]
                id="{{ this_session.id | default: this_session.title | slugify }}"
                {% if this_session.part_of %}data-part="{{ this_session.part_of }}"{% endif %}>
           
-          
+{% if s.category %}
+  <span class="session-category category-{{ s.category | downcase }}">
+    {% if s.category == "talk" %}
+      Talks
+    {% elsif s.category == "Poster" %}
+    {% else %}
+      {{ s.category | capitalize }}
+    {% endif %}
+  </span>
+{% endif %}
           
           {% if this_session.room %}
   <p class="room">Room: {{ this_session.room }}</p>
@@ -194,6 +218,72 @@ classes: [full-programme]
      
      
 <style>
+
+.legend-link-wrapper .legend-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: 999px;
+  background: #002A41;
+  color: #fff !important;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  margin-top:0.5rem;
+  margin-bottom:0.5rem;
+  margin-left: 0.5rem;
+}
+
+.legend-link-wrapper .legend-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+
+
+
+.session-category {
+  margin-top: 0.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  cursor: default;
+  user-select: none;
+}
+
+.category-talk {
+  color: #0d8157;
+}
+
+.category-workshop {
+  color: #184a7c;
+}
+
+.category-meeting {
+  color: #c85096;
+}
+
+.category-keynote {
+  color: #68246d;
+}
+
+.category-tutorial {
+  color: #947312;
+}
+
+.category-poster {
+  color: #dc3232;
+}
+
+
 
 .programme-top-button {
   width: 100%;           
@@ -805,7 +895,7 @@ padding: 0.5rem;
   }
 
   .programme-day.expanded .programme-grid {
-    max-height: 2000px;        
+      max-height: 10000px;      
   }
   .day-toggle {
     cursor: pointer;
@@ -839,7 +929,7 @@ padding: 0.5rem;
     transition: max-height 0.4s ease;
   }
   .programme-day.expanded .programme-grid {
-    max-height: 2000px;        
+    max-height: 10000px;        
   }
 }
 

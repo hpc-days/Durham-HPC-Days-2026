@@ -16,23 +16,23 @@ hybrid: "https://events.teams.microsoft.com/event/e0b1469d-3e39-45e0-aaf3-df2b61
 
 #FACILITATOR
 # Comma-separated list of the leads of the session
-facilitator: "Simon Hands"
+lead: "Simon Hands"
 # Leads photos (must match order of names above). 
-facilitator_photos:
+lead_photos:
   - "https://github.com/user-attachments/assets/607c5dd9-d266-4c78-b885-3c046c436e31"
 # Leads profile links (must match order of names above)
-facilitator_links:
+lead_links:
   - "https://dirac.ac.uk/person/simon-hands/"
 
 
 #SPEAKERS
 # Comma-separated list of the speakers of the session
-speaker: "Luke Davis, Luigi del Debbio, Sarah Harris, Jonathan Hays, Eugene Lim, Crispin Miller, Karina Rodriguez Echavarria, Katherine Rooke, Matthieu Schaller, Andrea Townsend-Nicholson, Mark Wilkinson, Scott Woodley"
+contributor: "Luke Davis, Luigi del Debbio, Sarah Harris, Jonathan Hays, Eugene Lim, Crispin Miller, Karina Rodriguez Echavarria, Katherine Rooke, Matthieu Schaller, Andrea Townsend-Nicholson, Mark Wilkinson, Scott Woodley"
 # Speakers photos (must match order of names above). 
-speaker_photos:
+contributor_photos:
  - ""
 # Speakers profile links (must match order of names above)
-speaker_links:
+contributor_links:
   - "https://www.rc-harwell.ac.uk/who-we-are/governance/our-executive-board/luke-davis-epsrc"
   - "https://higgs.ph.ed.ac.uk/people/del-debbio-luigi/"
   - "https://www.ccpbiosim.ac.uk/people/core-team/sarah-harris"
@@ -125,8 +125,8 @@ requirements: ""
 
 
 
-layout: talk
-category: "talk"
+layout: workshop
+category: "workshop"
 
 
 day: "Friday"
