@@ -20,7 +20,7 @@ hybrid: "https://events.teams.microsoft.com/event/ab407616-3405-4f5b-8028-84ffda
 lead: "Helen Cooper"
 # Leads photos (must match order of names above). 
 lead_photos:
-  - "assets/images/generic.jpg"
+  - "assets/images/HelenCooper.png"
 # Leads profile links (must match order of names above)
 lead_links:
   - ""
@@ -28,10 +28,10 @@ lead_links:
 
 #CONTRIBUTORS
 # Comma-separated list of the contributors of the session
-contributor: "Dean Roe"
+contributor: "Dugan Witherick, Sylvie Ramos"
 # contributors photos (must match order of names above). 
 contributor_photos:
-  - "assets/images/generic.jpg"
+  - "/assets/images/Dugan-Witherick-RCS-BW.jpg"
 # contributors profile links (must match order of names above)
 contributor_links:
   - ""
@@ -78,7 +78,7 @@ institution_link: ""
 # Comma-separated list of organisers
 organiser: "ACIT hub"
 # Organisers logo
-organiser_logo: "https://acit.surrey.ac.uk/assets/img/ACIT_logo_square.png"
+organiser_logo: "assets/images/ACIT_logo.png"
 # Organisers website link
 organiser_link: "https://acit.surrey.ac.uk/index.html"
 
@@ -101,8 +101,24 @@ supported_link: ""
 
 # Full session description (please use <br> to add a new paragraph). Add requirements if relevant. 
 description: "Discover how Research Infrastructure Engineers (RIEs) and Research Software Engineers (RSEs) can work together to boost HPC user confidence and improve cluster efficiency.
-We’ll be sharing results from the first ACIT hub hackathon, showcasing approaches for improving user efficiency on accelerated compute clusters, along with dashboards for system administrators and users that can help highlight issues at a glance.
-Take part in facilitated discussions to shape future hackathons, get under the hood of the cluster and into the minds of users, explore real pain points at the software–hardware boundary, and help define where intervention could have the biggest impact."
+
+Building and running scientific software on HPC systems is becoming increasingly complex, particularly as traditional toolchains meet rapidly evolving AI workflows. This session brings together perspectives from research infrastructure engineering and emerging concepts for federated AI applications, exploring how software stacks are built, managed, and supported in practice.
+Rather than focusing on tools alone, we want to examine the tensions between portability and performance, central provision and user responsibility, and standardisation versus local practice. An interactive unconference will invite participants to share experiences and explore how software environments—and the roles that support them are evolving for modern research computing.
+
+<br>
+<b>Dugan Witherick - Building and running Scientific Software from the RIE perspective</b>
+<br>
+HPC isn’t just code, it’s the entire stack, and ignoring it costs you performance, portability and more.  Learn about the considerations when trying to build software that works everywhere and begin to understand what containers, compilers, and infrastructure could mean for your research.
+<br>
+Dugan is the Head of Research Computing Platforms at Imperial College London. He holds a PhD in Astronomy from UCL and has built his career supporting research through advanced computing. He began as an HPC software engineer before moving into HPC infrastructure, with roles at the University of Oxford, the Institute of Cancer Research, and the University of Warwick. 
+<br>
+<br>
+<b>Sylvie Ramos - Federated AI Application Container Registry/Platform feasibility Study </b>
+<br>
+We are undertaking a comprehensive feasibility study and requirements gathering exercise to inform the potential development of a National Federated Compute Service (NFCS) platform or registry for AI application containers. The goal is to understand the community needs and technical viability of a service that simplifies access to AI tools (like TensorFlow, PyTorch) optimised for various hardware, including different CPU architectures (x86, ARM) and accelerators akin to a hardware-agnostic, federated version of vendor-specific cloud registries.
+<br>
+Sylvie is a Principal Research Infrastructure Developer at UCL leading the developement of Unified AI Services. She has particular interest in AI platforms and data management.  Previously, she worked as a software engineer on data management and data acquisition systems for a large UK experimental facility. Her role also involved supporting and helping researchers to get the most of the hardware available. Before moving to a development and support role, she was a post-doc working on Fusion devices.
+"
    
 
 requirements: ""
