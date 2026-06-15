@@ -106,6 +106,8 @@ description: |
     and container orchestration. This workshop is delivered by the Cloud-Native SIG
     team with support from the Computational Abilities Knowledge Exchange Network+.
 
+    Following along using this [Github pages](https://cloud-native-sig.github.io/hpcdays26-pocket-sized-kubernetes/introduction/)
+
 requirements: "Personal Device/Laptop"
 
 
