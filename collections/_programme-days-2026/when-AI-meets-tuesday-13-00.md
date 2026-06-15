@@ -102,23 +102,33 @@ supported_link: ""
 # DESCRIPTION
 
 # Full session description (please use <br> to add a new paragraph). Add requirements if relevant. 
-description:
- "This session serves as the main forum for work at the intersection of scientific research and Artificial Intelligence during Durham HPC Days, bringing together methods, applications, and infrastructure focused on using high-performance computing (HPC) to enable modern AI in science.<br>
 
-We highlight contributions that use machine learning, deep learning, and data-driven approaches to accelerate or augment scientific discovery on CPUs, GPUs, and emerging accelerators, including both mature results and work-in-progress studies.
-<br>
-The session spans a wide range of domains, including astrophysics and cosmology, climate and weather, materials and chemistry, life sciences, engineering, finance, and the social sciences. We also welcome cross-cutting work on scientific machine learning, surrogate models, AI-guided simulation and experiment design, scalable training and inference, workflow orchestration, and the robustness and trustworthiness of AI in scientific settings.
-<br>
-We strongly encourage participation from all career stages (from students and early-career researchers to senior academics, Research Software Engineers, and industry partners), and particularly from colleagues in under-represented groups. Both technical deep-dives and application-driven case studies are welcome.
-<br>
-As part of this session, we invite short talks from researchers and practitioners working at the intersection of AI and HPC.
-<br>
-To propose a talk or express interest in contributing, please submit your details via the following form <a href='https://docs.google.com/forms/d/e/1FAIpQLSeHOmlFKnq88BODiBWNrO4eVCz9oaEiJgnKsUTtzdPz_CJGGg/viewform'> here </a>
-<br><br>
-- Deadline for submission: May 10, 2026<br>
-- Outcomes communicated by May 16, 2026.<br>
-<br>
-(Note that you need to register for the HPC Days - registration deadline 20.4.2026 - to attend the workshop. <a href='https://hpc-days.github.io/Durham-HPC-Days-2026/register/'> Register here</a>)"
+description: "20 min talk + 5 min Q&A per talk
+
+<h3> From Automation to Autonomy: Agentic AI in HPC • Fawada Qaiser </h3>
+
+High-performance computing has automated many aspects of scientific research, yet researchers still spend substantial time coordinating workflows across simulations, data, models, schedulers, and analysis tools.
+
+This talk explores how agentic AI could move HPC from automation to autonomy by enabling workflows that reason, plan, act, and adapt across multi-step scientific tasks. It highlights opportunities in simulation steering, adaptive exploration, and hybrid simulation-AI pipelines.
+
+The central message is that agentic AI is not replacing scientists, but reducing workflow complexity and accelerating discovery.
+
+
+ <h3> Panel Discussion: The Future of AI in Scientific Computing </h3>
+
+
+Moderator: Dr Fawada Qaiser
+
+*Panel Members:*
+- Prof Jeyan Thiyagalingam
+- Prof Mark Wilkinson
+- Daniele Sorini
+- Gavin Leroy
+- Craig Bower
+
+This panel discusses emerging directions in AI-enabled scientific computing, including trustworthy AI, digital twins, agentic workflows, and the role of HPC in future discovery."
+
+
 
 # -------------------------
 # SCHEDULING INFORMATION - PLEASE DO NOT TOUCH THIS PART
@@ -133,8 +143,8 @@ category: "talk"
 day: "Tuesday"
 track: "C"
 
-start_time: "09:00"
-end_time: "10:30"
+start_time: "13:00"
+end_time: "14:30"
 
 
 day_1: "Tuesday"
