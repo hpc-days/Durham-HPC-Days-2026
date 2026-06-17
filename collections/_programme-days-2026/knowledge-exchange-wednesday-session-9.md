@@ -17,25 +17,25 @@ hybrid: "https://events.teams.microsoft.com/event/91f5eaaa-9d94-434e-94be-b26b70
 
 #FACILITATOR
 # Comma-separated list of the facilitator of the session
-facilitator: "Marion Weinzierl"
+lead: "Marion Weinzierl"
 # facilitator photos (must match order of names above). 
-facilitator_photos:
+lead_photos:
   - "assets/images/generic.jpg"
 # facilitator profile links (must match order of names above)
-facilitator_links:
+lead_links:
   - ""
 
 
 #SPEAKERS
 # Comma-separated list of the speakers of the session
-speaker: "Joe Wallwork, Lewis Sampson, Louise Chisholm"
+contributor: "Joe Wallwork, Lewis Sampson, Louise Chisholm"
 # Speakers photos (must match order of names above). 
-speaker_photos:
+contributor_photos:
   - "assets/images/generic.jpg"
   - "assets/images/lewis-stfc-dafni.jpg"
   - "assets/images/generic.jpg"
 # Speakers profile links (must match order of names above)
-speaker_links:
+contributor_links:
   - ""
   - "https://www.sc.stfc.ac.uk/programmes/dafni/"
   - ""
@@ -118,8 +118,8 @@ requirements: ""
 
 
 
-layout: talk
-category: "talk"
+layout: workshop
+category: "workshop"
 
 day: "Wednesday"
 track: "C"

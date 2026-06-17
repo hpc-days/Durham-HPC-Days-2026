@@ -102,23 +102,36 @@ supported_link: ""
 # DESCRIPTION
 
 # Full session description (please use <br> to add a new paragraph). Add requirements if relevant. 
-description:
- "This session serves as the main forum for work at the intersection of scientific research and Artificial Intelligence during Durham HPC Days, bringing together methods, applications, and infrastructure focused on using high-performance computing (HPC) to enable modern AI in science.<br>
+description: "20 min talk + 5 min Q&A per talk
 
-We highlight contributions that use machine learning, deep learning, and data-driven approaches to accelerate or augment scientific discovery on CPUs, GPUs, and emerging accelerators, including both mature results and work-in-progress studies.
-<br>
-The session spans a wide range of domains, including astrophysics and cosmology, climate and weather, materials and chemistry, life sciences, engineering, finance, and the social sciences. We also welcome cross-cutting work on scientific machine learning, surrogate models, AI-guided simulation and experiment design, scalable training and inference, workflow orchestration, and the robustness and trustworthiness of AI in scientific settings.
-<br>
-We strongly encourage participation from all career stages (from students and early-career researchers to senior academics, Research Software Engineers, and industry partners), and particularly from colleagues in under-represented groups. Both technical deep-dives and application-driven case studies are welcome.
-<br>
-As part of this session, we invite short talks from researchers and practitioners working at the intersection of AI and HPC.
-<br>
-To propose a talk or express interest in contributing, please submit your details via the following form <a href='https://docs.google.com/forms/d/e/1FAIpQLSeHOmlFKnq88BODiBWNrO4eVCz9oaEiJgnKsUTtzdPz_CJGGg/viewform'> here </a>
-<br><br>
-- Deadline for submission: May 10, 2026<br>
-- Outcomes communicated by May 16, 2026.<br>
-<br>
-(Note that you need to register for the HPC Days - registration deadline 20.4.2026 - to attend the workshop. <a href='https://hpc-days.github.io/Durham-HPC-Days-2026/register/'> Register here</a>)"
+<h3> Linking galaxy properties to halo gas density profiles with interpretable machine learning • Daniele Sorini </h3>
+
+Stellar and AGN feedback shape the distribution of gas from galaxies out to the intergalactic medium, but how this connects to galaxy properties remains uncertain. In this talk, I present a random forest algorithm that predicts the radial gas density profile within haloes from global properties of the central galaxy, including gas and stellar mass, star formation rate, and black hole mass and accretion rate. The model is trained on cosmological hydrodynamical simulations (EAGLE, IllustrisTNG, and Simba) and accurately recovers the simulated gas density profiles across a wide range of halo masses and redshifts. I will show how the predictions can be interpreted using statistical tools, including Sobol sensitivity analysis, to identify which galaxy properties are most closely linked to the gas distribution and what this reveals about feedback physics.
+
+ <h3> Spotting the Giants: Finding Galaxy Clusters in Noisy Weak-Lensing Convergence Maps • Gavin Leroy</h3>
+
+
+Galaxy clusters are among the most massive bound structures in the Universe and are key probes of cosmology and large-scale structure formation. In weak gravitational lensing surveys, they can appear as localized features in convergence maps. However, their detection is complicated by projection effects, shape noise, filtering choices, and the intrinsically non-Gaussian structure of the cosmic matter field.
+
+In this work, we investigate supervised machine-learning approaches for detecting galaxy clusters in filtered convergence maps, comparing convolutional U-Net and Vision Transformer models.
+
+
+<h3> Trustworthy Digital Twins of AREPO AGN-Jet Simulations • Craig Bower</h3>
+
+
+
+AGN jets are among the most powerful regulators in the Universe, yet each high-resolution AREPO simulation costs millions of core-hours, and every jet power demands a fresh run. We explore how a fast neural emulator can act as a digital twin of these simulations.
+
+Our physics-informed neural field maps position, time, and Eddington ratio to hydrodynamic fields while enforcing physical constraints and enabling fast querying.
+
+We also demonstrate how adaptive conformal inference provides reliable uncertainty estimates across different regimes.
+
+
+<h3> AI and DiRAC Training Hub • Gokman </h3>
+
+
+This talk presents the AI and DiRAC Training Hub, focusing on developing skills, training pathways, and community support for researchers working at the intersection of artificial intelligence and high-performance computing.
+"
 
 # -------------------------
 # SCHEDULING INFORMATION - PLEASE DO NOT TOUCH THIS PART
@@ -148,7 +161,5 @@ end_time_2: "14:30"
 
 
 room: "MJC2004"
-
-
-
 ---
+```

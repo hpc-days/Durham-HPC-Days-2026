@@ -16,25 +16,25 @@ hybrid: "https://events.teams.microsoft.com/event/a0a0dacb-ae88-4857-9128-3c6c7a
 
 #FACILITATOR
 # Comma-separated list of the facilitators of the session
-facilitator: "Omer Rathore, James Richings"
+lead: "Omer Rathore, James Richings"
 # Facilitators' photos (must match order of names above). 
-facilitator_photos:
+lead_photos:
   - "assets/images/generic.jpg"
   - "assets/images/generic.jpg"
 # Facilitators' profile links (must match order of names above)
-facilitator_links:
+lead_links:
   - ""
 
 
 
 #SPEAKERS
 # Comma-separated list of the speakers of the session
-speaker: ""
+contributor: ""
 # Speakers photos (must match order of names above). 
-speaker_photos:
+contributor_photos:
   - "assets/images/generic.jpg"
 # Speakers profile links (must match order of names above)
-speaker_links:
+contributor_links:
   - ""
 
 
@@ -129,8 +129,8 @@ requirements: ""
 
 
 
-layout: talk
-category: "talk"
+layout: workshop
+category: "workshop"
 
 
 day: "Wednesday"

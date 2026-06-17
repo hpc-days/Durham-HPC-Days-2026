@@ -34,7 +34,7 @@ speaker_links:
   
   
 
-room: "Mountjoy Centre"
+room: "MJC2004"
 layout: session
 category: "Poster"
 description: >

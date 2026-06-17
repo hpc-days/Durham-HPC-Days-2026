@@ -44,7 +44,17 @@ classes: [full-programme]
   <a href="{{ '/rooms/' | relative_url }}" class="legend-link">
     🗺️ Check where the rooms are on the map
   </a>
+
+     <a href="https://raw.githubusercontent.com/hpc-days/Durham-HPC-Days-2026/main/assets/images/booklet-hpcdays-26.pdf" class="legend-link">
+    📖 Download Full Programme Booklet (1,1 MB)
+  </a>
+
+     <a href="https://raw.githubusercontent.com/hpc-days/Durham-HPC-Days-2026/main/assets/images/summary-booklet-hpcdays-26.pdf" class="legend-link">
+      📄 Download Programme Overview (850 KB)
+  </a>
+
   </div>
+
   
 <div class="programme-legend">
 
@@ -52,9 +62,9 @@ classes: [full-programme]
   <div class="legend-item workshop" data-category="workshop"><span class="legend-colour"></span> Workshops</div>
   <div class="legend-item talk" data-category="talk"><span class="legend-colour"></span> Talks</div>
   <div class="legend-item tutorial" data-category="tutorial"><span class="legend-colour"></span> Tutorials</div>
-  <div class="legend-item poster" data-category="poster"><span class="legend-colour"></span> Posters</div>
   <div class="legend-item social" data-category="social"><span class="legend-colour"></span> Socials</div>
   <div class="legend-item meeting" data-category="meeting"><span class="legend-colour"></span> Meetings</div>
+    <div class="legend-item poster" data-category="poster"><span class="legend-colour"></span> Other</div>
 
 </div>
 
@@ -130,7 +140,25 @@ classes: [full-programme]
 
       {% for s in cell_sessions %}
       <div class="session-card {{ s.category | downcase }}">
+
     <div class="session-header">
+    
+{% if s.category %}
+  <span class="session-category category-{{ s.category | downcase }}">
+    {% if s.category == "talk" %}
+      Talks
+    {% elsif s.category == "Poster" %}
+    {% else %}
+      {{ s.category | capitalize }}
+    {% endif %}
+  </span>
+{% endif %}
+
+
+
+
+
+
   <h3 class="session-title">
     <a href="{{ s.url | relative_url }}">
       {{ s.title }}
@@ -152,6 +180,7 @@ classes: [full-programme]
         <span class="meta-value">{{ s.lead }}</span>
       </div>
     {% endif %}
+
 
     {% if s.instructor %}
       <div class="meta-line speaker">
@@ -214,6 +243,45 @@ classes: [full-programme]
 </div>
 
 <style>
+
+.session-category {
+  margin-top: 0.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  cursor: default;
+  user-select: none;
+}
+
+.category-talk {
+  color: #0d8157;
+}
+
+.category-workshop {
+  color: #184a7c;
+}
+
+.category-meeting {
+  color: #c85096;
+}
+
+.category-keynote {
+  color: #68246d;
+}
+
+.category-tutorial {
+  color: #947312;
+}
+
+.category-poster {
+  color: #dc3232;
+}
+
 
 /* === FULL WIDTH PAGE === */
 .full-programme .page__inner-wrap,
@@ -295,13 +363,25 @@ font-size: 0.5rem;
   display: block;
 }
 
-.legend-link-wrapper {
-  flex-basis: 100%;
-  display: flex;
+.legend-link-wrapper .legend-link {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  margin-top: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: 999px;
+  background: #002A41;
+  color: #fff !important;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
+.legend-link-wrapper .legend-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
 
 
 .legend-link {
