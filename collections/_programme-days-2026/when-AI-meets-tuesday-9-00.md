@@ -130,7 +130,9 @@ We also demonstrate how adaptive conformal inference provides reliable uncertain
 <h3> AI and DiRAC Training Hub • Gokman </h3>
 
 
-This talk presents the AI and DiRAC Training Hub, focusing on developing skills, training pathways, and community support for researchers working at the intersection of artificial intelligence and high-performance computing.
+In DiRAC Training Academy, there are several JupyterHub charts that allow users run and test their codes. Porting all codes on those complex machines could be harder than practice. In this way, we design to help users how they can run and test a piece of their codes on those architechtures to see performance of functions/models easily. So,  they do not have to run heavy profiler, tools and deal with all different software stack set up. By using containers and debuggers, we aim to help users/researchers how to use machine learning methods, hyper-parameter tuning in domain of scientific computing.
+
+*This talk has been cancelled due to planing issue.*
 "
 
 # -------------------------
