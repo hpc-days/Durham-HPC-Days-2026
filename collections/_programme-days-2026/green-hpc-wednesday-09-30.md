@@ -114,7 +114,7 @@ start_time_1: "09:00"
 end_time_1: "10:30"
 
 
-room: "VisLab"
+room: "MCS0001"
 
 
 
