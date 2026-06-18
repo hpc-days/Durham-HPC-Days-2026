@@ -27,9 +27,10 @@ lead_links:
 
 #CONTRIBUTORS
 # Comma-separated list of the contributors of the session
-contributor: "Jeremy Cohen, Samantha Wittke"
+contributor: "Jeremy Cohen, Samantha Wittke, Eirini Zormpa"
 # Contributors' photos (must match order of names above). 
 contributor_photos:
+  - "assets/images/generic.jpg"
   - "assets/images/generic.jpg"
   - "assets/images/generic.jpg"
 # Contributors' profile links (must match order of names above)
