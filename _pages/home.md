@@ -3,10 +3,10 @@ layout: splash
 permalink: /
 hidden: true
 ---
-<div class="news-banner">
+<!-- div class="news-banner">
   📢 Online participation for HPC Days 2026 is now open. You can now register to attend sessions online 
   <a href="https://hpc-days.github.io/Durham-HPC-Days-2026/online/">How to register →</a>
-</div>
+</div -->
 
 <section class="ws-hero ws-hero-banner full-bleed">
 </section>
