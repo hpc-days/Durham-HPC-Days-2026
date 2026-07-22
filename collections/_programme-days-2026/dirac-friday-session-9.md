@@ -145,7 +145,7 @@ start_time_2: "13:00"
 end_time_2: "15:00"
 
 room: "MCS0001"
-
+slides: "https://dirac.ac.uk/hpc-days-building-community-workshop/"
 
 
 ---

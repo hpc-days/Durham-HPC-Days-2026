@@ -24,4 +24,13 @@ room: "MCS0001"
 layout: keynote
 category: "keynote"
 description: "Academic-industry partnerships are important to spur innovation (for both partners) and increasingly to offer a new source of funding at universities. How does the difference in attitudes about corporate responsibility between the US and Europe change the way academic HPC centers interact with companies? Are industry relations *that* different on opposite sides of the Atlantic? This talk will compare the cultural and political impact of working with companies, including GDPR and Intellectual Property, and look at how AI may influence these relationships in the future."
+
+
+youtube_id: "6_ua_zF04Yc?si=VuVGyB86JGb9ya92"
+youtube_url: "https://youtu.be/6_ua_zF04Yc?si=VuVGyB86JGb9ya92"
+recording: "https://www.youtube.com/embed/6_ua_zF04Yc?si=VuVGyB86JGb9ya92"
+slides: "https://raw.githubusercontent.com/hpc-days/Durham-HPC-Days-2026/main/assets/documents/What Works Academic-Industry Collaborations Across Borders - US vs EU models - Wednesday-keynote-12pm.pdf"
+
+
+
 ---

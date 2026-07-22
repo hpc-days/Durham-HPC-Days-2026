@@ -187,7 +187,7 @@ end_time_1: "18:00"
 
 
 room: "MCS2068"
-
+slides: "https://github.com/hpc-days/Durham-HPC-Days-2026/tree/main/assets/documents/HPC-SIG"
 
 
 ---

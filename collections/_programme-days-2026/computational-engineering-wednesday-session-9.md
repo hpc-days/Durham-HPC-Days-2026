@@ -157,6 +157,9 @@ end_time_1: "10:30"
 
 room: "MCS2068"
 
+recording_available: true
+youtube_url: "https://youtu.be/Sd5kQbwUtMw?si=Szi-FjYWBksQ5sll"
+recording: "https://www.youtube.com/embed/Sd5kQbwUtMw?si=Szi-FjYWBksQ5sll"
 
 
 ---

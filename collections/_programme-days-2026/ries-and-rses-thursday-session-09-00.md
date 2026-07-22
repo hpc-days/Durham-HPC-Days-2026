@@ -153,6 +153,10 @@ end_time_2: "18:00"
 
 room: "RH007"
 
-
+recording_available: true
+youtube_id: "7vXRuct6xA8?si=tM8mbFzWkh7Ds3hR"
+youtube_url: "https://youtu.be/7vXRuct6xA8?si=tM8mbFzWkh7Ds3hR"
+recording: "https://www.youtube.com/embed/7vXRuct6xA8?si=tM8mbFzWkh7Ds3hR"
+slides: "https://github.com/hpc-days/Durham-HPC-Days-2026/tree/main/assets/documents/ACIT-Hub"
 
 ---

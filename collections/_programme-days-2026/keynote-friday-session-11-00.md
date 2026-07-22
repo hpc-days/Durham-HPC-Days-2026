@@ -25,6 +25,10 @@ category: "keynote"
 description: "The EPSRC Centre for Doctoral Training in Collaborative Computational Modelling at the Interface (CCMI) is a newly created Doctoral Training Centre between UCL and Imperial College. Its vision is to create a modern graduate training programme that lifts Research Software Engineering from being a Professional Service to being a core academic activity of a Computational Researcher. In our first cohort we had 20 students and are  soon welcoming 16 more students for the second cohort, aiming to train over 70 students in the lifetime of the CDT.
 
 In this talk I will give an overview of what the CDT is and how we try to tackle the core training challenges on the interface of data, software, and computation."
-
+recording_available: true
+youtube_id: "723LBfIfLkg?si=BRWcYc_t98cYDXO3"
+youtube_url: "https://youtu.be/723LBfIfLkg?si=BRWcYc_t98cYDXO3"
+recording: "https://www.youtube.com/embed/723LBfIfLkg?si=BRWcYc_t98cYDXO3"
+slides: "https://github.com/hpc-days/Durham-HPC-Days-2026/blob/main/assets/documents/betcke-keynote-slides.pdf"
 
 ---

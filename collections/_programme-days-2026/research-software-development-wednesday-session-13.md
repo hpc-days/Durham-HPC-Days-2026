@@ -133,6 +133,11 @@ end_time_1: "14:30"
 
 room: "RH007"
 
+recording_available: true
+youtube_url: "https://youtu.be/LxqQxGhY0gg?si=41oZi4glwuJDR-UM"
+recording: "https://www.youtube.com/embed/LxqQxGhY0gg?si=41oZi4glwuJDR-UM"
+slides: "https://github.com/hpc-days/Durham-HPC-Days-2026/tree/main/assets/documents/Research%20funding%20calls"
+
 
 
 ---
