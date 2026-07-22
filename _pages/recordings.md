@@ -301,6 +301,14 @@ allowfullscreen>
 {% endif %}
 </div>
 
+
+<div class="meta">
+{% if session.lead %}
+<strong>Lead:</strong><br>
+{{ session.lead }}
+{% endif %}
+</div>
+
 <div class="recording-buttons">
 
 <a href="{{ session.youtube_url }}" 
@@ -365,6 +373,15 @@ These sessions do not have a recording available, but the presentation slides ar
 {{ session.speaker }}
 {% endif %}
 </div>
+
+
+<div class="meta">
+{% if session.contributor %}
+<strong>Speakers:</strong><br>
+{{ session.contributor }}
+{% endif %}
+</div>
+
 
 <div class="recording-buttons">
 
