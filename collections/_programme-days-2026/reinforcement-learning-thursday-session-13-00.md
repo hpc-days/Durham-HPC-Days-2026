@@ -161,7 +161,10 @@ end_time_2: "18:00"
 
 
 room: "RH007"
-
+recording_available: true
+youtube_id: "7IMNRw3-njA"
+youtube_url: "https://youtu.be/7IMNRw3-njA"
+recording: "https://www.youtube.com/embed/7IMNRw3-njA"
 
 
 ---

@@ -69,6 +69,30 @@ classes: wide
 }
 
 
+.recordings-disclaimer{
+  max-width:1200px;
+  margin:1rem auto 1rem;
+  padding:1rem 1rem;
+  background:#f5f7fa;
+  border-left:6px solid #68246D;
+  border-radius:12px;
+  color:#444;
+  line-height:1.7;
+  font-size:1rem;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+.recordings-disclaimer h3{
+  margin:0 0 .75rem;
+  color:#002A41;
+  font-size:0.9rem;
+}
+
+.recordings-disclaimer p{
+  margin:0;
+  font-size:0.7rem;
+}
+
 .description {
   max-width:1200px;
   text-align:center;
@@ -260,7 +284,19 @@ Missed a session? Catch up with recordings and download presentation slides from
 </section>
 
 
+<div class="recordings-disclaimer">
 
+<h3>Recording and Privacy Notice</h3>
+
+<p>
+Please note that only recordings for which we received permission from the presenters have been published. Some sessions include only the talks of speakers who consented to having their presentations shared, and therefore may not represent the complete session.
+</p>
+
+<p>
+To respect the privacy of participants, discussion periods, audience questions, and other interactive sections may have been edited or removed. We thank all speakers and attendees for helping us make these resources available.
+</p>
+
+</div>
 
 
 
