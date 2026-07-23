@@ -133,7 +133,9 @@ end_time_1: "10:30"
 
 
 room: "MCS0001"
-
+youtube_id: "TnDtHpXggYU?si=aH6na9qIILTVpEOG"
+youtube_url: "https://youtu.be/TnDtHpXggYU?si=aH6na9qIILTVpEOG"
+recording: "https://www.youtube.com/embed/TnDtHpXggYU?si=aH6na9qIILTVpEOG"
 
 
 ---

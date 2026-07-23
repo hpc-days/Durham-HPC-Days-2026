@@ -140,7 +140,10 @@ end_time_1: "14:30"
 
 
 room: "MCS0001"
-
+youtube_id: "iGXizSylXp8?si=3GX5j1ccZNU82J2Z"
+youtube_url: "https://youtu.be/iGXizSylXp8?si=3GX5j1ccZNU82J2Z"
+recording: "https://www.youtube.com/embed/iGXizSylXp8?si=3GX5j1ccZNU82J2Z"
+slides: "https://raw.githubusercontent.com/hpc-days/Durham-HPC-Days-2026/main/assets/documents/we-know-what-to-do-so-why-arent-we-doin-it.pdf"
 
 
 ---

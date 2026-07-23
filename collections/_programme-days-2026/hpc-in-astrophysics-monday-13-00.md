@@ -208,7 +208,11 @@ end_time_2: "18:00"
 
 room: "MCS0001"
 
-
+recording_available: true
+youtube_id: "n9XaSKcpsmU?si=TGEkvcDTgjD4VYFM"
+youtube_url: "https://youtu.be/n9XaSKcpsmU?si=TGEkvcDTgjD4VYFM"
+recording: "https://www.youtube.com/embed/n9XaSKcpsmU?si=TGEkvcDTgjD4VYFM"
+slides: "https://github.com/hpc-days/Durham-HPC-Days-2026/tree/main/assets/documents/astro"
 
 ---
 

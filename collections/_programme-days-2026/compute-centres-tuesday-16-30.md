@@ -158,6 +158,11 @@ end_time_1: "18:00"
 
 room: "MJC2004"
 
+recording_available: true
+youtube_id: "qNUYaLIdfNM?si=fxZGXsaf7qBBZ98B"
+youtube_url: "https://youtu.be/qNUYaLIdfNM?si=fxZGXsaf7qBBZ98B"
+recording: "https://www.youtube.com/embed/qNUYaLIdfNM?si=fxZGXsaf7qBBZ98B"
+slides: "https://raw.githubusercontent.com/hpc-days/Durham-HPC-Days-2026/main/assets/documents/Cristin-Merritt-Tuesday-HPC-Centres-4-30pm.pdf"
 
 
 ---
